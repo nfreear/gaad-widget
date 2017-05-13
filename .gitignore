@@ -1,0 +1,8 @@
+
+*.css
+test*.html
+*.min.js
+*copy*
+
+node_modules/
+*.log
