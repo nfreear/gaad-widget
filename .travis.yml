@@ -11,6 +11,6 @@ script:
   - npm test
 
 after_script:
-  - ls -al build
+  - ls -alh build
 
 # End.
