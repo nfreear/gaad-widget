@@ -27,6 +27,7 @@ Note ~ this is not an official widget!
 * Basic internationalization,
 * Basic automated testing in place (Travis-CI),
 * Accessible ~ _let me know if you spot a problem!_
+* Compatible with all modern browsers, and MSIE 10-11 ([MSIE 9 is in-progress][ie])
 
 [Wishlist][].
 
@@ -104,6 +105,7 @@ Twitter: [@nfreear][].
 [gaad-widget]: https://github.com/nfreear/gaad-widget
 [gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/GAAD.widget.png
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist
+[ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
 [Datejs]: https://github.com/datejs/Datejs
 [RawGit]: https://rawgit.com/
