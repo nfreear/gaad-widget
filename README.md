@@ -46,7 +46,7 @@ Via [RawGit][] - production / CDN:
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/1.0-alpha/build/GAAD.widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/1.0-beta/build/GAAD.widget.js"></script>
 ```
 
 Local hosting:
@@ -95,7 +95,7 @@ Français (French):
 
 License: [MIT][].
 
-Twitter: [@nfreear][];
+Twitter: [@nfreear][].
 
 
 [GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget

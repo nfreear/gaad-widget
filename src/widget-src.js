@@ -23,35 +23,24 @@
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',
     days_before: 10,
     days_after: 5,
+    style_url: '/../../style/GAAD.widget.css',
     should_show: null,
     date: GAAD_DATE,
     datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
     today: Date.today(),
-    xth: Date.today().toString('yyyy') - 2011,
-    css: [
-      '.gaad-widget-js {',
-      '  background: #00385E;',
-      '  border: 3px solid #f8c958;',
-      '  border-radius: 6px;',
-      '  color: #fff;',
-      '  display: block;',
-      '  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;',
-      '  line-height: 1.6em;',
-      '  margin: 1em;',
-      '  padding: 20px;',
-      '  text-align: center;',
-      '}',
-      '.gaad-widget-js a { color: #fff; text-decoration: underline; }'
-    ]
+    xth: Date.today().toString('yyyy') - 2011
   };
 
   var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
+
   var data = scriptEl.getAttribute('data-gaad');
   var options = data ? JSON.parse(data) : {};
 
   C.warn(scriptEl, options); // Not: scriptEl.dataset
 
   var gaad = extend(defaults, options);
+
+  gaad.script_url = scriptEl.src;
 
   gaad.show_date = new Date(GAAD_DATE).addDays(-gaad.days_before); // Clone.
   gaad.hide_date = new Date(GAAD_DATE).addDays(gaad.days_after);
@@ -70,10 +59,6 @@
 
   C.warn('GAAD: show', gaad);
 
-  var styleEl = D.createElement('style');
-  styleEl.id = gaad.id + '-css';
-  styleEl.innerText = gaad.css.join('\n');
-
   var elem = D.getElementById(gaad.id);
 
   elem.lang = gaad.lang;
@@ -81,7 +66,7 @@
   elem.className = 'gaad-widget-js';
   elem.innerHTML = gaad.join;
 
-  D.head.appendChild(styleEl);
+  addStylesheet(gaad.script_url + gaad.style_url);
 
   // ---------------------------
   // JuhQ: https://gist.github.com/pbojinov/8f3765b672efec122f66#gistcomment-1493930
@@ -100,5 +85,18 @@
       }
     }
     return extended;
+  }
+
+  function addStylesheet (url) {
+    var styleEl = D.createElement('link');
+    styleEl.rel = 'stylesheet';
+    styleEl.type = 'text/css';
+    styleEl.href = url;
+
+    /* var styleEl = D.createElement('style');
+    styleEl.id = gaad.id + '-css';
+    styleEl.innerText = gaad.css.join('\n'); */
+
+    D.head.appendChild(styleEl);
   }
 })(window, window.document, window.console, window.Date);

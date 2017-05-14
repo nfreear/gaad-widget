@@ -1,0 +1,22 @@
+/*!
+  GAAD.widget.js | ©Nick Freear 2017-04-27 | License: MIT.
+
+  https://github.com/nfreear/gaad-widget
+*/
+
+.gaad-widget-js {
+  background: #00385E;
+  border: 3px solid #f8c958;
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 1.2em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6em;
+  margin: 1em;
+  padding: 20px;
+  text-align: center;
+}
+.gaad-widget-js a {
+  color: #fff;
+  text-decoration: underline;
+}
