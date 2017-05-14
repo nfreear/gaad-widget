@@ -1531,7 +1531,7 @@ Date.CultureInfo = {
         script: "GAAD.widget.js",
         lang: "en",
         template: 'Join us on Thursday %D and mark the %xth <a href="%U">Global Accessibility Awareness Day (GAAD)</a>.',
-        url: "http://globalaccessibilityawarenessday.org/",
+        url: "http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget",
         days_before: 10,
         days_after: 5,
         should_show: null,
@@ -1539,7 +1539,7 @@ Date.CultureInfo = {
         datefmt: GAAD_DATE.toString("MMMM dS, yyyy"),
         today: Date.today(),
         xth: Date.today().toString("yyyy") - 2011,
-        css: [ ".gaad-widget-js {", "  background: #00385E;", "  border: 3px solid #f8c958;", "  border-radius: 5px;", "  color: #fff;", "  display: block;", '  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;', "  line-height: 1.5em;", "  margin: 1em;", "  padding: 20px;", "  text-align: center;", "}", ".gaad-widget-js a { color: #fff; text-decoration: underline; }" ]
+        css: [ ".gaad-widget-js {", "  background: #00385E;", "  border: 3px solid #f8c958;", "  border-radius: 6px;", "  color: #fff;", "  display: block;", '  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;', "  line-height: 1.6em;", "  margin: 1em;", "  padding: 20px;", "  text-align: center;", "}", ".gaad-widget-js a { color: #fff; text-decoration: underline; }" ]
     };
     var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
     var data = scriptEl.getAttribute("data-gaad");
