@@ -28,6 +28,7 @@ Note ~ this is not an official widget!
 * Basic automated testing in place (Travis-CI),
 * Accessible ~ _let me know if you spot a problem!_
 * Compatible with all modern browsers, and MSIE 10-11 ([MSIE 9 is in-progress][ie])
+* CDN courtesy of [RawGit][] (thank you!) - with HTTPS/SSL.
 
 [Wishlist][].
 
@@ -47,7 +48,7 @@ Via [RawGit][] - production / CDN:
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/1.0-beta/build/GAAD.widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/1.0-rc.1/build/GAAD.widget.js"></script>
 ```
 
 Local hosting:
@@ -109,10 +110,11 @@ Twitter: [@nfreear][].
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
 [Datejs]: https://github.com/datejs/Datejs
 [RawGit]: https://rawgit.com/
+    "Serves Git files with the correct mime-type; content delivery network (CDN)"
 [MIT]: https://nfreear.mit-license.org/ "MIT License"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
-    "Build status – Travis-CI (PHP + NPM/eslint)"
+    "Build status – Travis-CI (NPM/eslint)"
 [semi]: https://github.com/Flet/semistandard
 [semi-icon]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square
     "Javascript coding style — 'semistandard'"

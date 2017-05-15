@@ -1520,15 +1520,15 @@ Date.CultureInfo = {
 
   https://github.com/nfreear/gaad-widget
 */
-(function(W, D, C, Date) {
+(function(W, D, console, Date) {
     "use strict";
     if (typeof Date.today !== "function") {
-        return C.error('GAAD error: missing dependency, "Datejs"');
+        return console.error('GAAD error: missing dependency, "Datejs"');
     }
     var GAAD_DATE = Date.may().third().thursday();
     var defaults = {
         id: "id-gaad",
-        script: "GAAD.widget.js",
+        script: "GAAD.widget.",
         lang: "en",
         template: 'Join us on Thursday %D and mark the %xth <a href="%U">Global Accessibility Awareness Day (GAAD)</a>.',
         url: "http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget",
@@ -1539,13 +1539,14 @@ Date.CultureInfo = {
         date: GAAD_DATE,
         datefmt: GAAD_DATE.toString("MMMM dS, yyyy"),
         today: Date.today(),
-        xth: Date.today().toString("yyyy") - 2011
+        xth: Date.today().toString("yyyy") - 2011,
+        log: /debug=1/.test(W.location.search) && W.console ? console.warn : function() {}
     };
     var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
     var data = scriptEl.getAttribute("data-gaad");
     var options = data ? JSON.parse(data) : {};
-    C.warn(scriptEl, options);
     var gaad = extend(defaults, options);
+    gaad.log(scriptEl, options);
     gaad.script_url = scriptEl.src;
     gaad.show_date = new Date(GAAD_DATE).addDays(-gaad.days_before);
     gaad.hide_date = new Date(GAAD_DATE).addDays(gaad.days_after);
@@ -1554,15 +1555,16 @@ Date.CultureInfo = {
     gaad.should_show = gaad.diff_show >= 0 && gaad.diff_hide < 0;
     gaad.join = gaad.template.replace(/%D/, gaad.datefmt).replace(/%x/, gaad.xth).replace(/%U/, gaad.url);
     if (!gaad.should_show) {
-        return C.warn("GAAD: no-show", gaad);
+        return gaad.log("GAAD: no-show", gaad);
     }
-    C.warn("GAAD: show", gaad);
+    gaad.log("GAAD: show", gaad);
     var elem = D.getElementById(gaad.id);
     elem.lang = gaad.lang;
     elem.setAttribute("role", "alert");
     elem.className = "gaad-widget-js";
     elem.innerHTML = gaad.join;
     addStylesheet(gaad.script_url + gaad.style_url);
+    W.console && console.log("Happy GAAD! ~ http://globalaccessibilityawarenessday.org");
     function extend() {
         var extended = {};
         var key;

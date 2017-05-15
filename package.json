@@ -1,7 +1,8 @@
 {
   "name": "gaad-widget",
-  "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display it for a period before and after the day.",
-  "author": "Nick Freear (@nfreear)",
+  "version": "1.0.0-rc.1",
+  "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
+  "author": "Nick Freear {@nfreear}",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   },
   "scripts": {
     "build": "node_modules/.bin/uglifyjs src/c*.js node_modules/Datejs/build/date.js src/w*.js --comments=/^[!*]/ -bo build/GAAD.widget.js",
-    "build-min": "node_modules/.bin/uglifyjs build/*.widget.js --comments=/^[!*]/ -o build/GAAD.widget.min.js",
+    "build-min": "node_modules/.bin/uglifyjs build/*.widget.js --comments=/^[!*]/ -mo build/GAAD.widget.min.js",
     "test": "node_modules/.bin/semistandard"
   },
   "semistandard": {

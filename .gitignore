@@ -2,6 +2,7 @@
 test*.html
 *.min.js
 *copy*
+*.php
 
 node_modules/
 *.log
