@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-beta.2",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "author": "Nick Freear {@nfreear}",
   "license": "MIT",
@@ -12,13 +12,14 @@
     "datejs": "https://github.com/datejs/Datejs#8164739566"
   },
   "devDependencies": {
+    "csslint": "^1.0.5",
     "semistandard": "^11.0.0",
     "uglifyjs": "^2.4.10"
   },
   "scripts": {
     "build": "node_modules/.bin/uglifyjs src/c*.js node_modules/Datejs/build/date.js src/w*.js --comments=/^[!*]/ -bo build/GAAD.widget.js",
     "build-min": "node_modules/.bin/uglifyjs build/*.widget.js --comments=/^[!*]/ -mo build/GAAD.widget.min.js",
-    "test": "node_modules/.bin/semistandard"
+    "test": "node_modules/.bin/semistandard; node_modules/.bin/csslint style"
   },
   "semistandard": {
     "ignore": "build/"

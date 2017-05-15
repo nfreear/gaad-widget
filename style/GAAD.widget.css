@@ -7,16 +7,31 @@
 .gaad-widget-js {
   background: #00385E;
   border: 3px solid #f8c958;
-  border-radius: 6px;
+  border-radius: 7px;
   color: #fff;
   display: block;
-  font: 1.2em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: normal 1.15em 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.6em;
-  margin: 1em;
-  padding: 20px;
+  margin: 0 0 1.3em;
+  padding: 1em;
   text-align: center;
 }
+
 .gaad-widget-js a {
   color: #fff;
   text-decoration: underline;
+}
+
+.gaad-widget-js a:hover,
+.gaad-widget-js a:focus {
+  color: #eee;
+}
+
+@media (max-width: 767px) {
+
+  .gaad-widget-js {
+    border-width: 2px;
+    font-size: 1.05em;
+    padding: 0.6em;
+  }
 }
