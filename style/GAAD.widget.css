@@ -12,18 +12,20 @@
   display: block;
   font: normal 1.15em 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.6em;
-  margin: 0 0 1.3em;
-  padding: 1em;
+  margin: 0 0 1.5em;
+  padding: 0.8em;
   text-align: center;
 }
 
 .gaad-widget-js a {
+  border-bottom: 2px dotted transparent;
   color: #fff;
   text-decoration: underline;
 }
 
 .gaad-widget-js a:hover,
 .gaad-widget-js a:focus {
+  border-color: #fff;
   color: #eee;
 }
 
@@ -32,6 +34,6 @@
   .gaad-widget-js {
     border-width: 2px;
     font-size: 1.05em;
-    padding: 0.6em;
+    padding: 0.5em;
   }
 }

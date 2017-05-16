@@ -19,7 +19,7 @@
     id: 'id-gaad',
     script: 'GAAD.widget.', // .js OR .min.js;
     lang: 'en',
-    template: 'Join us on Thursday %D and mark the %xth <a href="%U">Global Accessibility Awareness Day (GAAD)</a>.',
+    template: 'Join us on Thursday %D and mark the %xth <a href="%U" target="_top">Global Accessibility Awareness Day (GAAD)</a>.',
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',
     days_before: 10,
     days_after: 5,
