@@ -31,7 +31,7 @@
 
 @media (max-width: 767px) {
 
-  .gaad-widget-js {
+  .gaad-widget-js.no-embed {
     border-width: 2px;
     font-size: 1.05em;
     padding: 0.5em;
