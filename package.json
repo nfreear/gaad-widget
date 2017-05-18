@@ -14,11 +14,11 @@
   "devDependencies": {
     "csslint": "^1.0.5",
     "semistandard": "^11.0.0",
-    "uglifyjs": "^2.4.10"
+    "uglify-js": "^2.8.26"
   },
   "scripts": {
     "build": "node_modules/.bin/uglifyjs src/c*.js node_modules/Datejs/build/date.js src/w*.js --comments=/^[!*]/ -bo build/GAAD.widget.js",
-    "build-min": "node_modules/.bin/uglifyjs build/*.widget.js --comments=/^[!*]/ -mo build/GAAD.widget.min.js",
+    "build-min": "node_modules/.bin/uglifyjs build/*.widget.js --comments=/^[!*]/ -mco build/GAAD.widget.min.js",
     "test": "node_modules/.bin/semistandard; node_modules/.bin/csslint style"
   },
   "semistandard": {
