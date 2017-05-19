@@ -34,7 +34,7 @@
     },
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',
     days_before: 10,
-    days_after: 5,
+    days_after: 10,
     embed: false,
     style_url: '/../../style/GAAD.widget.css',
     should_show: null,
