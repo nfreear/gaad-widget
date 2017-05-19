@@ -21,8 +21,16 @@ Note ~ this is not an official widget!
 
 ## Features
 
+# v2.x
+
+* Separate after-event message - containing next year's date, [#5][b/a]
+* Add translation in Français/French, [#4][i18n]
+* Neutral `black` theme, [#2][wishlist]
+
+# v1.x
+
 * Zero configuration required by default,
-* Paste and forget - the banner appears _10_ days before and disappears _5_ days after,
+* Paste and forget - the banner appears _10_ days before and disappears _10_ days after,
 * Configurable,
 * Basic internationalization,
 * Basic automated testing in place (Travis-CI),
@@ -49,7 +57,7 @@ Via [RawGit][] - production / CDN:
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/1.0-beta.2/build/GAAD.widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/2.0-beta/build/GAAD.widget.js"></script>
 ```
 
 Local hosting:
@@ -75,8 +83,7 @@ Setting several configuration options:
 
 <script
   src="build/GAAD.widget.js"
-  data-gaad=
-  '{ "id": "custom_id", "days_before": 20, "days_after": 8, "url": "http://globalaccessibilityawarenessday.org/" }'
+  data-gaad='{ "id": "custom_id", "days_after": 10, "theme": "black", "debug": true }'
   ></script>
 ```
 
@@ -87,18 +94,14 @@ Français (French):
 ```html
 <div id="id-gaad"></div>
 
-<script
-  src="build/GAAD.widget.js"
-  data-gaad=
-  '{ "lang": "fr", "template": "Rejoignez-nous le jeudi 18 mai 2017 et marquer le %xème <a href=\"%U\">Global Accessibility Awareness Day (GAAD)</a>." }'
-  ></script>
+<script src="build/GAAD.widget.js" data-gaad='{ "lang": "fr" }' ></script>
 ```
 
 ## License
 
 License: [MIT][].
 
-Twitter: [@nfreear][].
+Twitter: [@nfreear][], [@gbla11yday][].
 
 
 [GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
@@ -106,8 +109,10 @@ Twitter: [@nfreear][].
 [@nfreear]: https://twitter.com/nfreear
 [gaad-widget]: https://github.com/nfreear/gaad-widget
 [gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/GAAD.widget.png
-[wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Wishlist"
-[ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Browser compatibility"
+[wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
+[i18n]: https://github.com/nfreear/gaad-widget/issues/4 "Bug #4, Translations (v 2.x)"
+[b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
+[ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
 [Datejs]: https://github.com/datejs/Datejs
 [RawGit]: https://rawgit.com/

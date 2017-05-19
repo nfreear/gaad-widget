@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+.gaad-widget-js.black {
+  background: #333;
+}
+
 .gaad-widget-js a {
   border-bottom: 2px dotted transparent;
   color: #fff;

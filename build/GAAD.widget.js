@@ -1548,6 +1548,7 @@ Date.CultureInfo = {
         days_after: 10,
         embed: false,
         style_url: "/../../style/GAAD.widget.css",
+        theme: "blue",
         should_show: null,
         is_before: null,
         xreplace: {
@@ -1597,7 +1598,10 @@ Date.CultureInfo = {
     elem.lang = gaad.lang;
     elem.dir = gaad.dir;
     elem.setAttribute("role", "alert");
-    elem.className = "gaad-widget-js " + (gaad.embed ? "embed" : "no-embed");
+    elem.className = replaceObj("gaad-widget-js {t} {e}", {
+        "{t}": gaad.theme,
+        "{e}": gaad.embed ? "embed" : "no-embed"
+    });
     elem.innerHTML = gaad.join;
     addStylesheet(gaad.script_url + gaad.style_url);
     W.console && console.log("Happy GAAD! ~ http://globalaccessibilityawarenessday.org");
