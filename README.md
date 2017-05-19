@@ -23,9 +23,10 @@ Note ~ this is not an official widget!
 
 # v2.x
 
-* Separate after-event message - containing next year's date, [#5][b/a]
-* Add translation in Français/French, [#4][i18n]
-* Neutral `black` theme, [#2][wishlist]
+* Different after-event message - containing next year's date, [#5][b/a] - thanks [@srinivasu..][]
+* Added translation into Français/French, [#4][i18n]
+* Added neutral `black` theme, [#2][wishlist]
+* Changed default `days_after` from 5 to 10.
 
 # v1.x
 
@@ -107,6 +108,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
 [@gbla11yday]: https://twitter.com/gbla11yday
 [@nfreear]: https://twitter.com/nfreear
+[@srinivasu..]: http://srinivasu.org "Suggested by @srinivasuchakravarthula"
 [gaad-widget]: https://github.com/nfreear/gaad-widget
 [gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/GAAD.widget.png
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
