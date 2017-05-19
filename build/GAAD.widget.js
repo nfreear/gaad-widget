@@ -1520,7 +1520,7 @@ Date.CultureInfo = {
 
   https://github.com/nfreear/gaad-widget
 */
-(function(W, D, console, Date) {
+(function(W, D, location, console, Date) {
     "use strict";
     if (typeof Date.today !== "function") {
         return console.error('GAAD error: missing dependency, "Datejs"');
@@ -1530,23 +1530,30 @@ Date.CultureInfo = {
         id: "id-gaad",
         script: "GAAD.widget.",
         lang: "en",
-        template: 'Join us on Thursday %D and mark the %xth <a href="%U" target="_top">Global Accessibility Awareness Day (GAAD)</a>.',
+        dir: "ltr",
+        template: 'Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href="{u}" target="_top">Global Accessibility Awareness Day (GAAD)</a>.',
         url: "http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget",
         days_before: 10,
         days_after: 5,
         embed: false,
         style_url: "/../../style/GAAD.widget.css",
         should_show: null,
+        xreplace: {
+            "{d}": GAAD_DATE.toString("dd"),
+            "{th}": GAAD_DATE.toString("S"),
+            "{m}": GAAD_DATE.toString("MMMM"),
+            "{y}": GAAD_DATE.toString("yyyy")
+        },
         date: GAAD_DATE,
-        datefmt: GAAD_DATE.toString("MMMM dS, yyyy"),
         today: Date.today(),
         xth: Date.today().toString("yyyy") - 2011,
-        log: /debug=1/.test(W.location.search) && W.console ? console.warn : function() {}
+        debug: /[?&]debug=1/.test(location.search)
     };
     var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
     var data = scriptEl.getAttribute("data-gaad");
     var options = data ? JSON.parse(data) : {};
     var gaad = extend(defaults, options);
+    gaad.log = gaad.debug && W.console ? console.warn : function() {};
     gaad.log(scriptEl, options);
     gaad.script_url = scriptEl.src;
     gaad.show_date = new Date(GAAD_DATE).addDays(-gaad.days_before);
@@ -1554,13 +1561,16 @@ Date.CultureInfo = {
     gaad.diff_show = gaad.today - gaad.show_date;
     gaad.diff_hide = gaad.today - gaad.hide_date;
     gaad.should_show = gaad.diff_show >= 0 && gaad.diff_hide < 0;
-    gaad.join = gaad.template.replace(/%D/, gaad.datefmt).replace(/%x/, gaad.xth).replace(/%U/, gaad.url);
+    gaad.xreplace["{u}"] = gaad.url;
+    gaad.xreplace["{x}"] = gaad.xth;
+    gaad.join = replaceObj(gaad.template, gaad.xreplace);
     if (!gaad.should_show) {
         return gaad.log("GAAD: no-show", gaad);
     }
     gaad.log("GAAD: show", gaad);
     var elem = D.getElementById(gaad.id);
     elem.lang = gaad.lang;
+    elem.dir = gaad.dir;
     elem.setAttribute("role", "alert");
     elem.className = "gaad-widget-js " + (gaad.embed ? "embed" : "no-embed");
     elem.innerHTML = gaad.join;
@@ -1580,6 +1590,12 @@ Date.CultureInfo = {
         }
         return extended;
     }
+    function replaceObj(str, mapObj) {
+        var re = new RegExp(Object.keys(mapObj).join("|"), "g");
+        return str.replace(re, function(matched) {
+            return mapObj[matched];
+        });
+    }
     function addStylesheet(url) {
         var styleEl = D.createElement("link");
         styleEl.rel = "stylesheet";
@@ -1587,4 +1603,4 @@ Date.CultureInfo = {
         styleEl.href = url;
         D.head.appendChild(styleEl);
     }
-})(window, window.document, window.console, window.Date);
+})(window, window.document, window.location, window.console, window.Date);
