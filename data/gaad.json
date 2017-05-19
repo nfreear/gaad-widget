@@ -1,0 +1,124 @@
+{
+  "//": "",
+  "timestamp": "2017-05-19 22:28:35Z",
+  "texts": {
+    "en": {
+      "name": "Global Accessibility Awareness Day (GAAD)",
+      "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href='{u}' target='_top'>{g}</a>.",
+      "after": "Put next year's <a href='{u}' target='_top'>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
+      "url": "http://globalaccessibilityawarenessday.org"
+    },
+    "fr": {
+      "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a href='{u}' target='_top'>{g}</a>.",
+      "after": "Mettez le <a href='{u}' target='_top'>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
+      "url": "http://globalaccessibilityawarenessday.org/gaadfr.html"
+    }
+  },
+  "dates": {
+    "2011": {
+      "{x}": 0,
+      "{d}": "19",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2011"
+    },
+    "2012": {
+      "{x}": 1,
+      "{d}": "17",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2012"
+    },
+    "2013": {
+      "{x}": 2,
+      "{d}": "16",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2013"
+    },
+    "2014": {
+      "{x}": 3,
+      "{d}": "15",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2014"
+    },
+    "2015": {
+      "{x}": 4,
+      "{d}": "21",
+      "{th}": "st",
+      "{m}": "May",
+      "{y}": "2015"
+    },
+    "2016": {
+      "{x}": 5,
+      "{d}": "19",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2016"
+    },
+    "2017": {
+      "{x}": 6,
+      "{d}": "18",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2017"
+    },
+    "2018": {
+      "{x}": 7,
+      "{d}": "17",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2018"
+    },
+    "2019": {
+      "{x}": 8,
+      "{d}": "16",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2019"
+    },
+    "2020": {
+      "{x}": 9,
+      "{d}": "21",
+      "{th}": "st",
+      "{m}": "May",
+      "{y}": "2020"
+    },
+    "2021": {
+      "{x}": 10,
+      "{d}": "20",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2021"
+    },
+    "2022": {
+      "{x}": 11,
+      "{d}": "19",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2022"
+    },
+    "2023": {
+      "{x}": 12,
+      "{d}": "18",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2023"
+    },
+    "2024": {
+      "{x}": 13,
+      "{d}": "16",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2024"
+    },
+    "2025": {
+      "{x}": 14,
+      "{d}": "15",
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": "2025"
+    }
+  }
+}

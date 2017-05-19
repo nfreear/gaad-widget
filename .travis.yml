@@ -5,12 +5,18 @@ node_js:
 git:
   depth: 5
 
+install:
+  - npm install
+  - npm run install-legacy-datejs
+
 script:
+  - node bin/gaad.js
   - npm run build
   - npm run build-min
   - npm test
 
 after_script:
   - ls -alh build
+  - ls -alh data
 
 # End.

@@ -1,8 +1,17 @@
 
+LICENSE*
+
 test*.html
 *.min.js
+*.sa.js
+#data/*.json
+src/*.json
 *copy*
 *.php
 
+x_legacy/
 node_modules/
 *.log
+
+composer.*
+vendor/
