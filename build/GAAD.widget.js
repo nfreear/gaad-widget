@@ -1526,18 +1526,30 @@ Date.CultureInfo = {
         return console.error('GAAD error: missing dependency, "Datejs"');
     }
     var GAAD_DATE = Date.may().third().thursday();
+    var GAAD_NEXT = Date.today("+1 year").may().third().thursday();
     var defaults = {
         id: "id-gaad",
         script: "GAAD.widget.",
         lang: "en",
         dir: "ltr",
-        template: 'Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href="{u}" target="_top">Global Accessibility Awareness Day (GAAD)</a>.',
+        texts: {
+            en: {
+                name: "Global Accessibility Awareness Day (GAAD)",
+                before: 'Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href="{u}" target="_top">{g}</a>.',
+                after: 'Put next year\'s <a href="{u}" target="_top">{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!'
+            },
+            fr: {
+                before: 'Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a href="{u}" target="_top">{g}</a>.',
+                after: 'Mettez le <a href="{u}" target="_top">{g}</a> de l\'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!'
+            }
+        },
         url: "http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget",
         days_before: 10,
         days_after: 5,
         embed: false,
         style_url: "/../../style/GAAD.widget.css",
         should_show: null,
+        is_before: null,
         xreplace: {
             "{d}": GAAD_DATE.toString("dd"),
             "{th}": GAAD_DATE.toString("S"),
@@ -1545,6 +1557,7 @@ Date.CultureInfo = {
             "{y}": GAAD_DATE.toString("yyyy")
         },
         date: GAAD_DATE,
+        date_next: GAAD_NEXT,
         today: Date.today(),
         xth: Date.today().toString("yyyy") - 2011,
         debug: /[?&]debug=1/.test(location.search)
@@ -1561,9 +1574,21 @@ Date.CultureInfo = {
     gaad.diff_show = gaad.today - gaad.show_date;
     gaad.diff_hide = gaad.today - gaad.hide_date;
     gaad.should_show = gaad.diff_show >= 0 && gaad.diff_hide < 0;
+    gaad.is_before = gaad.today - gaad.date < 0;
+    if (!gaad.is_before) {
+        gaad.xreplace = {
+            "{d}": GAAD_NEXT.toString("dd"),
+            "{th}": GAAD_NEXT.toString("S"),
+            "{m}": GAAD_NEXT.toString("MMMM"),
+            "{y}": GAAD_NEXT.toString("yyyy")
+        };
+    }
     gaad.xreplace["{u}"] = gaad.url;
     gaad.xreplace["{x}"] = gaad.xth;
-    gaad.join = replaceObj(gaad.template, gaad.xreplace);
+    gaad.xreplace["{g}"] = gaad.texts.en.name;
+    var lang = gaad.texts[gaad.lang] ? gaad.lang : "en";
+    var template = gaad.is_before ? gaad.texts[lang].before : gaad.texts[lang].after;
+    gaad.join = replaceObj(template, gaad.xreplace);
     if (!gaad.should_show) {
         return gaad.log("GAAD: no-show", gaad);
     }
