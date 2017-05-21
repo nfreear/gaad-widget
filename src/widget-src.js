@@ -24,12 +24,12 @@
     texts: {
       en: {
         name: 'Global Accessibility Awareness Day (GAAD)',
-        before: 'Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href="{u}" target="_top">{g}</a>.',
-        after: 'Put next year\'s <a href="{u}" target="_top">{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!'
+        before: 'Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>.',
+        after: 'Put next year\'s <a {at}>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!'
       },
       fr: {
-        before: 'Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a href="{u}" target="_top">{g}</a>.',
-        after: 'Mettez le <a href="{u}" target="_top">{g}</a> de l\'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!'
+        before: 'Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a {at}>{g}</a>.',
+        after: 'Mettez le <a {at}>{g}</a> de l\'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!'
       }
     },
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',
@@ -54,18 +54,7 @@
     debug: /[?&]debug=1/.test(location.search)
   };
 
-  var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
-
-  var data = scriptEl.getAttribute('data-gaad');
-  var options = data ? JSON.parse(data) : {};
-
-  var gaad = extend(defaults, options);
-
-  gaad.log = gaad.debug && W.console ? console.warn : function () {};
-
-  gaad.log(scriptEl, options); // Not: scriptEl.dataset
-
-  gaad.script_url = scriptEl.src;
+  var gaad = getConfig(defaults);
 
   gaad.show_date = new Date(GAAD_DATE).addDays(-gaad.days_before); // Clone.
   gaad.hide_date = new Date(GAAD_DATE).addDays(gaad.days_after);
@@ -87,7 +76,7 @@
     };
   }
 
-  gaad.xreplace[ '{u}' ] = gaad.url;
+  gaad.xreplace[ '{at}' ] = replaceObj(' href="{u}" target="_top"', { '{u}': gaad.url });
   gaad.xreplace[ '{x}' ] = gaad.xth;
   gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
 
@@ -95,7 +84,6 @@
   var template = gaad.is_before ? gaad.texts[ lang ].before : gaad.texts[ lang ].after;
 
   gaad.join = replaceObj(template, gaad.xreplace);
-  // gaad.join = gaad.template.replace(/%D/, gaad.datefmt).replace(/%x/, gaad.xth).replace(/%U/, gaad.url);
 
   if (!gaad.should_show) {
     return gaad.log('GAAD: no-show', gaad);
@@ -103,19 +91,27 @@
 
   gaad.log('GAAD: show', gaad);
 
-  var elem = D.getElementById(gaad.id);
-
-  elem.lang = gaad.lang;
-  elem.dir = gaad.dir;
-  elem.setAttribute('role', 'alert');
-  elem.className = replaceObj('gaad-widget-js {t} {e}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed' });
-  elem.innerHTML = gaad.join;
-
   addStylesheet(gaad.script_url + gaad.style_url);
+
+  setHTML(gaad);
 
   W.console && console.log('Happy GAAD! ~ http://globalaccessibilityawarenessday.org');
 
-  // ---------------------------
+  // ------------------------------------
+
+  function getConfig (defaults) {
+    var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
+
+    var data = scriptEl.getAttribute('data-gaad');
+    var options = data ? JSON.parse(data) : {};
+
+    var gaad = extend(defaults, options);
+
+    gaad.log = gaad.debug && W.console ? console.warn : function () {};
+
+    gaad.script_url = scriptEl.src;
+    return gaad;
+  }
 
   // JuhQ (16 July 2015): https://gist.github.com/pbojinov/8f3765b672efec122f66#gistcomment-1493930
   function extend () {
@@ -142,6 +138,16 @@
     return str.replace(re, function (matched) {
       return mapObj[ matched ]; // Was: matched.toLowerCase().
     });
+  }
+
+  function setHTML (gaad) {
+    var elem = D.getElementById(gaad.id);
+
+    elem.lang = gaad.lang;
+    elem.dir = gaad.dir;
+    elem.setAttribute('role', 'alert');
+    elem.className = replaceObj('gaad-widget-js {t} {e}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed' });
+    elem.innerHTML = gaad.join;
   }
 
   function addStylesheet (url) {
