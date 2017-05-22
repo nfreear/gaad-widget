@@ -17,6 +17,7 @@
   text-align: center;
 }
 
+/*csslint adjoining-classes: false */
 .gaad-widget-js.black {
   background: #333;
 }

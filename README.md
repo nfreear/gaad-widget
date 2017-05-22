@@ -90,6 +90,8 @@ Setting several configuration options:
 
 ## Translation
 
+[Translations][i18n-code], [#4][i18n].
+
 Français (French):
 
 ```html
@@ -113,6 +115,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/GAAD.widget.png
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4 "Bug #4, Translations (v 2.x)"
+[i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833

@@ -1,6 +1,6 @@
 {
   "name": "Global Accessibility Awareness Day (GAAD)",
-  "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href='{u}' target='_top'>{g}</a>.",
-  "after": "Put next year's <a href='{u}' target='_top'>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
+  "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>{g}</a>.",
+  "after": "Put next year's <a {at}>{g}</a>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
   "url": "http://globalaccessibilityawarenessday.org"
 }

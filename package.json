@@ -17,8 +17,11 @@
     "semistandard": "^11.0.0",
     "uglify-js": "^2.8.26"
   },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "bin": {
-    "gaad": "./bin/gaad"
+    "gaad": "./bin/gaad.js"
   },
   "scripts": {
     "install-legacy-datejs": "mkdir x_legacy; npm i --prefix x_legacy https://github.com/datejs/Datejs#8164739566",
