@@ -2,7 +2,8 @@
 zh*
 LICENSE*
 
-test*.html
+*.html
+!test/index.html
 *.min.js
 *.sa.js
 #data/*.json

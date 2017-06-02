@@ -122,7 +122,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [Datejs]: https://github.com/datejs/Datejs
 [RawGit]: https://rawgit.com/
     "Serves Git files with the correct mime-type; content delivery network (CDN)"
-[MIT]: https://nfreear.mit-license.org/ "MIT License"
+[MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"
