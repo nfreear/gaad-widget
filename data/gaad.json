@@ -1,17 +1,17 @@
 {
-  "//": "",
-  "timestamp": "2017-05-19 22:28:35Z",
+  "//": "License: MIT. The data is provided \"as is\". I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.",
+  "timestamp": "2017-05-21 10:29:48Z",
   "texts": {
     "en": {
       "name": "Global Accessibility Awareness Day (GAAD)",
-      "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a href='{u}' target='_top'>{g}</a>.",
-      "after": "Put next year's <a href='{u}' target='_top'>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
+      "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>{g}</a>.",
+      "after": "Put next year's <a {at}>{g}</a>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
       "url": "http://globalaccessibilityawarenessday.org"
     },
     "fr": {
-      "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a href='{u}' target='_top'>{g}</a>.",
-      "after": "Mettez le <a href='{u}' target='_top'>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
-      "url": "http://globalaccessibilityawarenessday.org/gaadfr.html"
+      "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a {at}>{g}</a>.",
+      "after": "Mettez le <a {at}>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
+      "url": "/gaadfr.html"
     }
   },
   "dates": {

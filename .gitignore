@@ -17,3 +17,7 @@ node_modules/
 
 composer.*
 vendor/
+
+*.js.map
+*BAK*
+*.js

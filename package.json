@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "2.0.0-beta",
+  "version": "2.1.0-beta",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "author": "Nick Freear {@nfreear}",
   "license": "MIT",

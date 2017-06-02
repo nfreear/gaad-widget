@@ -21,14 +21,19 @@ Note ~ this is not an official widget!
 
 ## Features
 
-# v2.x
+### v2.1
+
+* Added `?gaadwidget=force` URL parameter, [#2][wishlist]
+* Added iCal and JSON data files.
+
+### v2.0
 
 * Different after-event message - containing next year's date, [#5][b/a] - thanks [@srinivasu..][]
 * Added translation into Français/French, [#4][i18n]
 * Added neutral `black` theme, [#2][wishlist]
 * Changed default `days_after` from 5 to 10.
 
-# v1.x
+### v1.x
 
 * Zero configuration required by default,
 * Paste and forget - the banner appears _10_ days before and disappears _10_ days after,
@@ -58,7 +63,7 @@ Via [RawGit][] - production / CDN:
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/2.0-beta/build/GAAD.widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/2.1-beta/build/GAAD.widget.js"></script>
 ```
 
 Local hosting:
