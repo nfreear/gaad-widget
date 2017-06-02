@@ -51,7 +51,8 @@
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
     today: Date.today(),
     xth: Date.today().toString('yyyy') - 2011,
-    debug: /[?&]debug=1/.test(location.search)
+    debug: /[?&]debug=1/.test(location.search),
+    force: /[?&]gaadwidget=force/i.test(location.search)
   };
 
   var gaad = getConfig(defaults);
@@ -85,7 +86,7 @@
 
   gaad.join = replaceObj(template, gaad.xreplace);
 
-  if (!gaad.should_show) {
+  if (!gaad.should_show && !gaad.force) {
     return gaad.log('GAAD: no-show', gaad);
   }
 
