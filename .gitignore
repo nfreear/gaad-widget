@@ -1,6 +1,7 @@
 
 zh*
 LICENSE*
+bin/*.js
 
 *.html
 !test/index.html
@@ -14,10 +15,12 @@ src/*.json
 x_legacy/
 node_modules/
 *.log
+*.diff
 
 composer.*
 vendor/
 
 *.js.map
 *BAK*
-*.js
+i18n-texts.js
+widget-run.js

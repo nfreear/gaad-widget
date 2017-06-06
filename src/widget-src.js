@@ -1,7 +1,5 @@
 /*!
   GAAD.widget.js | ©Nick Freear 2017-04-27 | License: MIT.
-
-  https://github.com/nfreear/gaad-widget
 */
 
 (function (W, D, location, console, Date) {
@@ -18,7 +16,7 @@
 
   var defaults = {
     id: 'id-gaad',
-    script: 'GAAD.widget.', // .js OR .min.js;
+    script: 'GAAD.widget.', // '.js' OR '.min.js';
     lang: 'en',
     dir: 'ltr',
     texts: {
@@ -156,10 +154,6 @@
     styleEl.rel = 'stylesheet';
     styleEl.type = 'text/css';
     styleEl.href = url;
-
-    /* var styleEl = D.createElement('style');
-    styleEl.id = gaad.id + '-css';
-    styleEl.innerText = gaad.css.join('\n'); */
 
     D.head.appendChild(styleEl);
   }

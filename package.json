@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "2.1.0-beta",
+  "version": "2.2.0-beta",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "author": "Nick Freear {@nfreear}",
   "license": "MIT",
@@ -14,6 +14,9 @@
   },
   "devDependencies": {
     "csslint": "^1.0.5",
+    "jsonlint": "^1.6.2",
+    "nice-package": "^3.0.3",
+    "revalidator": "^0.3.1",
     "semistandard": "^11.0.0",
     "uglify-js": "^2.8.26"
   },
@@ -25,10 +28,11 @@
   },
   "scripts": {
     "install-legacy-datejs": "mkdir x_legacy; npm i --prefix x_legacy https://github.com/datejs/Datejs#8164739566",
-    "build": "node_modules/.bin/uglifyjs src/c*.js x_legacy/node_modules/Datejs/build/date.js src/w*.js --comments=/^[!*]/ -bo build/GAAD.widget.js",
-    "x-build-sa": "node_modules/.bin/uglifyjs src/c*.js node_modules/superagent/superagent.js src/w*.js --comments=/^[!*]/ -bo build/GAAD.sa.js",
-    "build-min": "node_modules/.bin/uglifyjs build/*.widget.js --comments=/^[!*]/ -mco build/GAAD.widget.min.js",
-    "test": "node_modules/.bin/semistandard; node_modules/.bin/csslint style"
+    "build": "uglifyjs src/c*.js x_legacy/node_modules/Datejs/build/date.js src/w*c.js --comments=/^[!*]/ -bo build/GAAD.widget.js",
+    "x-build-sa": "uglifyjs src/c*.js node_modules/superagent/superagent.js src/w*.js --comments=/^[!*]/ -bo build/GAAD.sa.js",
+    "build-min": "uglifyjs build/*.widget.js --comments=/^[!*]/ -mco build/GAAD.widget.min.js",
+    "test": "semistandard && csslint style && jsonlint -q **/*.json",
+    "x-test": "npm test && node bin/nice.js && node bin/lintl.js"
   },
   "semistandard": {
     "ignore": "build/"
