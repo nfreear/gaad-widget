@@ -1,4 +1,5 @@
 [![Build status — Travis-CI][travis-icon]][travis]
+[![GAAD-widget on Npmjs][npm-icon]][npm]
 [![js-semistandard-style][semi-icon]][semi]
 
 
@@ -13,7 +14,7 @@ The banner displays for a configurable period before and after the day.
 > The purpose of GAAD is to get everyone talking, thinking and learning about digital
 > (web, software, mobile, etc.) access/inclusion and people with different disabilities.
 
-Built on [Datejs][].
+[Blog post][blog]. Built on [Datejs][].
 
 Note ~ this is not an official widget!
 
@@ -112,6 +113,7 @@ License: [MIT][].
 Twitter: [@nfreear][], [@gbla11yday][].
 
 
+[blog]: http://nick.freear.org.uk/2017/05/14/gaad-widget.html
 [GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
 [@gbla11yday]: https://twitter.com/gbla11yday
 [@nfreear]: https://twitter.com/nfreear
@@ -134,3 +136,5 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [semi]: https://github.com/Flet/semistandard
 [semi-icon]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square
     "Javascript coding style — 'semistandard'"
+[npm]: https://npmjs.com/package/gaad-widget
+[npm-icon]: https://img.shields.io/npm/v/gaad-widget

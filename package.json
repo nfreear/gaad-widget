@@ -2,8 +2,9 @@
   "name": "gaad-widget",
   "version": "2.2.0-beta",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
-  "author": "Nick Freear {@nfreear}",
   "license": "MIT",
+  "keywords": [ "accessibility", "a11y", "browser-widget", "date", "datejs", "icalendar", "GAAD" ],
+  "author": "Nick Freear {@nfreear}",
   "repository": {
     "type": "git",
     "url": "https://github.com/nfreear/gaad-widget"
