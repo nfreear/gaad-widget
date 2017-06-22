@@ -59,6 +59,14 @@ npm test
 
 ## Usage
 
+Via [unpkg][] - production / CDN:
+
+```html
+<div id="id-gaad"></div>
+
+<script src="https://unpkg.com/gaad-widget@2.2.0-beta/build/GAAD.widget.js"></script>
+```
+
 Via [RawGit][] - production / CDN:
 
 ```html
@@ -106,6 +114,10 @@ Français (French):
 <script src="build/GAAD.widget.js" data-gaad='{ "lang": "fr" }' ></script>
 ```
 
+## WordPress
+
+A [plugin for WordPress][wp].
+
 ## License
 
 License: [MIT][].
@@ -126,9 +138,11 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
+[wp]: https://gist.github.com/nfreear/e5520adbb930e537ef5fe2e0aab231d1 "WordPress plugin"
 [Datejs]: https://github.com/datejs/Datejs
 [RawGit]: https://rawgit.com/
     "Serves Git files with the correct mime-type; content delivery network (CDN)"
+[unpkg]: https://unpkg.com "unpkg is a fast, global content delivery network for everything on npm"
 [MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
