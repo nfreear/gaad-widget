@@ -31,7 +31,7 @@
   "scripts": {
     "build": "node bin/gaad.js && npm run browserify && npm run uglify",
     "browserify": "browserify index.js --no-bf --debug | exorcist build/gaad-widget.js.map > build/gaad-widget.js",
-    "uglify": "uglifyjs build/*.widget.js --comments=/^[!]/ -mco build/gaad-widget.min.js",
+    "uglify": "uglifyjs build/*-widget.js --comments=/^[!]/ -mco build/gaad-widget.min.js",
     "test": "semistandard && csslint style"
   },
   "semistandard": {

@@ -53,7 +53,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
   var GAAD_NEXT = DATES.dates[ YEAR + 1 ];
 
   var defaults = {
-    id: 'id-gaad',
+    id: 'id-gaad-widget',
     script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
     lang: 'en',
     dir: 'ltr',
@@ -73,7 +73,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
     today: new Date(),
     xth: YEAR - 2011,
     debug: /[?&]debug=1/.test(location.search),
-    force: /[?&]gaadwidget=force/i.test(location.search)
+    force: /[?&]gaad.?widget=f(orce)?/i.test(location.search)
   };
 
   return defaults;
@@ -91,7 +91,7 @@ module.exports = {
   getConfig: function (defaults, methods) {
     var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
 
-    var data = scriptEl.getAttribute('data-gaad');
+    var data = scriptEl.getAttribute('data-gaad-widget');
     var options = data ? JSON.parse(data) : {};
 
     var gaad = methods.extend(defaults, options);

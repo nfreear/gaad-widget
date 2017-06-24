@@ -9,7 +9,7 @@ module.exports = {
   getConfig: function (defaults, methods) {
     var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
 
-    var data = scriptEl.getAttribute('data-gaad');
+    var data = scriptEl.getAttribute('data-gaad-widget');
     var options = data ? JSON.parse(data) : {};
 
     var gaad = methods.extend(defaults, options);

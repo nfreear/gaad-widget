@@ -18,7 +18,7 @@ The banner displays for a configurable period before and after the day.
 > The purpose of GAAD is to get everyone talking, thinking and learning about digital
 > (web, software, mobile, etc.) access/inclusion and people with different disabilities.
 
-Read the [blog post][blog]. Built on [Datejs][].
+Read the [blog post][blog]. Built on [Datejs][] ([API][datejs-api]).
 
 _Note ~ this is not an official widget!_
 
@@ -30,7 +30,9 @@ _Note ~ this is not an official widget!_
 
 * Adopted Browserify,
 * Switch from `Datejs` include, to a lookup of JSON embedded in the Javascript,
-  * Reduces Javascript file size from 55 to 7.8 kilobytes.
+  * Reduces Javascript file size from 55 to ~8 kilobytes 💓
+* Renamed Javascript, CSS etc. `build/GAAD.widget.js` &rarr; `build/gaad-widget.js`
+* Renamed default HTML `id=".."` from `id-gaad` → `id-gaad-widget` (plus, `data-` attribute)
 
 ### v2.1
 
@@ -71,7 +73,7 @@ npm test
 Via [unpkg][] - production CDN:
 
 ```html
-<div id="id-gaad"></div>
+<div id="id-gaad-widget"></div>
 
 <script src="https://unpkg.com/gaad-widget@3.0.0-beta#._.js"></script>
 ```
@@ -79,7 +81,7 @@ Via [unpkg][] - production CDN:
 Via [RawGit][] - production CDN:
 
 ```html
-<div id="id-gaad"></div>
+<div id="id-gaad-widget"></div>
 
 <script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.0.0-beta/build/gaad-widget.js"></script>
 ```
@@ -87,7 +89,7 @@ Via [RawGit][] - production CDN:
 Local hosting:
 
 ```html
-<div id="id-gaad"></div>
+<div id="id-gaad-widget"></div>
 
 <script src="build/gaad-widget.js" ></script>
 ```
@@ -95,9 +97,9 @@ Local hosting:
 Setting the `days_before` option:
 
 ```html
-<div id="id-gaad"></div>
+<div id="id-gaad-widget"></div>
 
-<script src="build/gaad-widget.js" data-gaad='{ "days_before": 20 }'></script>
+<script src="build/gaad-widget.js" data-gaad-widget='{ "days_before": 20 }'></script>
 ```
 
 Setting several configuration options:
@@ -107,7 +109,7 @@ Setting several configuration options:
 
 <script
   src="build/gaad-widget.js"
-  data-gaad='{ "id": "custom_id", "days_after": 10, "theme": "black", "debug": true }'
+  data-gaad-widget='{ "id": "custom_id", "days_after": 10, "theme": "black", "debug": true }'
   ></script>
 ```
 
@@ -118,9 +120,9 @@ Setting several configuration options:
 Français (French):
 
 ```html
-<div id="id-gaad"></div>
+<div id="id-gaad-widget"></div>
 
-<script src="build/gaad-widget.js" data-gaad='{ "lang": "fr" }' ></script>
+<script src="build/gaad-widget.js" data-gaad-widget='{ "lang": "fr" }' ></script>
 ```
 
 ## WordPress
@@ -140,7 +142,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [@nfreear]: https://twitter.com/nfreear
 [@srinivasu..]: http://srinivasu.org "Suggested by @srinivasuchakravarthula"
 [gaad-widget]: https://github.com/nfreear/gaad-widget
-[gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/gaad-widget.png
+[gaad-image]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4 "Bug #4, Translations (v 2.x)"
 [i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
@@ -148,7 +150,8 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
 [wp]: https://gist.github.com/nfreear/e5520adbb930e537ef5fe2e0aab231d1 "WordPress plugin (PHP)"
-[Datejs]: https://github.com/datejs/Datejs
+[Datejs]: https://npmjs.com/package/datejs "Thanks: @abritinthebay"
+[Datejs-api]: https://github.com/datejs/Datejs#example-usage "API only (legacy code-base)"
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
