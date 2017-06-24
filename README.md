@@ -29,7 +29,7 @@ _Note ~ this is not an official widget!_
 ### v3.x
 
 * Adopted Browserify,
-* Switch from `Datejs` include, to a lookup of JSON within the Javascript,
+* Switch from `Datejs` include, to a lookup of JSON embedded in the Javascript,
   * Reduces Javascript file size from 55 to 7.8 kilobytes.
 
 ### v2.1
@@ -81,7 +81,7 @@ Via [RawGit][] - production CDN:
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.0.0-beta/build/GAAD.widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.0.0-beta/build/gaad-widget.js"></script>
 ```
 
 Local hosting:
@@ -89,7 +89,7 @@ Local hosting:
 ```html
 <div id="id-gaad"></div>
 
-<script src="build/GAAD.widget.js" ></script>
+<script src="build/gaad-widget.js" ></script>
 ```
 
 Setting the `days_before` option:
@@ -97,7 +97,7 @@ Setting the `days_before` option:
 ```html
 <div id="id-gaad"></div>
 
-<script src="build/GAAD.widget.js" data-gaad='{ "days_before": 20 }'></script>
+<script src="build/gaad-widget.js" data-gaad='{ "days_before": 20 }'></script>
 ```
 
 Setting several configuration options:
@@ -106,7 +106,7 @@ Setting several configuration options:
 <div id="custom_id"></div>
 
 <script
-  src="build/GAAD.widget.js"
+  src="build/gaad-widget.js"
   data-gaad='{ "id": "custom_id", "days_after": 10, "theme": "black", "debug": true }'
   ></script>
 ```
@@ -120,7 +120,7 @@ Français (French):
 ```html
 <div id="id-gaad"></div>
 
-<script src="build/GAAD.widget.js" data-gaad='{ "lang": "fr" }' ></script>
+<script src="build/gaad-widget.js" data-gaad='{ "lang": "fr" }' ></script>
 ```
 
 ## WordPress
@@ -140,7 +140,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [@nfreear]: https://twitter.com/nfreear
 [@srinivasu..]: http://srinivasu.org "Suggested by @srinivasuchakravarthula"
 [gaad-widget]: https://github.com/nfreear/gaad-widget
-[gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/GAAD.widget.png
+[gaad-image]: https://github.com/nfreear/gaad-widget/raw/master/style/gaad-widget.png
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4 "Bug #4, Translations (v 2.x)"
 [i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
@@ -163,7 +163,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [npm-icon]: https://img.shields.io/npm/v/gaad-widget.svg
 [license-icon]: https://img.shields.io/npm/l/gaad-widget.svg
 [downl-icon]: https://img.shields.io/npm/dt/gaad-widget.svg "Count of total downloads ~NPM"
-[size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/build/GAAD.widget.js.svg
+[size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/build/gaad-widget.js.svg
     "Size of built Javascript, kilo-Bytes ~ on GitHub"
 [built-icon]: https://img.shields.io/badge/built_with-browserify-blue.svg
     "Built with Browserify"

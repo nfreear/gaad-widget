@@ -30,8 +30,8 @@
   },
   "scripts": {
     "build": "node bin/gaad.js && npm run browserify && npm run uglify",
-    "browserify": "browserify index.js --no-bf --debug | exorcist build/GAAD.widget.js.map > build/GAAD.widget.js",
-    "uglify": "uglifyjs build/*.widget.js --comments=/^[!]/ -mco build/GAAD.widget.min.js",
+    "browserify": "browserify index.js --no-bf --debug | exorcist build/gaad-widget.js.map > build/gaad-widget.js",
+    "uglify": "uglifyjs build/*.widget.js --comments=/^[!]/ -mco build/gaad-widget.min.js",
     "test": "semistandard && csslint style"
   },
   "semistandard": {
