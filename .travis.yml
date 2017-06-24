@@ -1,13 +1,13 @@
 language: node_js
 node_js:
   - "4"
+  - "6"
 
 git:
-  depth: 5
+  depth: 8
 
 install:
   - npm install
-  - npm run install-legacy-datejs
 
 script:
   - npm run build
