@@ -4,6 +4,7 @@
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "license": "MIT",
   "browser": "build/GAAD.widget.js",
+  "unpkg": "build/GAAD.widget.js",
   "main": "./index.js",
   "author": "Nick Freear {@nfreear}",
   "repository": "https://github.com/nfreear/gaad-widget",
@@ -29,7 +30,7 @@
   },
   "scripts": {
     "build": "node bin/gaad.js && npm run browserify && npm run uglify",
-    "browserify": "browserify index.js --debug | exorcist build/GAAD.widget.js.map > build/GAAD.widget.js",
+    "browserify": "browserify index.js --no-bf --debug | exorcist build/GAAD.widget.js.map > build/GAAD.widget.js",
     "uglify": "uglifyjs build/*.widget.js --comments=/^[!]/ -mco build/GAAD.widget.min.js",
     "test": "semistandard && csslint style"
   },
