@@ -24,12 +24,7 @@ module.exports.run = function (defaults, methods) {
   gaad.is_before = (gaad.today - gaad.date) < 0;
 
   if (!gaad.is_before) {
-    gaad.xreplace = GAAD_NEXT; /* {
-      '{d}': GAAD_NEXT.toString('dd'),
-      '{th}': GAAD_NEXT.toString('S'),
-      '{m}': GAAD_NEXT.toString('MMMM'),
-      '{y}': GAAD_NEXT.toString('yyyy')
-    }; */
+    gaad.xreplace = GAAD_NEXT;
   }
 
   gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top"', { '{u}': gaad.url });

@@ -5,7 +5,7 @@
  *
  * @copyright © Nick Freear, 19-May-2017.
  * @license   MIT.
- * @link      https://github.com/nfreear/gaad-widget
+ * @see       https://github.com/nfreear/gaad-widget
  */
 const NO_LIABILITY =
 'License: MIT. The data is provided "as is". I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.';

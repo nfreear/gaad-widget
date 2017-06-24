@@ -1,5 +1,10 @@
 [![Build status — Travis-CI][travis-icon]][travis]
 [![js-semistandard-style][semi-icon]][semi]
+[![GAAD-widget on Npmjs][npm-icon]][npm]
+[![License][license-icon]][mit]
+[![Total downloads ~ NPMJS.com][downl-icon]][npm]
+[![Size of Javascript][size-icon]][build]
+<!--[![Browserify][built-icon]][gh]-->
 
 
 # nfreear/gaad-widget
@@ -13,13 +18,19 @@ The banner displays for a configurable period before and after the day.
 > The purpose of GAAD is to get everyone talking, thinking and learning about digital
 > (web, software, mobile, etc.) access/inclusion and people with different disabilities.
 
-[Blog post][blog]. Built on [Datejs][].
+Read the [blog post][blog]. Built on [Datejs][].
 
-Note ~ this is not an official widget!
+_Note ~ this is not an official widget!_
 
 [Original Gist][gist].
 
 ## Features
+
+### v3.x
+
+* Adopted Browserify,
+* Switch from `Datejs` include, to a lookup of JSON within the Javascript,
+  * Reduces Javascript file size from 55 to 7.8 kilobytes.
 
 ### v2.1
 
@@ -71,6 +82,7 @@ Via [RawGit][] - production CDN:
 <div id="id-gaad"></div>
 
 <script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.0.0-beta/build/GAAD.widget.js"></script>
+```
 
 Local hosting:
 
@@ -140,7 +152,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
-[MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License | © Nick Freear 2017-04-27"
+[MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"
@@ -149,5 +161,11 @@ Twitter: [@nfreear][], [@gbla11yday][].
     "Javascript coding style — 'semistandard'"
 [npm]: https://npmjs.com/package/gaad-widget
 [npm-icon]: https://img.shields.io/npm/v/gaad-widget.svg
+[license-icon]: https://img.shields.io/npm/l/gaad-widget.svg
+[downl-icon]: https://img.shields.io/npm/dt/gaad-widget.svg "Count of total downloads ~NPM"
+[size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/build/GAAD.widget.js.svg
+    "Size of built Javascript, kilo-Bytes ~ on GitHub"
+[built-icon]: https://img.shields.io/badge/built_with-browserify-blue.svg
+    "Built with Browserify"
 
 [End]: //.
