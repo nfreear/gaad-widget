@@ -54,7 +54,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
 
   var defaults = {
     id: 'id-gaad',
-    script: 'GAAD.widget.', // .js OR .min.js;
+    script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
     lang: 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
@@ -62,7 +62,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
     days_before: 10,
     days_after: 10,
     embed: false,
-    style_url: '/../../style/GAAD.widget.css',
+    style_url: '/../../style/gaad-widget.css', // Was: '/../../style/GAAD.widget.css'
     theme: 'blue', // OR: 'black'
     should_show: null,
     is_before: null,
@@ -138,15 +138,25 @@ module.exports = {
     elem.innerHTML = gaad.join;
   },
 
-  addStylesheet: function (url) {
+  addStylesheet: function (gaad) {
     var styleEl = D.createElement('link');
     styleEl.rel = 'stylesheet';
     styleEl.type = 'text/css';
-    styleEl.href = url;
+    styleEl.href = decideScriptUrl(gaad);
 
     D.head.appendChild(styleEl);
   }
 };
+
+function decideScriptUrl (CFG) {
+  // Support for 'unpkg' CDN short URL.
+  if (/@\d\.\d\.\d(-[\w.]+)(#|_.js|$)/.test(CFG.script_url)) {
+    CFG.log('GAAD: npm @version found');
+    CFG.style_url = CFG.style_url.replace('/../..', '');
+    CFG.script_url = CFG.script_url.replace(/(#.*|_\.js)/, '');
+  }
+  return CFG.script_url + CFG.style_url;
+}
 
 function replaceObj (str, mapObj) {
   var re = new RegExp(Object.keys(mapObj).join('|'), 'g'); // Was: "gi".
@@ -201,7 +211,7 @@ module.exports.run = function (defaults, methods) {
 
   gaad.log('GAAD: show', gaad);
 
-  methods.addStylesheet(gaad.script_url + gaad.style_url);
+  methods.addStylesheet(gaad);
 
   methods.setHTML(gaad);
 

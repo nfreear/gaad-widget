@@ -42,7 +42,7 @@ module.exports.run = function (defaults, methods) {
 
   gaad.log('GAAD: show', gaad);
 
-  methods.addStylesheet(gaad.script_url + gaad.style_url);
+  methods.addStylesheet(gaad);
 
   methods.setHTML(gaad);
 

@@ -13,7 +13,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
 
   var defaults = {
     id: 'id-gaad',
-    script: 'GAAD.widget.', // .js OR .min.js;
+    script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
     lang: 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
@@ -21,7 +21,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
     days_before: 10,
     days_after: 10,
     embed: false,
-    style_url: '/../../style/GAAD.widget.css',
+    style_url: '/../../style/gaad-widget.css', // Was: '/../../style/GAAD.widget.css'
     theme: 'blue', // OR: 'black'
     should_show: null,
     is_before: null,

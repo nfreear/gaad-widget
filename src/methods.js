@@ -56,15 +56,25 @@ module.exports = {
     elem.innerHTML = gaad.join;
   },
 
-  addStylesheet: function (url) {
+  addStylesheet: function (gaad) {
     var styleEl = D.createElement('link');
     styleEl.rel = 'stylesheet';
     styleEl.type = 'text/css';
-    styleEl.href = url;
+    styleEl.href = decideScriptUrl(gaad);
 
     D.head.appendChild(styleEl);
   }
 };
+
+function decideScriptUrl (CFG) {
+  // Support for 'unpkg' CDN short URL.
+  if (/@\d\.\d\.\d(-[\w.]+)(#|_.js|$)/.test(CFG.script_url)) {
+    CFG.log('GAAD: npm @version found');
+    CFG.style_url = CFG.style_url.replace('/../..', '');
+    CFG.script_url = CFG.script_url.replace(/(#.*|_\.js)/, '');
+  }
+  return CFG.script_url + CFG.style_url;
+}
 
 function replaceObj (str, mapObj) {
   var re = new RegExp(Object.keys(mapObj).join('|'), 'g'); // Was: "gi".

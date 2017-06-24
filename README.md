@@ -73,7 +73,7 @@ Via [unpkg][] - production CDN:
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://unpkg.com/gaad-widget@3.0.0-beta/build/GAAD.widget.js"></script>
+<script src="https://unpkg.com/gaad-widget@3.0.0-beta#._.js"></script>
 ```
 
 Via [RawGit][] - production CDN:
@@ -167,5 +167,6 @@ Twitter: [@nfreear][], [@gbla11yday][].
     "Size of built Javascript, kilo-Bytes ~ on GitHub"
 [built-icon]: https://img.shields.io/badge/built_with-browserify-blue.svg
     "Built with Browserify"
+[build]: https://github.com/nfreear/gaad-widget/tree/3.x/build
 
 [End]: //.
