@@ -4,17 +4,18 @@
 var Date = window.Date;
 var location = window.location;
 
-module.exports.config = function (TRANSLATE_TEXTS) {
+module.exports.config = function (TRANSLATE_TEXTS, DATES) {
   'use strict';
 
   if (typeof Date.today !== 'function') {
-    return console.error('GAAD error: missing dependency, "Datejs"');
+    // return console.error('GAAD error: missing dependency, "Datejs"');
   }
 
   // "...we invite you to help us mark GAAD on the third Thursday of May."
   // ~~  http://globalaccessibilityawarenessday.org/background.html  ~~
-  var GAAD_DATE = Date.may().third().thursday();
-  var GAAD_NEXT = Date.today('+1 year').may().third().thursday();
+  var YEAR = new Date().getFullYear();  // .toLocaleFormat('%Y');
+  var GAAD_DATE = DATES.dates[ YEAR ];     // Was: Date.may().third().thursday();
+  var GAAD_NEXT = DATES.dates[ YEAR + 1 ]; // Was: Date.today('+1 year').may().third().thursday();
 
   var defaults = {
     id: 'id-gaad',
@@ -30,17 +31,17 @@ module.exports.config = function (TRANSLATE_TEXTS) {
     theme: 'blue', // OR: 'black'
     should_show: null,
     is_before: null,
-    xreplace: {
+    xreplace: GAAD_DATE, /* : {
       '{d}': GAAD_DATE.toString('dd'),
       '{th}': GAAD_DATE.toString('S'),
       '{m}': GAAD_DATE.toString('MMMM'),
       '{y}': GAAD_DATE.toString('yyyy')
-    },
+    }, */
     date: GAAD_DATE,
     date_next: GAAD_NEXT,
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
-    today: Date.today(),
-    xth: Date.today().toString('yyyy') - 2011,
+    today: new Date(), // Date.now(), // Date.today(),
+    xth: YEAR - 2011,  // Date.today().toString('yyyy') - 2011,
     debug: /[?&]debug=1/.test(location.search),
     force: /[?&]gaadwidget=force/i.test(location.search)
   };

@@ -2,7 +2,7 @@
 // Main widget 'run' function | ©Nick Freear.
 
 var W = window;
-var Date = W.Date;
+// var Date = W.Date;
 
 module.exports.run = function (defaults, methods) {
   'use strict';
@@ -12,8 +12,8 @@ module.exports.run = function (defaults, methods) {
   var GAAD_DATE = gaad.date;
   var GAAD_NEXT = gaad.date_next;
 
-  gaad.show_date = new Date(GAAD_DATE).addDays(-gaad.days_before); // Clone.
-  gaad.hide_date = new Date(GAAD_DATE).addDays(gaad.days_after);
+  gaad.show_date = methods.addDays(GAAD_DATE, -gaad.days_before); // new Date(GAAD_DATE).addDays(-gaad.days_before); // Clone.
+  gaad.hide_date = methods.addDays(GAAD_DATE, gaad.days_after); // new Date(GAAD_DATE).addDays(gaad.days_after);
 
   // gaad.diff_days = gaad.today.toString('dd') - gaad.show_date.toString('dd');
   gaad.diff_show = gaad.today - gaad.show_date;
@@ -24,12 +24,12 @@ module.exports.run = function (defaults, methods) {
   gaad.is_before = (gaad.today - gaad.date) < 0;
 
   if (!gaad.is_before) {
-    gaad.xreplace = {
+    gaad.xreplace = GAAD_NEXT; /* {
       '{d}': GAAD_NEXT.toString('dd'),
       '{th}': GAAD_NEXT.toString('S'),
       '{m}': GAAD_NEXT.toString('MMMM'),
       '{y}': GAAD_NEXT.toString('yyyy')
-    };
+    }; */
   }
 
   gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top"', { '{u}': gaad.url });

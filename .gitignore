@@ -4,20 +4,19 @@ LICENSE*
 
 *.html
 !test/index.html
-*.min.js
-*.sa.js
-#data/*.json
-src/*.json
+*.min.js*
+*.js.map
 *copy*
-*.php
+*BAK*
 
 x_legacy/
 node_modules/
 *.log
 
+*.php
 composer.*
 vendor/
 
-*.js.map
-*BAK*
 *.js
+!src/*.js
+!bin/gaad.js

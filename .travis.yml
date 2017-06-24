@@ -10,13 +10,12 @@ install:
   - npm run install-legacy-datejs
 
 script:
-  - node bin/gaad.js
   - npm run build
-  - npm run build-min
   - npm test
 
 after_script:
-  - ls -alh build
-  - ls -alh data
+  #- ls -alh build
+  #- ls -alh data
+  - cat build/GAAD.widget.js
 
 # End.

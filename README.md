@@ -13,7 +13,7 @@ The banner displays for a configurable period before and after the day.
 > The purpose of GAAD is to get everyone talking, thinking and learning about digital
 > (web, software, mobile, etc.) access/inclusion and people with different disabilities.
 
-Built on [Datejs][].
+[Blog post][blog]. Built on [Datejs][].
 
 Note ~ this is not an official widget!
 
@@ -50,21 +50,27 @@ Note ~ this is not an official widget!
 ## Install and test
 
 ```sh
-npm install
+npm i gaad-widget
 npm run build
-npm run build-min
 npm test
 ```
 
 ## Usage
 
-Via [RawGit][] - production / CDN:
+Via [unpkg][] - production CDN:
 
 ```html
 <div id="id-gaad"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/2.1-beta/build/GAAD.widget.js"></script>
+<script src="https://unpkg.com/gaad-widget@3.0.0-beta/build/GAAD.widget.js"></script>
 ```
+
+Via [RawGit][] - production CDN:
+
+```html
+<div id="id-gaad"></div>
+
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.0.0-beta/build/GAAD.widget.js"></script>
 
 Local hosting:
 
@@ -105,6 +111,10 @@ Français (French):
 <script src="build/GAAD.widget.js" data-gaad='{ "lang": "fr" }' ></script>
 ```
 
+## WordPress
+
+A [plugin for WordPress][wp].
+
 ## License
 
 License: [MIT][].
@@ -112,6 +122,7 @@ License: [MIT][].
 Twitter: [@nfreear][], [@gbla11yday][].
 
 
+[blog]: http://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=readme
 [GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
 [@gbla11yday]: https://twitter.com/gbla11yday
 [@nfreear]: https://twitter.com/nfreear
@@ -124,13 +135,19 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
+[wp]: https://gist.github.com/nfreear/e5520adbb930e537ef5fe2e0aab231d1 "WordPress plugin (PHP)"
 [Datejs]: https://github.com/datejs/Datejs
 [RawGit]: https://rawgit.com/
-    "Serves Git files with the correct mime-type; content delivery network (CDN)"
-[MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License"
+    "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
+[unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
+[MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License | © Nick Freear 2017-04-27"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"
 [semi]: https://github.com/Flet/semistandard
 [semi-icon]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square
     "Javascript coding style — 'semistandard'"
+[npm]: https://npmjs.com/package/gaad-widget
+[npm-icon]: https://img.shields.io/npm/v/gaad-widget.svg
+
+[End]: //.

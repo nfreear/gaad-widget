@@ -21,6 +21,10 @@ module.exports = {
     return gaad;
   },
 
+  addDays: function (dateObj, days) {
+    return dateObj.ts + (days * 24 * 60 * 60 * 1000); // Milliseconds.
+  },
+
   // JuhQ (16 July 2015): https://gist.github.com/pbojinov/8f3765b672efec122f66#gistcomment-1493930
   extend: function () {
     var extended = {};
