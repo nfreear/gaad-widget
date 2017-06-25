@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "3.0.0-beta",
+  "version": "3.1.0-beta",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "license": "MIT",
   "browser": "build/gaad-widget.js",
@@ -19,6 +19,7 @@
     "csslint": "^1.0.5",
     "derequire": "^2.0.6",
     "exorcist": "^0.4.0",
+    "replace": "^0.3.0",
     "semistandard": "^11.0.0",
     "uglify-js": "^2.8.26"
   },
@@ -29,9 +30,10 @@
     "gaad": "./bin/gaad.js"
   },
   "scripts": {
-    "build": "node bin/gaad.js && npm run browserify && npm run uglify",
+    "build": "bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify",
     "browserify": "browserify index.js --no-bf --debug | exorcist build/gaad-widget.js.map > build/gaad-widget.js",
     "uglify": "uglifyjs build/*-widget.js --comments=/^[!]/ -mco build/gaad-widget.min.js",
+    "ver": "bin/_ver.js",
     "test": "semistandard && csslint style"
   },
   "semistandard": {

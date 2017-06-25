@@ -75,7 +75,7 @@ Via [unpkg][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://unpkg.com/gaad-widget@3.0.0-beta#._.js"></script>
+<script src="https://unpkg.com/gaad-widget@3.1.0-beta#._.js"></script>
 ```
 
 Via [RawGit][] - production CDN:
@@ -83,7 +83,7 @@ Via [RawGit][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.0.0-beta/build/gaad-widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.1.0-beta/build/gaad-widget.js"></script>
 ```
 
 Local hosting:

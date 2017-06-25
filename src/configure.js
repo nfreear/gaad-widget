@@ -4,7 +4,7 @@
 var Date = window.Date;
 var location = window.location;
 
-module.exports.config = function (TRANSLATE_TEXTS, DATES) {
+module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   'use strict';
 
   var YEAR = new Date().getFullYear();
@@ -34,6 +34,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
     debug: /[?&]debug=1/.test(location.search),
     force: /[?&]gaad.?widget=f(orce)?/i.test(location.search)
   };
+
+  defaults.version = VERSION;
 
   return defaults;
 };

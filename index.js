@@ -7,7 +7,7 @@
 
 'use strict';
 
-// Was: require('datejs');
+var VERSION = '3.1.0-beta'; // <Auto>
 
 var TRANSLATE_TEXTS = {
   en: require('./locales/en'),
@@ -15,7 +15,7 @@ var TRANSLATE_TEXTS = {
 };
 var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min.json');
 // console.log(GAAD_DATE_LOOKUP);
-var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP);
+var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION);
 var METHODS = require('./src/methods');
 
 require('./src/widget-src').run(DEFAULTS, METHODS);

@@ -1,6 +1,9 @@
 {
   "//": "License: MIT. The data is provided \"as is\". I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.",
-  "timestamp": "2017-06-24 15:04:43Z",
+  "name": "gaad-widget",
+  "version": "3.1.0-beta",
+  "timestamp": "2017-06-24 23:47:09Z",
+  "url": "https://github.com/nfreear/gaad-widget",
   "texts": {
     "en": {
       "name": "Global Accessibility Awareness Day (GAAD)",

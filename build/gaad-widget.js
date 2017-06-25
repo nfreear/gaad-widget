@@ -10,7 +10,7 @@ module.exports={"dates":{"2011":{"{x}":0,"{d}":"19","{th}":"th","{m}":"May","{y}
 
 'use strict';
 
-// Was: require('datejs');
+var VERSION = '3.1.0-beta'; // <Auto>
 
 var TRANSLATE_TEXTS = {
   en: require('./locales/en'),
@@ -18,7 +18,7 @@ var TRANSLATE_TEXTS = {
 };
 var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min.json');
 // console.log(GAAD_DATE_LOOKUP);
-var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP);
+var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION);
 var METHODS = require('./src/methods');
 
 require('./src/widget-src').run(DEFAULTS, METHODS);
@@ -45,7 +45,7 @@ module.exports={
 var Date = window.Date;
 var location = window.location;
 
-module.exports.config = function (TRANSLATE_TEXTS, DATES) {
+module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   'use strict';
 
   var YEAR = new Date().getFullYear();
@@ -75,6 +75,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES) {
     debug: /[?&]debug=1/.test(location.search),
     force: /[?&]gaad.?widget=f(orce)?/i.test(location.search)
   };
+
+  defaults.version = VERSION;
 
   return defaults;
 };

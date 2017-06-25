@@ -11,6 +11,7 @@ const NO_LIABILITY =
 'License: MIT. The data is provided "as is". I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.';
 
 const path = require('path').join;
+const PKG = require(path(__dirname, '/../package.json'));
 const ICS_FILE = path(__dirname, '/../data/gaad.en.ics');
 const JSON_FILE = path(__dirname, '/../data/gaad.json');
 const MIN_FILE = path(__dirname, '/../data/gaad-dates.min.json');
@@ -33,7 +34,10 @@ const today = new Date();
 var ical = new icalendar.iCalendar(); // eslint-disable-line
 var gaadobj = {
   '//': NO_LIABILITY,
-  'timestamp': today.toString('u'),
+  name: PKG.name,
+  version: PKG.version,
+  timestamp: today.toString('u'),
+  url: PKG.repository,
   texts: texts,
   dates: {}
 };
