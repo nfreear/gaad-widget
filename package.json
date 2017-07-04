@@ -3,8 +3,8 @@
   "version": "3.1.0-beta",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "license": "MIT",
-  "browser": "build/gaad-widget.js",
-  "unpkg": "build/gaad-widget.js",
+  "browser": "dist/gaad-widget.js",
+  "unpkg": "dist/gaad-widget.js",
   "main": "./index.js",
   "author": "Nick Freear {@nfreear}",
   "repository": "https://github.com/nfreear/gaad-widget",
@@ -30,15 +30,15 @@
     "gaad": "./bin/gaad.js"
   },
   "scripts": {
-    "build": "bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify",
-    "browserify": "browserify index.js --no-bf --debug | exorcist build/gaad-widget.js.map > build/gaad-widget.js",
-    "uglify": "uglifyjs build/*-widget.js --comments=/^[!]/ -mco build/gaad-widget.min.js",
+    "build": "rm dist/* && bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify",
+    "browserify": "browserify index.js --no-bf --debug | exorcist dist/gaad-widget.js.map > dist/gaad-widget.js",
+    "uglify": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
     "ver": "bin/_ver.js",
     "test": "semistandard && csslint style"
   },
   "semistandard": {
     "ignore": [
-      "build/"
+      "dist/"
     ]
   },
   "keywords": [
@@ -53,6 +53,14 @@
     "international",
     "GAAD"
   ],
+  "files": [
+    "index.js",
+    "dist/",
+    "data/",
+    "src/",
+    "style/"
+  ],
+  "x-build-js-size": "8.3KB",
   "//": {
     "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566"
   }
