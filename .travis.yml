@@ -14,8 +14,8 @@ script:
   - npm test
 
 after_script:
-  - ls -alh build
+  - ls -alh dist
   - ls -alh data
-  - cat build/GAAD.widget.min.js
+  - cat dist/gaad-widget.min.js
 
 # End.

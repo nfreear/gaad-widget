@@ -53,20 +53,20 @@ module.exports = {
     elem.dir = gaad.dir;
     elem.setAttribute('role', 'alert');
     elem.className = replaceObj('gaad-widget-js {t} {e}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed' });
-    elem.innerHTML = gaad.join;
+    elem.innerHTML = gaad.message;  // Was: 'gaad.join'
   },
 
   addStylesheet: function (gaad) {
     var styleEl = D.createElement('link');
     styleEl.rel = 'stylesheet';
     styleEl.type = 'text/css';
-    styleEl.href = decideScriptUrl(gaad);
+    styleEl.href = decideStyleUrl(gaad);
 
     D.head.appendChild(styleEl);
   }
 };
 
-function decideScriptUrl (CFG) {
+function decideStyleUrl (CFG) {
   // Support for 'unpkg' CDN short URL.
   if (/@\d\.\d\.\d(-[\w.]+)(#|_.js|$)/.test(CFG.script_url)) {
     CFG.log('GAAD: npm @version found');

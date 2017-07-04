@@ -1,8 +1,9 @@
 
 // Configure | ©Nick Freear.
 
-var Date = window.Date;
-var location = window.location;
+var W = window;
+var Date = W.Date;
+var queryString = W.location.search;
 
 module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   'use strict';
@@ -10,11 +11,12 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   var YEAR = new Date().getFullYear();
   var GAAD_DATE = DATES.dates[ YEAR ];
   var GAAD_NEXT = DATES.dates[ YEAR + 1 ];
+  var M_LANG = queryString.match(/[?&]lang=(\w{2}(-\w{2})?)/);
 
   var defaults = {
     id: 'id-gaad-widget',
     script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
-    lang: 'en',
+    lang: M_LANG ? M_LANG[ 1 ] : 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',
@@ -31,8 +33,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
     today: new Date(),
     xth: YEAR - 2011,
-    debug: /[?&]debug=1/.test(location.search),
-    force: /[?&]gaad.?widget=f(orce)?/i.test(location.search)
+    debug: /[?&]debug=1/.test(queryString),
+    force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
   };
 
   defaults.version = VERSION;

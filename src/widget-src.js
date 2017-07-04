@@ -2,7 +2,6 @@
 // Main widget 'run' function | ©Nick Freear.
 
 var W = window;
-// var Date = W.Date;
 
 module.exports.run = function (defaults, methods) {
   'use strict';
@@ -34,7 +33,7 @@ module.exports.run = function (defaults, methods) {
   var lang = gaad.texts[ gaad.lang ] ? gaad.lang : 'en';
   var template = gaad.is_before ? gaad.texts[ lang ].before : gaad.texts[ lang ].after;
 
-  gaad.join = methods.replaceObj(template, gaad.xreplace);
+  gaad.message = methods.replaceObj(template, gaad.xreplace);
 
   if (!gaad.should_show && !gaad.force) {
     return gaad.log('GAAD: no-show', gaad);

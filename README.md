@@ -75,7 +75,7 @@ Via [unpkg][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://unpkg.com/gaad-widget@3.1.0-beta#._.js"></script>
+<script src="https://unpkg.co/gaad-widget@3.1.0-beta#._.js"></script>
 ```
 
 Via [RawGit][] - production CDN:
