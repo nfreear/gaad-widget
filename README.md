@@ -26,9 +26,11 @@ _Note ~ this is not an official widget!_
 
 ## Features
 
+See the [Release notes][rel].
+
 ### v3.x
 
-* Adopted Browserify,
+* Adopted [Browserify][],
 * Switch from `Datejs` include, to a lookup of JSON embedded in the Javascript,
   * Reduces Javascript file size from 55 to ~8 kilobytes 💓
 * Renamed Javascript, CSS etc. `build/GAAD.widget.js` &rarr; `build/gaad-widget.js`
@@ -58,7 +60,7 @@ _Note ~ this is not an official widget!_
 * Compatible with [all modern browsers, and MSIE 9-11][ie],
 * CDN courtesy of [RawGit][] (thank you!) - with HTTPS/SSL.
 
-[Wishlist][].
+See the [Release notes][rel] and [Wishlist][].
 
 ## Install and test
 
@@ -142,8 +144,10 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [@nfreear]: https://twitter.com/nfreear
 [@srinivasu..]: http://srinivasu.org "Suggested by @srinivasuchakravarthula"
 [gaad-widget]: https://github.com/nfreear/gaad-widget
-[gaad-image]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
+[gaad-image]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget-after.png
+[gaad-img-00]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
+[rel]: https://github.com/nfreear/gaad-widget/releases "Release notes / changelog"
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4 "Bug #4, Translations (v 2.x)"
 [i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
@@ -166,10 +170,12 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [npm-icon]: https://img.shields.io/npm/v/gaad-widget.svg
 [license-icon]: https://img.shields.io/npm/l/gaad-widget.svg
 [downl-icon]: https://img.shields.io/npm/dt/gaad-widget.svg "Count of total downloads ~NPM"
-[size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/build/gaad-widget.js.svg
-    "Size of built Javascript, kilo-Bytes ~ on GitHub"
+[size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/dist/gaad-widget.js.svg
+    "Size of built Javascript, kilo-bytes (kB) ~ on GitHub"
 [built-icon]: https://img.shields.io/badge/built_with-browserify-blue.svg
     "Built with Browserify"
-[build]: https://github.com/nfreear/gaad-widget/tree/3.x/build
+[build]: https://github.com/nfreear/gaad-widget/tree/3.x/dist
+[Browserify]: http://browserify.org/
+    "Browserify lets you require('modules') in the browser by bundling your dependencies."
 
 [End]: //.
