@@ -18,7 +18,7 @@ composer.*
 vendor/
 
 *.js
-!build/gaad-widget.js
+!dist/gaad-widget.js
 !bin/gaad.js
 !bin/_ver.js
 !src/*.js

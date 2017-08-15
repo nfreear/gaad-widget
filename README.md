@@ -4,6 +4,7 @@
 [![License][license-icon]][mit]
 [![Total downloads ~ NPMJS.com][downl-icon]][npm]
 [![Size of Javascript][size-icon]][build]
+[![vulnerabilities][snyk-icon]][snyk]
 <!--[![Browserify][built-icon]][gh]-->
 
 
@@ -77,7 +78,7 @@ Via [unpkg][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://unpkg.co/gaad-widget@3.1.0-beta#._.js"></script>
+<script src="https://unpkg.com/gaad-widget@3.1.0-beta#._.js"></script>
 ```
 
 Via [RawGit][] - production CDN:
@@ -93,7 +94,7 @@ Local hosting:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="build/gaad-widget.js" ></script>
+<script src="dist/gaad-widget.js" ></script>
 ```
 
 Setting the `days_before` option:
@@ -101,7 +102,7 @@ Setting the `days_before` option:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="build/gaad-widget.js" data-gaad-widget='{ "days_before": 20 }'></script>
+<script src="dist/gaad-widget.js" data-gaad-widget='{ "days_before": 20 }'></script>
 ```
 
 Setting several configuration options:
@@ -110,7 +111,7 @@ Setting several configuration options:
 <div id="custom_id"></div>
 
 <script
-  src="build/gaad-widget.js"
+  src="dist/gaad-widget.js"
   data-gaad-widget='{ "id": "custom_id", "days_after": 10, "theme": "black", "debug": true }'
   ></script>
 ```
@@ -124,7 +125,7 @@ Français (French):
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="build/gaad-widget.js" data-gaad-widget='{ "lang": "fr" }' ></script>
+<script src="dist/gaad-widget.js" data-gaad-widget='{ "lang": "fr" }' ></script>
 ```
 
 ## WordPress
@@ -177,5 +178,7 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [build]: https://github.com/nfreear/gaad-widget/tree/3.x/dist
 [Browserify]: http://browserify.org/
     "Browserify lets you require('modules') in the browser by bundling your dependencies."
+[snyk]: https://snyk.io/test/npm/gaad-widget "Vulnerability count ~ via Snyk"
+[snyk-icon]: https://snyk.io/test/npm/gaad-widget/badge.svg
 
 [End]: //.
