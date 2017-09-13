@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "3.1.0-beta",
+  "version": "3.2.0-beta",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "license": "MIT",
   "browser": "dist/gaad-widget.js",
@@ -12,13 +12,14 @@
   "homepage": "http://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=npm",
   "dependencies": {
     "datejs": "^1.0.0-rc3",
-    "icalendar": "^0.7.1"
+    "icalendar": "^0.7.1",
+    "node-analytics-ga": "git://github.com/nfreear/node-analytics-ga#918d458d8a"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
     "csslint": "^1.0.5",
-    "derequire": "^2.0.6",
     "exorcist": "^0.4.0",
+    "live-server": "^1.2.0",
     "replace": "^0.3.0",
     "semistandard": "^11.0.0",
     "uglify-js": "^2.8.26"
@@ -33,7 +34,7 @@
     "build": "rm dist/* && bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify",
     "browserify": "browserify index.js --no-bf --debug | exorcist dist/gaad-widget.js.map > dist/gaad-widget.js",
     "uglify": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
-    "ver": "bin/_ver.js",
+    "start": "live-server --port=9001 -V",
     "test": "semistandard && csslint style"
   },
   "semistandard": {
@@ -44,6 +45,7 @@
   "keywords": [
     "accessibility",
     "a11y",
+    "campaign",
     "browser-widget",
     "date",
     "datejs",
@@ -60,8 +62,9 @@
     "src/",
     "style/"
   ],
-  "x-build-js-size": "8.3KB",
+  "x-build-js-size": "8.47kB",
   "//": {
-    "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566"
+    "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566",
+    "universal-ga": "^1.1.0"
   }
 }

@@ -18,4 +18,8 @@ var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min.json');
 var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION);
 var METHODS = require('./src/methods');
 
+METHODS.analytics = require('node-analytics-ga');
+// METHODS.analytics = require('universal-ga');
+// METHODS.analytics = require('./google-analytics/index');
+
 require('./src/widget-src').run(DEFAULTS, METHODS);

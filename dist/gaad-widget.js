@@ -21,9 +21,13 @@ var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min.json');
 var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION);
 var METHODS = require('./src/methods');
 
+METHODS.analytics = require('node-analytics-ga');
+// METHODS.analytics = require('universal-ga');
+// METHODS.analytics = require('./google-analytics/index');
+
 require('./src/widget-src').run(DEFAULTS, METHODS);
 
-},{"./data/gaad-dates.min.json":1,"./locales/en":3,"./locales/fr":4,"./src/configure":5,"./src/methods":6,"./src/widget-src":7}],3:[function(require,module,exports){
+},{"./data/gaad-dates.min.json":1,"./locales/en":3,"./locales/fr":4,"./src/configure":6,"./src/methods":7,"./src/widget-src":8,"node-analytics-ga":5}],3:[function(require,module,exports){
 module.exports={
   "name": "Global Accessibility Awareness Day (GAAD)",
   "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>.",
@@ -39,11 +43,115 @@ module.exports={
 }
 
 },{}],5:[function(require,module,exports){
+/*!
+  A basic Google Analytics wrapper | © Nick Freear, 06-July-2017.
+*/
+
+module.exports = {
+  create: create,
+  pageView: pageView,
+  sendEvent: sendEvent
+};
+
+var WIN = window;
+var DOC = WIN.document;
+var LOC = WIN.location;
+
+var analyticsCfg = {};
+var enable = false;
+var gaFn;
+var sendName;
+
+/** create
+ * @public
+
+ var config = {
+   id: 'UA-XXXXX-Y', // Required.
+   name: 'gaadWidget', // Required.
+   fn: 'myGA' // Optional.
+ };
+
+ */
+function create (config) {
+  // Setup private vars.
+  enable = config && config.id;
+  analyticsCfg = config;
+
+  if (!enable) {
+    console.warn('no analytics');
+    return;
+  }
+
+  analyticsCfg.fn = analyticsCfg.fn || 'ga';
+
+  includeJavascript(analyticsCfg.fn);
+
+  return createTracker();
+}
+
+/** createTracker.
+ * @private
+ */
+function createTracker () {
+  gaFn = WIN[ analyticsCfg.fn ];
+  sendName = analyticsCfg.name ? analyticsCfg.name + '.send' : 'send';
+
+  // ga('create', 'UA-XXXXX-Y', 'auto');
+  gaFn('create', analyticsCfg.id, 'auto', analyticsCfg.name);
+
+  console.warn('analytics: ', analyticsCfg);
+
+  return analyticsCfg;
+}
+
+/** pageView.
+ * @public
+ */
+function pageView () {
+  if (!enable) return;
+
+  var path = null;
+  if (analyticsCfg.isWidget) {
+    // Widgets: include "host" in the path sent to pageview.
+    path = LOC.host + LOC.pathname + LOC.search.replace(/^\?/, '!');
+  }
+
+  gaFn(sendName, 'pageview', path);
+}
+
+/** sendEvent.
+ * @public
+ */
+function sendEvent (cat, act, label, value) {
+  if (!enable) return;
+
+  gaFn(sendName, 'event', cat, act, label, value);
+  console.warn('analytics.event: ', cat, act, label, value);
+}
+
+/** includeJavascript.
+ * @private
+ */
+function includeJavascript (gaName) {
+  var existingJs = DOC.querySelector('script[ src *= google-analytics ]');
+
+  if (!existingJs) {
+     /* eslint-disable */
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', gaName /* || 'ga' */);
+     /* eslint-enable */
+  }
+}
+
+},{}],6:[function(require,module,exports){
 
 // Configure | ©Nick Freear.
 
-var Date = window.Date;
-var location = window.location;
+var W = window;
+var Date = W.Date;
+var queryString = W.location.search;
 
 module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   'use strict';
@@ -51,11 +159,12 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   var YEAR = new Date().getFullYear();
   var GAAD_DATE = DATES.dates[ YEAR ];
   var GAAD_NEXT = DATES.dates[ YEAR + 1 ];
+  var M_LANG = queryString.match(/[?&]lang=(\w{2}(-\w{2})?)/);
 
   var defaults = {
     id: 'id-gaad-widget',
     script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
-    lang: 'en',
+    lang: M_LANG ? M_LANG[ 1 ] : 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',
@@ -72,8 +181,13 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
     today: new Date(),
     xth: YEAR - 2011,
-    debug: /[?&]debug=1/.test(location.search),
-    force: /[?&]gaad.?widget=f(orce)?/i.test(location.search)
+    analytics: {
+      isWidget: true,
+      name: 'gaadWidget',
+      id: 'UA-102188521-1'
+    },
+    debug: /[?&]debug=1/.test(queryString),
+    force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
   };
 
   defaults.version = VERSION;
@@ -81,7 +195,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   return defaults;
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 
 // Functions: extend, setHTML, addStylesheet.. | ©Nick Freear.
 
@@ -137,20 +251,20 @@ module.exports = {
     elem.dir = gaad.dir;
     elem.setAttribute('role', 'alert');
     elem.className = replaceObj('gaad-widget-js {t} {e}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed' });
-    elem.innerHTML = gaad.join;
+    elem.innerHTML = gaad.message;  // Was: 'gaad.join'
   },
 
   addStylesheet: function (gaad) {
     var styleEl = D.createElement('link');
     styleEl.rel = 'stylesheet';
     styleEl.type = 'text/css';
-    styleEl.href = decideScriptUrl(gaad);
+    styleEl.href = decideStyleUrl(gaad);
 
     D.head.appendChild(styleEl);
   }
 };
 
-function decideScriptUrl (CFG) {
+function decideStyleUrl (CFG) {
   // Support for 'unpkg' CDN short URL.
   if (/@\d\.\d\.\d(-[\w.]+)(#|_.js|$)/.test(CFG.script_url)) {
     CFG.log('GAAD: npm @version found');
@@ -168,12 +282,11 @@ function replaceObj (str, mapObj) {
   });
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 
 // Main widget 'run' function | ©Nick Freear.
 
 var W = window;
-// var Date = W.Date;
 
 module.exports.run = function (defaults, methods) {
   'use strict';
@@ -205,13 +318,15 @@ module.exports.run = function (defaults, methods) {
   var lang = gaad.texts[ gaad.lang ] ? gaad.lang : 'en';
   var template = gaad.is_before ? gaad.texts[ lang ].before : gaad.texts[ lang ].after;
 
-  gaad.join = methods.replaceObj(template, gaad.xreplace);
+  gaad.message = methods.replaceObj(template, gaad.xreplace);
 
   if (!gaad.should_show && !gaad.force) {
     return gaad.log('GAAD: no-show', gaad);
   }
 
   gaad.log('GAAD: show', gaad);
+
+  runAnalytics(methods.analytics, gaad.analytics);
 
   methods.addStylesheet(gaad);
 
@@ -221,6 +336,16 @@ module.exports.run = function (defaults, methods) {
 
   return gaad;
 };
+
+function runAnalytics (analyticsFn, config) {
+  if (config) {
+    analyticsFn.create(config);
+    analyticsFn.pageView();
+
+    // analyticsFn.initialize(analyticsCfg.id, { name: analyticsCfg.name, debug: gaad.debug });
+    // analyticsFn.pageview();
+  }
+}
 
 },{}]},{},[2])
 //# sourceMappingURL=gaad-widget.js.map

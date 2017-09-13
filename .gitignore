@@ -6,10 +6,13 @@ LICENSE*
 !test/index.html
 *.min.js*
 *.js.map
+*.*gz
 *copy*
 *BAK*
 
 x_legacy/
+package*
+!package.json
 node_modules/
 *.log
 
@@ -23,3 +26,5 @@ vendor/
 !bin/_ver.js
 !src/*.js
 !index.js
+
+*analytics*

@@ -41,6 +41,8 @@ module.exports.run = function (defaults, methods) {
 
   gaad.log('GAAD: show', gaad);
 
+  runAnalytics(methods.analytics, gaad.analytics);
+
   methods.addStylesheet(gaad);
 
   methods.setHTML(gaad);
@@ -49,3 +51,13 @@ module.exports.run = function (defaults, methods) {
 
   return gaad;
 };
+
+function runAnalytics (analyticsFn, config) {
+  if (config) {
+    analyticsFn.create(config);
+    analyticsFn.pageView();
+
+    // analyticsFn.initialize(analyticsCfg.id, { name: analyticsCfg.name, debug: gaad.debug });
+    // analyticsFn.pageview();
+  }
+}

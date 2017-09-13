@@ -33,6 +33,11 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
     today: new Date(),
     xth: YEAR - 2011,
+    analytics: {
+      isWidget: true,
+      name: 'gaadWidget',
+      id: 'UA-102188521-1'
+    },
     debug: /[?&]debug=1/.test(queryString),
     force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
   };
