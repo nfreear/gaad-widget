@@ -116,6 +116,16 @@ Setting several configuration options:
   ></script>
 ```
 
+## Analytics
+
+Anonymous usage statistics via Google Analytics is being added for version `3.2+` (`> 3.1.0`). It will be [enabled][analytics] by default, and can be disabled thus:
+
+```html
+<div id="id-gaad-widget"></div>
+
+<script src="dist/gaad-widget.js" data-gaad-widget='{ "analytics": null }'></script>
+```
+
 ## Translation
 
 [Translations][i18n-code], [#4][i18n].
@@ -153,6 +163,8 @@ Twitter: [@nfreear][], [@gbla11yday][].
 [i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
+[analytics]: https://github.com/nfreear/gaad-widget/blob/3.x/src/configure.js#L36-L40
+    "Analytics configuration, JS code"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
 [wp]: https://gist.github.com/nfreear/e5520adbb930e537ef5fe2e0aab231d1 "WordPress plugin (PHP)"
 [Datejs]: https://npmjs.com/package/datejs "Thanks: @abritinthebay"
