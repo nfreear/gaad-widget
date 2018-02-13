@@ -148,6 +148,8 @@ License: [MIT][].
 
 Twitter: [@nfreear][], [@gbla11yday][].
 
+_See the related [isad-widget][]._
+
 
 [blog]: http://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=readme
 [GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
@@ -192,5 +194,8 @@ Twitter: [@nfreear][], [@gbla11yday][].
     "Browserify lets you require('modules') in the browser by bundling your dependencies."
 [snyk]: https://snyk.io/test/npm/gaad-widget "Vulnerability count ~ via Snyk"
 [snyk-icon]: https://snyk.io/test/npm/gaad-widget/badge.svg
+
+[isad-widget]: https://github.com/nfreear/isad-widget
+    "banner-link for International Stuttering Awareness Day (ISAD)"
 
 [End]: //.

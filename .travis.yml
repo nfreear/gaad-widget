@@ -1,17 +1,15 @@
 language: node_js
-node_js:
-  - "4"
-  - "6"
+
+node_js: 6
 
 git:
   depth: 8
 
-install:
-  - npm install
+install: npm install
 
-script:
-  - npm run build
-  - npm test
+before_script: num run build
+
+script: npm test
 
 after_script:
   - ls -alh dist
