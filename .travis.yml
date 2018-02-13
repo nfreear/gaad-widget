@@ -16,6 +16,7 @@ script:
   - npm run serve-ci & sleep 5; npm run pa11y-ci;
 
 after_script:
+  - npm run ps
   - ls -alh dist
   - ls -alh data
   - cat dist/gaad-widget.min.js
