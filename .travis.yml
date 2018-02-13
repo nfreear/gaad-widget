@@ -1,3 +1,4 @@
+
 language: node_js
 
 node_js: 6
@@ -9,11 +10,15 @@ install: npm install
 
 before_script: num run build
 
-script: npm test
+script:
+  - npm test
+  # http://cruft.io/posts/automated-accessibility-testing-node-travis-ci-pa11y/
+  - npm run serve-ci & sleep 5; npm run pa11y-ci;
 
 after_script:
   - ls -alh dist
   - ls -alh data
   - cat dist/gaad-widget.min.js
+  - npm run pa11y
 
 # End.

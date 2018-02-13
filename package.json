@@ -20,6 +20,7 @@
     "csslint": "^1.0.5",
     "exorcist": "^0.4.0",
     "live-server": "^1.2.0",
+    "pa11y-ci": "^1.3.1",
     "replace": "^0.3.0",
     "semistandard": "^11.0.0",
     "uglify-js": "^2.8.26"
@@ -35,6 +36,10 @@
     "browserify": "browserify index.js --no-bf --debug | exorcist dist/gaad-widget.js.map > dist/gaad-widget.js",
     "uglify": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
     "start": "live-server --port=9001 -V",
+    "serve-ci": "live-server --port=9001 -V --no-browser",
+    "pa11y": "pa11y --standard WCAG2AAA http://127.0.0.1:9001/embed/?gaadwidget=force&_ua=pa11y",
+    "pa11y-ci": "pa11y-ci --config .pa11yci.json",
+    "pa11y-help": "pa11y --version && pa11y --help",
     "test": "semistandard && csslint style"
   },
   "semistandard": {

@@ -1,0 +1,18 @@
+{
+  "#": "Automated accessibility testing ~ https://github.com/pa11y/pa11y-ci",
+
+  "defaults": {
+    "standard": "WCAG2AAA",
+    "timeout": 5000
+  },
+  "urls": [
+    "http://127.0.0.1:9001/embed/?gaadwidget=force&_ua=pa11y-ci",
+    "http://127.0.0.1:9001/test/static.html?_ua=pa11y-ci"
+  ],
+
+  "X-UNUSED--urls": [
+    "http://127.0.0.1:9001/test/index.html?gaadwidget=force&_ua=pa11y-ci",
+    "http://127.0.0.1:9001/test/fail.html?gaadwidget=force&_ua=pa11y-ci",
+    "https://nick.freear.org.uk/2017/05/14/gaad-widget.html?gaadwidget=force#id-gaad"
+  ]
+}

@@ -5,6 +5,7 @@
 [![Total downloads ~ NPMJS.com][downl-icon]][npm]
 [![Size of Javascript][size-icon]][build]
 [![vulnerabilities][snyk-icon]][snyk]
+[![Accessibility testing - GAAD passes][pa11y-icon]][pa11y-ci]
 <!--[![Browserify][built-icon]][gh]-->
 
 
@@ -194,6 +195,10 @@ _See the related [isad-widget][]._
     "Browserify lets you require('modules') in the browser by bundling your dependencies."
 [snyk]: https://snyk.io/test/npm/gaad-widget "Vulnerability count ~ via Snyk"
 [snyk-icon]: https://snyk.io/test/npm/gaad-widget/badge.svg
+[pa11y-ci]: https://github.com/pa11y/pa11y-ci
+    "Automated accessibility testing - via 'pa11y-ci'"
+[pa11y-icon]: https://img.shields.io/badge/accessibility-pa11y--ci-blue.svg
+[wcag-icon]: https://img.shields.io/badge/accessibility-WCAG_2.0_AAA-green.svg
 
 [isad-widget]: https://github.com/nfreear/isad-widget
     "banner-link for International Stuttering Awareness Day (ISAD)"
