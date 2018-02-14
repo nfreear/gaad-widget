@@ -37,7 +37,8 @@
     "uglify": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
     "start": "live-server --port=9001 -V",
     "serve-ci": "live-server --port=9001 -V --no-browser --watch=DUMMY",
-    "ps": "ps aux | grep live-server",
+    "ps": "pgrep -lf live-server",
+    "kill-server": "pkill -f live-server",
     "pa11y": "pa11y --standard WCAG2AAA http://127.0.0.1:9001/embed/?gaadwidget=force&_ua=pa11y",
     "pa11y-ci": "pa11y-ci --config .pa11yci.json",
     "pa11y-help": "pa11y --version && pa11y --help",
@@ -51,6 +52,7 @@
   "keywords": [
     "accessibility",
     "a11y",
+    "pa11y",
     "campaign",
     "browser-widget",
     "date",

@@ -17,9 +17,9 @@ script:
 
 after_script:
   - npm run ps
+  - npm run kill-server
   - ls -alh dist
   - ls -alh data
-  - cat dist/gaad-widget.min.js
-  - npm run pa11y
+  #- cat dist/gaad-widget.min.js
 
 # End.

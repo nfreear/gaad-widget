@@ -3,7 +3,7 @@
 /**
  * CLI. Implant `package.version` in index.js, README.md etc.
  *
- * @copyright © Nick Freear, 04, 25-June-2017.
+ * @copyright © Nick Freear, 04-, 25-June-2017, 2018.
  * @license   MIT
  * @see       https://github.com/nfreear/gaad-widget
  */

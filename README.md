@@ -175,7 +175,7 @@ _See the related [isad-widget][]._
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
-[MIT]: https://nfreear.mit-license.org/2017#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27"
+[MIT]: https://nfreear.mit-license.org/2017-2018#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"

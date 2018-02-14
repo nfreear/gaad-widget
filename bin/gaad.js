@@ -3,7 +3,7 @@
 /**
  * Node CLI. Build iCalendar, JSON data and lookup files.
  *
- * @copyright © Nick Freear, 19-May-2017.
+ * @copyright © Nick Freear, 19-May-2017, 2018.
  * @license   MIT.
  * @see       https://github.com/nfreear/gaad-widget
  */
