@@ -105,13 +105,29 @@ console.log(datejs);
 function readLocaleTexts (localedir) {
   var texts = {};
   fs.readdirSync(localedir).forEach(function (file) {
+    if (!file.match(/.+\.json$/)) { return texts; }
+
     console.log('Locale: %s', file);
 
     var locale = file.replace('.json', '');
     var jsontext = fs.readFileSync(localedir + file, 'utf8');
-    texts[ locale ] = JSON.parse(jsontext);
+    texts[ locale ] = removeJsonComments(JSON.parse(jsontext));
   });
 
+  return texts;
+}
+
+// https://github.com/i18next/i18next/issues/108#__comment
+function removeJsonComments (locale) {
+  var texts = {};
+  var prop;
+  // console.log(locale);
+
+  for (prop in locale) {
+    if (!prop.match(/^#__/)) {
+      texts[ prop ] = locale[ prop ];
+    }
+  }
   return texts;
 }
 

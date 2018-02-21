@@ -7,11 +7,12 @@
 
 'use strict';
 
-var VERSION = '3.1.0-beta'; // <Auto>
+var VERSION = '3.2.0-beta'; // <Auto>
 
 var TRANSLATE_TEXTS = {
   en: require('./locales/en'),
-  fr: require('./locales/fr')
+  fr: require('./locales/fr'),
+  'zh-cn': require('./locales/zh-cn')
 };
 var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min.json');
 // console.log(GAAD_DATE_LOOKUP);
