@@ -16,6 +16,7 @@ script:
   - npm run serve-ci & sleep 5; npm run pa11y-ci;
 
 after_script:
+  - npm run pa11y
   - npm run ps
   - npm run kill-server
   - ls -alh dist

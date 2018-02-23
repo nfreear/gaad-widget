@@ -5,15 +5,15 @@
   "license": "MIT",
   "browser": "dist/gaad-widget.js",
   "unpkg": "dist/gaad-widget.js",
-  "main": "./index.js",
+  "main": "index.js",
   "author": "Nick Freear {@nfreear}",
-  "repository": "https://github.com/nfreear/gaad-widget",
+  "repository": "https://github.com/nfreear/gaad-widget.git",
   "bugs": "https://github.com/nfreear/gaad-widget/issues",
   "homepage": "http://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=npm",
   "dependencies": {
     "datejs": "^1.0.0-rc3",
     "icalendar": "^0.7.1",
-    "node-analytics-ga": "git://github.com/nfreear/node-analytics-ga#918d458d8a"
+    "node-analytics-ga": "https://github.com/nfreear/node-analytics-ga.git#918d458d8a"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
@@ -32,7 +32,7 @@
     "gaad": "./bin/gaad.js"
   },
   "scripts": {
-    "build": "rm dist/* && bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify",
+    "build": "rm -f dist/* && bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify",
     "browserify": "browserify index.js --no-bf --debug | exorcist dist/gaad-widget.js.map > dist/gaad-widget.js",
     "uglify": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
     "start": "live-server --port=9001 -V",
