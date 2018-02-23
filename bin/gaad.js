@@ -10,35 +10,34 @@
 const NO_LIABILITY =
 'License: MIT. The data is provided "as is". I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.';
 
-const path = require('path').join;
-const PKG = require(path(__dirname, '/../package.json'));
-const ICS_FILE = path(__dirname, '/../data/gaad.en.ics');
-const JSON_FILE = path(__dirname, '/../data/gaad.json');
-const MIN_FILE = path(__dirname, '/../data/gaad-dates.min.json');
-const LOCALE_DIR = path(__dirname, '/../locales/');
-// const LOCALE_FILE = path(__dirname, '/../src/locales.json');
-// const JSON_TEXT = path(__dirname, '/../src/gaad-texts.json');
+const PKG = require('../package.json');
+const ICS_FILE = abspath('../data/gaad.en.ics');
+const JSON_FILE = abspath('../data/gaad.json');
+const MIN_FILE = abspath('../data/gaad-dates.min.json');
+const LOCALE_DIR = abspath('../locales/');
+const LOCALE_FILE = abspath('../data/locales.json');
+// const JSON_TEXT = abspath('../src/gaad-texts.json');
 
 const GAAD_START_YEAR = 2011;
 const LIMIT_YEARS = 15;
 // const A_DAY = 24 * 60 * 60;
 
-const fs = require('fs');
 const icalendar = require('icalendar');
 const datejs = require('datejs');
 
-const texts = readLocaleTexts(LOCALE_DIR);
+const texts = readLocaleTexts(LOCALE_DIR, PKG[ 'x-locales' ]);
 const GAAD_URL = texts.en.url;
 const today = new Date();
 
 var ical = new icalendar.iCalendar(); // eslint-disable-line
 var gaadobj = {
-  '//': NO_LIABILITY,
+  '#': NO_LIABILITY,
   name: PKG.name,
   version: PKG.version,
   timestamp: today.toString('u'),
   url: PKG.repository,
-  texts: texts,
+  // texts: texts,
+  locales: PKG[ 'x-locales' ],
   dates: {}
 };
 var idx;
@@ -80,31 +79,43 @@ var gaaddates = {
 
 const json = JSON.stringify(gaadobj, null, 2);
 const minjson = JSON.stringify(gaaddates);
-// const locjson = JSON.stringify(texts, null, 2);
+const locjson = JSON.stringify(texts, null, 2);
 const ics = ical.toString();
 
-fs.writeFile(JSON_FILE, json);
-// fs.writeFile(LOCALE_FILE, locjson);
-fs.writeFile(MIN_FILE, minjson);
-fs.writeFile(ICS_FILE, ics);
-
-setTimeout(function () {
-  var jsonstat = fs.statSync(JSON_FILE);
-  var minstat = fs.statSync(MIN_FILE);
-  var icsstat = fs.statSync(ICS_FILE);
-
-  console.log('JSON, %d bytes: %s', jsonstat.size, JSON_FILE);
-  console.log('MIN, %d bytes: %s', minstat.size, MIN_FILE);
-  console.log('iCal, %d bytes: %s', icsstat.size, ICS_FILE);
-}, 100);
+writeStatFile(JSON_FILE, json, 'JSON');
+writeStatFile(LOCALE_FILE, locjson, 'LANG');
+writeStatFile(MIN_FILE, minjson, 'MIN');
+writeStatFile(ICS_FILE, ics, 'iCal');
 
 console.log(datejs);
 
 // ------------------------------------
 
-function readLocaleTexts (localedir) {
+function abspath (path) {
+  return require('path').join(__dirname, path);
+}
+
+function writeStatFile (file, data, label) {
+  const FS = require('fs');
+
+  FS.writeFile(file, data, 'utf8', function (err) {
+    if (err) throw err;
+
+    const stat = FS.statSync(file);
+    console.log('%s, %d bytes: %s', label, stat.size, file);
+  });
+}
+
+function readLocaleTexts (localedir, locales) {
   var texts = {};
-  fs.readdirSync(localedir).forEach(function (file) {
+  var locale;
+
+  for (var idx = 0; idx < locales.length; idx++) {
+    locale = locales[ idx ];
+    texts[ locale ] = removeJsonComments(require(localedir + locale));
+  }
+
+  /* fs.readdirSync(localedir).forEach(function (file) {
     if (!file.match(/.+\.json$/)) { return texts; }
 
     console.log('Locale: %s', file);
@@ -112,7 +123,7 @@ function readLocaleTexts (localedir) {
     var locale = file.replace('.json', '');
     var jsontext = fs.readFileSync(localedir + file, 'utf8');
     texts[ locale ] = removeJsonComments(JSON.parse(jsontext));
-  });
+  }); */
 
   return texts;
 }
@@ -124,7 +135,7 @@ function removeJsonComments (locale) {
   // console.log(locale);
 
   for (prop in locale) {
-    if (!prop.match(/^#__/)) {
+    if (!prop.match(/^#_+/)) {
       texts[ prop ] = locale[ prop ];
     }
   }

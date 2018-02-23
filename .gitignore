@@ -1,5 +1,5 @@
 
-zh*
+# zh*
 LICENSE*
 
 *.html
@@ -27,5 +27,9 @@ vendor/
 !bin/_ver.js
 !src/*.js
 !index.js
+locales.json
 
 *analytics*
+
+ndf-*
+*.yaml

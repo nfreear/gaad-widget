@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "3.2.0-beta",
+  "version": "3.2.0",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "license": "MIT",
   "browser": "dist/gaad-widget.js",
@@ -70,6 +70,7 @@
     "src/",
     "style/"
   ],
+  "x-locales": [ "en", "fr", "zh-cn" ],
   "x-build-js-size": "8.47kB",
   "//": {
     "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566",
