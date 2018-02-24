@@ -26,13 +26,14 @@ module.exports.run = function (defaults, methods) {
     gaad.xreplace = GAAD_NEXT;
   }
 
-  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top"', { '{u}': gaad.url });
+  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': gaad.texts.en.name });
   gaad.xreplace[ '{x}' ] = gaad.xth;
-  gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
+  // Was: gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
 
   var lang = gaad.texts[ gaad.lang ] ? gaad.lang : 'en';
   var template = gaad.is_before ? gaad.texts[ lang ].before : gaad.texts[ lang ].after;
 
+  gaad.xreplace[ '{g}' ] = gaad.texts[ lang ].name;
   gaad.message = methods.replaceObj(template, gaad.xreplace);
 
   if (!gaad.should_show && !gaad.force) {
