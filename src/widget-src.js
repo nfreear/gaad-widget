@@ -20,7 +20,7 @@ module.exports.run = function (defaults, methods) {
 
   gaad.should_show = (gaad.diff_show >= 0 && gaad.diff_hide < 0);
 
-  gaad.is_before = (gaad.today - gaad.date) < 0;
+  gaad.is_before = (gaad.today - gaad.date.ts) < 0; // Use: 'JS Date - timestamp' (implicite cast), works!
 
   if (!gaad.is_before) {
     gaad.xreplace = GAAD_NEXT;

@@ -70,7 +70,7 @@ for (idx = 0; idx < LIMIT_YEARS; idx++) {
     '{m}': GAAD_DATE.toString('MMMM'),
     '{y}': parseInt(GAAD_DATE.toString('yyyy')),
     // iso: GAAD_DATE.toISOString(),
-    ts: GAAD_DATE.getTime() / 1000 // Seconds since epoch.
+    ts: GAAD_DATE.getTime() // Milli-seconds since epoch.
   };
 }
 
