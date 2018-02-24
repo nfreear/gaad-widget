@@ -8,7 +8,7 @@
  * @see       https://github.com/nfreear/gaad-widget
  */
 const NO_LIABILITY =
-'License: MIT. The data is provided "as is". I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.';
+"License: MIT. The data is provided 'as is'. I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.";
 
 const PKG = require('../package.json');
 const ICS_FILE = abspath('../data/gaad.en.ics');
@@ -38,6 +38,7 @@ var gaadobj = {
   url: PKG.repository,
   // texts: texts,
   locales: PKG[ 'x-locales' ],
+  count_years: LIMIT_YEARS,
   dates: {}
 };
 var idx;
@@ -63,13 +64,13 @@ for (idx = 0; idx < LIMIT_YEARS; idx++) {
   event.setProperty('DTEND;VALUE=DATE', GAAD_DATE.toString('yyyyMMdd'));
 
   gaadobj.dates[ year ] = {
-    '{x}': idx + 0,
-    '{d}': GAAD_DATE.toString('dd'),
+    '{x}': parseInt(idx),
+    '{d}': parseInt(GAAD_DATE.toString('dd')),
     '{th}': GAAD_DATE.toString('S'),
     '{m}': GAAD_DATE.toString('MMMM'),
-    '{y}': GAAD_DATE.toString('yyyy'),
+    '{y}': parseInt(GAAD_DATE.toString('yyyy')),
     // iso: GAAD_DATE.toISOString(),
-    ts: GAAD_DATE.getTime() // Milliseconds since epoch.
+    ts: GAAD_DATE.getTime() / 1000 // Seconds since epoch.
   };
 }
 
@@ -114,21 +115,10 @@ function readLocaleTexts (localedir, locales) {
     locale = locales[ idx ];
     texts[ locale ] = removeJsonComments(require(localedir + locale));
   }
-
-  /* fs.readdirSync(localedir).forEach(function (file) {
-    if (!file.match(/.+\.json$/)) { return texts; }
-
-    console.log('Locale: %s', file);
-
-    var locale = file.replace('.json', '');
-    var jsontext = fs.readFileSync(localedir + file, 'utf8');
-    texts[ locale ] = removeJsonComments(JSON.parse(jsontext));
-  }); */
-
   return texts;
 }
 
-// https://github.com/i18next/i18next/issues/108#__comment
+// https://github.com/i18next/i18next/issues/108#__A-comment
 function removeJsonComments (locale) {
   var texts = {};
   var prop;
