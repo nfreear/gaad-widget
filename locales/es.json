@@ -1,0 +1,12 @@
+{
+  "#__locale": "Español/Spanish (es)",
+  "#__translator": "Google Translate!",
+  "#__revision_date": "2018-02-24",
+
+  "name": "Día Mundial para Promover la Concienciación sobre la Accesibilidad Web (GAAD)",
+  "before": "El {d} de mayo de {y}, le invitamos a participar en el {x} ° <a {at}>{g}</a>.",
+  "#__known_as": "{k}, conocido en inglés como Global Accessibility Awareness Day (GAAD)",
+  "#__intro": "Cuando hablamos de la accesibilidad Web nos referimos a el contenido, la navegación y la interacción.",
+  "after": "Coloque el <a {at}>{g}<a> del próximo año, el jueves {d} de mayo de {y}, en su diario. ¡Hasta entonces!",
+  "url": "/gaadsp.html"
+}

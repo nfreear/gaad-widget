@@ -72,7 +72,7 @@
     "src/",
     "style/"
   ],
-  "x-locales": [ "en", "fr", "zh-cn" ],
+  "x-locales": [ "en", "es", "fr", "zh-cn" ],
   "x-build-js-size": "8.47kB",
   "//": {
     "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566",
