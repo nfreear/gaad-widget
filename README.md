@@ -26,43 +26,12 @@ _Note ~ this is not an official widget!_
 
 [Original Gist][gist].
 
-## Features
+## Release notes
+### Features
 
-See the [Release notes][rel].
+ * [CHANGELOG][].
 
-### v3.x
-
-* Adopted [Browserify][],
-* Switch from `Datejs` include, to a lookup of JSON embedded in the Javascript,
-  * Reduces Javascript file size from 55 to ~8 kilobytes 💓
-* Renamed Javascript, CSS etc. `build/GAAD.widget.js` &rarr; `build/gaad-widget.js`
-* Renamed default HTML `id=".."` from `id-gaad` → `id-gaad-widget` (plus, `data-` attribute)
-
-### v2.1
-
-* Added `?gaadwidget=force` URL parameter, [#2][wishlist]
-* Added iCal and JSON data files.
-
-### v2.0
-
-* Different after-event message - containing next year's date, [#5][b/a] - thanks [@srinivasu..][]
-* Added translation into Français/French, [#4][i18n]
-* Added neutral `black` theme, [#2][wishlist]
-* Changed default `days_after` from 5 to 10.
-
-### v1.x
-
-* Zero configuration required by default,
-* Paste and forget - the banner appears _10_ days before and disappears _10_ days after,
-* Configurable,
-* Basic internationalization,
-* Basic automated testing in place (Travis-CI),
-* Accessible ~ _let me know if you spot a problem!_
-* Responsive design,
-* Compatible with [all modern browsers, and MSIE 9-11][ie],
-* CDN courtesy of [RawGit][] (thank you!) - with HTTPS/SSL.
-
-See the [Release notes][rel] and [Wishlist][].
+See the [releases page][rel] and [Wishlist][].
 
 ## Install and test
 
@@ -74,12 +43,12 @@ npm test
 
 ## Usage
 
-Via [unpkg][] - production CDN:
+Via [unpkg][] - [browse][] - production CDN:
 
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://unpkg.com/gaad-widget@3.1.0-beta#._.js"></script>
+<script src="https://unpkg.com/gaad-widget@3.2.0#._.js"></script>
 ```
 
 Via [RawGit][] - production CDN:
@@ -87,7 +56,7 @@ Via [RawGit][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.1.0-beta/build/gaad-widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.2.0/dist/gaad-widget.js"></script>
 ```
 
 Local hosting:
@@ -160,9 +129,10 @@ _See the related [isad-widget][]._
 [gaad-widget]: https://github.com/nfreear/gaad-widget
 [gaad-image]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget-after.png
 [gaad-img-00]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
-[wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
+[changelog]: https://github.com/nfreear/gaad-widget/blob/3.x/CHANGELOG.md
 [rel]: https://github.com/nfreear/gaad-widget/releases "Release notes / changelog"
-[i18n]: https://github.com/nfreear/gaad-widget/issues/4 "Bug #4, Translations (v 2.x)"
+[wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
+[i18n]: https://github.com/nfreear/gaad-widget/issues/4#!-i18n "Bug #4, Translations (v 2.x)"
 [i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
@@ -175,7 +145,9 @@ _See the related [isad-widget][]._
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
+[browse]: https://unpkg.com/gaad-widget/ "Browse the most recent version on Unpkg.com"
 [MIT]: https://nfreear.mit-license.org/2017-2018#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
+[mit-txt]: https://nfreear.mit-license.org/2017-2018/license.txt "MIT License | © Nick Freear"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"
