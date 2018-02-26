@@ -1,5 +1,5 @@
 /*!
-  GAAD.widget.js | ©Nick Freear 2017-04-27 | License: MIT.
+  gaad-widget.js | © 2018 Nick Freear | License: MIT.
 
   https://github.com/nfreear/gaad-widget
 */
@@ -15,23 +15,23 @@
   margin: 0 0 1.5em;
   padding: 0.8em;
   text-align: center;
-}
 
-/*csslint adjoining-classes: false */
-.gaad-widget-js.black {
-  background: #333;
-}
+  // csslint adjoining-classes: false;
+  &.black {
+    background: #333;
+  }
 
-.gaad-widget-js a {
-  border-bottom: 2px dotted transparent;
-  color: #fff;
-  text-decoration: underline;
-}
+  a {
+    border-bottom: 2px dotted transparent;
+    color: #fff;
+    text-decoration: underline;
 
-.gaad-widget-js a:hover,
-.gaad-widget-js a:focus {
-  border-color: #fff;
-  color: #eee;
+    &:hover,
+    &:focus {
+      border-color: #fff;
+      color: #eee;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -42,3 +42,5 @@
     padding: 0.5em;
   }
 }
+
+// End.
