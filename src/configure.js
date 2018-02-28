@@ -38,6 +38,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
       name: 'gaadWidget',
       id: 'UA-102188521-1'
     },
+    put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget" aria-label="{p}" title="{p}" target=_top >{c}</a>',
+    put_char: '&#x2193;', // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html; http://amp-what.com/
     debug: /[?&]debug=1/.test(queryString),
     force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
   };

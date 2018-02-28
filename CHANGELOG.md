@@ -5,17 +5,21 @@
 
 ← [README][]
 
+ * Download on the [releases page][rel]. (Also, see the [wishlist][].)
+
 ## Version 3.2.0
 
  * _Date:  ~ March 2018_
  * _Tag:   3.2.0_
  * Incorrect message bug - logic bug (see screenshot) #10;
- * Display language-specific GAAD string, not English - bug or enhancement;
+ * Add a "_Put gaad-widget on your site_" link ([arrow][]);
+ * Display language-specific GAAD string, not English - bug/enhancement;
  * Re-factor language/ locale/ translation/ i18n code, #4;
  * Cast strings to integers in JSON - `parseInt()`;
- * Chinese, Simplified translation, #4,
- * Spanish translation, maybe ?! #4,
- * Automated accessibility testing, via [pa11y-ci][] and `live-server`, #9,
+ * Initial Chinese, Simplified translation, #4;
+ * Initial Spanish translation, #4;
+ * Automated accessibility testing, via [pa11y-ci][] and `live-server`, #9;
+ * Adopt `lessc` to build a LESS stylesheet;
  * Google Analytics via `node-analytics-ga`, can be disabled (see [README][]).
 
 ## Version 3.1.0 (Beta)
@@ -57,15 +61,15 @@
  * _Date:  15 May 2017_
  * _Tag:   1.0-alpha_
 
+---
 
-See the [Release notes][rel] and [Wishlist][].
+ * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
 ← [README][]
 
 
----
-
 [readme]: https://github.com/nfreear/gaad-widget#readme
+[rel]: https://github.com/nfreear/gaad-widget/releases
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4#!-i18n
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11
@@ -73,6 +77,8 @@ See the [Release notes][rel] and [Wishlist][].
 [pa11y-ci]: https://github.com/pa11y/pa11y-ci
 [browserify]: http://browserify.org/
 [@srinivasu..]: http://srinivasu.org/
+[arrow]: http://xahlee.info/comp/unicode_arrows.html#!-U-2913
+    "U+2913: DOWNWARDS ARROW TO BAR — &#x2913;"
 
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg

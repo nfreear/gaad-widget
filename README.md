@@ -29,9 +29,8 @@ _Note ~ this is not an official widget!_
 ## Release notes
 ### Features
 
- * [CHANGELOG][].
-
-See the [releases page][rel] and [Wishlist][].
+ * See the [CHANGELOG][].
+ * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
 ## Install and test
 

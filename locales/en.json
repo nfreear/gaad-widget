@@ -2,5 +2,6 @@
   "name": "Global Accessibility Awareness Day (GAAD)",
   "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>.",
   "after": "Put next year's <a {at}>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
+  "put": "Put gaad-widget on your web site",
   "url": "http://globalaccessibilityawarenessday.org"
 }
