@@ -1,6 +1,7 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><title> gaad-widget test </title>
 
 <style> body { font: 1em sans-serif; color: #333; X-background: #ccc; margin: 1em auto; max-width: 42em; } </style>
+<body>
 
 <h1> gaad-widget test </h1>
 
@@ -8,15 +9,19 @@
 <div id="id-gaad-widget"></div>
 
 
-<p> If the widget is not visible, <a href="?gaadwidget=force">click to add <code>?gaadwidget=force</code></a> to the URL in the address-bar above. </p>
+<p> If the widget is not visible, <a href="?gaadwidget=force">click to add
+  <code>?gaadwidget=force</code></a> to the URL in the address-bar above.
+</p>
 
-<p> See the widget in <a href="?gaadwidget=force&lang=zh-cn">Chinese, with <code>?lang=zh-cn</code></a> | <a href="?gaadwidget=force">Revert to English</a>. </p>
+<p> See the widget in <a href="?gaadwidget=force&lang=zh-cn">Chinese, with
+  <code>?lang=zh-cn</code></a> | <a href="?gaadwidget=force">revert to English</a>.
+</p>
 
 
 <script data-CDN-src="https://unpkg.com/gaad-widget@3.2.0#._.js"></script>
 
-<script src="../dist/gaad-widget.js" data-gaad-widget='{ "debug": true, "X-lang": "fr", "X-theme": "black", "X-analytics": false }'></script>
-
+<script src="../dist/gaad-widget.js" data-gaad-widget=
+  '{ "debug": true, "X-lang": "fr", "X-theme": "black", "X-analytics": null }'></script>
 
 
 <pre>
@@ -28,4 +33,5 @@ gaad-widget.js | © 2017-2018 Nick Freear | License: MIT.
 * http://www.globalaccessibilityawarenessday.org
 
 </pre>
+</body>
 </html>

@@ -37,7 +37,7 @@ var gaadobj = {
   timestamp: today.toString('u'),
   url: PKG.repository,
   // texts: texts,
-  locales: PKG[ 'x-locales' ],
+  // locales: PKG[ 'x-locales' ],
   count_years: LIMIT_YEARS,
   dates: {}
 };

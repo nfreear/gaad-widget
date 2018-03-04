@@ -1,6 +1,7 @@
 {
   "name": "gaad-widget",
   "version": "3.2.0",
+  "x-version-hat": "^3",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
   "license": "MIT",
   "browser": "dist/gaad-widget.js",
@@ -9,7 +10,7 @@
   "author": "Nick Freear {@nfreear}",
   "repository": "https://github.com/nfreear/gaad-widget.git",
   "bugs": "https://github.com/nfreear/gaad-widget/issues",
-  "homepage": "http://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=npm",
+  "homepage": "https://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=npm",
   "dependencies": {
     "datejs": "^1.0.0-rc3",
     "icalendar": "^0.7.1",
@@ -30,7 +31,7 @@
     "node": ">= 4.0.0"
   },
   "bin": {
-    "gaad": "./bin/gaad.js"
+    "gaad": "bin/gaad.js"
   },
   "scripts": {
     "build": "rm -f dist/* && bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify && npm run less",
@@ -75,7 +76,7 @@
     "style/*.css"
   ],
   "x-locales": [ "en", "es", "fr", "zh-cn" ],
-  "x-build-js-size": "8.47kB",
+  "x-build-js-size": "12.9 kB",
   "//": {
     "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566",
     "universal-ga": "^1.1.0"

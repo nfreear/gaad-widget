@@ -3,6 +3,7 @@
 
 var W = window;
 var D = W.document;
+var CFG;
 
 module.exports = {
 
@@ -17,6 +18,8 @@ module.exports = {
     gaad.log = gaad.debug && W.console ? console.warn : function () {};
 
     gaad.script_url = scriptEl.src;
+
+    CFG = gaad;
 
     return gaad;
   },
@@ -40,6 +43,12 @@ module.exports = {
       }
     }
     return extended;
+  },
+
+  trans: function (msgid, vars) {
+    var texts = CFG.texts;
+    var msgstr = texts[ CFG.lang ][ msgid ] || texts[ 'en' ][ msgid ];
+    return msgstr; // replaceObj( msgstr, vars );
   },
 
   // Ben McCormick (24 March 2013), SirDerpington:

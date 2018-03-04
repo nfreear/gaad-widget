@@ -8,6 +8,7 @@ module.exports.run = function (defaults, methods) {
 
   var gaad = methods.getConfig(defaults, methods);
 
+  var texts = gaad.texts;
   var GAAD_DATE = gaad.date;
   var GAAD_NEXT = gaad.date_next;
 
@@ -26,15 +27,17 @@ module.exports.run = function (defaults, methods) {
     gaad.xreplace = GAAD_NEXT;
   }
 
-  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': gaad.texts.en.name });
+  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': texts.en.name });
   gaad.xreplace[ '{x}' ] = gaad.xth;
   // Was: gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
 
-  var lang = gaad.texts[ gaad.lang ] ? gaad.lang : 'en';
-  var template = gaad.is_before ? gaad.texts[ lang ].before : gaad.texts[ lang ].after;
-  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': gaad.texts[ lang ].put, '{c}': gaad.put_char });
+  var lang = texts[ gaad.lang ] ? gaad.lang : 'en';
+  gaad.lang = lang;
 
-  gaad.xreplace[ '{g}' ] = gaad.texts[ lang ].name;
+  var template = gaad.is_before ? texts[ lang ].before : texts[ lang ].after;
+  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char });
+
+  gaad.xreplace[ '{g}' ] = texts[ lang ].name;
   gaad.message = methods.replaceObj(template, gaad.xreplace) + putWidget;
 
   if (!gaad.should_show && !gaad.force) {

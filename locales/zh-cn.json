@@ -13,8 +13,8 @@
   "#__after_orig": "Put next year's <a {at}>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
   "after": "请在您的日历上标注5月  日举行的活动日 — <a {at}>{g}</a>。",
 
-  "#__howto_orig": "Put {z} on your site",
-  "howto": "",
+  "#__put_orig": "Put {z} on your web site",
+  "#__put": "",
 
   "#__calendar_orig": "Download an iCal calendar file",
   "calendar": "下载    日历文件",
