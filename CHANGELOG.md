@@ -9,16 +9,16 @@
 
 ## Version 3.2.0
 
- * _Date:  ~ March 2018_
+ * _Date:  ~ April 2018_
  * _Tag:   3.2.0_
  * Incorrect message bug - logic bug (see screenshot) #10;
  * Add a "_Put gaad-widget on your site_" link ([arrow][]);
  * Display language-specific GAAD string, not English - bug/enhancement;
  * Re-factor language/ locale/ translation/ i18n code, #4;
- * Cast strings to integers in JSON - `parseInt()`;
  * Initial Chinese, Simplified translation, #4;
  * Initial Spanish translation, #4;
  * Automated accessibility testing, via [pa11y-ci][] and `live-server`, #9;
+ * Cast strings to integers in JSON - `parseInt()`;
  * Adopt `lessc` to build a LESS stylesheet;
  * Added [GitLab CI][] integration;
  * Google Analytics via `node-analytics-ga`, can be disabled (see [README][]).

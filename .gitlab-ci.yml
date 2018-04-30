@@ -14,43 +14,30 @@ cache:
   - node_modules/
 
 stages:
-  - install
-  - build
   - test
-  - pa11y-ci
-  - release
 
-install 1:
-  before_script:
-    - node -v
-    - npm -v
-  stage: install
-  script: npm install
+before_script:
+  - node -v
+  - npm -v
+  - npm install
 
-build 1:
-  stage: build
-  script: npm run build
-
-test 1:
+job 1:
   stage: test
-  script: npm test
+  script:
+    - npm run build
+    - npm test
+    - npm run serve-ci & sleep 5; npm run pa11y-ci
 
-accessibility test 1:
-  stage: pa11y-ci
-  script: npm run serve-ci & sleep 5; npm run pa11y-ci
-  after_script:
-    - npm run ps
-    - npm run kill-server
-    - nvm --version
+after_script:
+  - npm run ps
+  - npm run kill-server
+  - nvm --version
 
-release 1:
-  stage: release
-  script: echo Hello!
-  artifacts:
-    untracked: true
-    paths:
-      - dist/*
-      - data/*
+artifacts:
+  untracked: true
+  paths:
+    - dist/*
+    - data/*
   # only:
   #   - tags
 
