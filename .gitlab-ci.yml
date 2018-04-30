@@ -28,7 +28,7 @@ job 1:
     - npm test
     - npm run serve-ci & sleep 5; npm run pa11y-ci
   artifacts:
-    untracked: true
+    # untracked: true
     paths:
       - dist/*
       - data/*
@@ -38,6 +38,7 @@ job 1:
 after_script:
   - npm run ps
   - npm run kill-server
+  - npm pack
   - nvm --version
 
 # End.

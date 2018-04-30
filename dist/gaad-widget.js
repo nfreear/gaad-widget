@@ -1,8 +1,37 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports={"dates":{"2011":{"{x}":0,"{d}":"19","{th}":"th","{m}":"May","{y}":"2011","ts":1305759600000},"2012":{"{x}":1,"{d}":"17","{th}":"th","{m}":"May","{y}":"2012","ts":1337209200000},"2013":{"{x}":2,"{d}":"16","{th}":"th","{m}":"May","{y}":"2013","ts":1368658800000},"2014":{"{x}":3,"{d}":"15","{th}":"th","{m}":"May","{y}":"2014","ts":1400108400000},"2015":{"{x}":4,"{d}":"21","{th}":"st","{m}":"May","{y}":"2015","ts":1432162800000},"2016":{"{x}":5,"{d}":"19","{th}":"th","{m}":"May","{y}":"2016","ts":1463612400000},"2017":{"{x}":6,"{d}":"18","{th}":"th","{m}":"May","{y}":"2017","ts":1495062000000},"2018":{"{x}":7,"{d}":"17","{th}":"th","{m}":"May","{y}":"2018","ts":1526511600000},"2019":{"{x}":8,"{d}":"16","{th}":"th","{m}":"May","{y}":"2019","ts":1557961200000},"2020":{"{x}":9,"{d}":"21","{th}":"st","{m}":"May","{y}":"2020","ts":1590015600000},"2021":{"{x}":10,"{d}":"20","{th}":"th","{m}":"May","{y}":"2021","ts":1621465200000},"2022":{"{x}":11,"{d}":"19","{th}":"th","{m}":"May","{y}":"2022","ts":1652914800000},"2023":{"{x}":12,"{d}":"18","{th}":"th","{m}":"May","{y}":"2023","ts":1684364400000},"2024":{"{x}":13,"{d}":"16","{th}":"th","{m}":"May","{y}":"2024","ts":1715814000000},"2025":{"{x}":14,"{d}":"15","{th}":"th","{m}":"May","{y}":"2025","ts":1747263600000}}}
+(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
+module.exports={"dates":{"2011":{"{x}":0,"{d}":19,"{th}":"th","{m}":"May","{y}":2011,"ts":1305759600000},"2012":{"{x}":1,"{d}":17,"{th}":"th","{m}":"May","{y}":2012,"ts":1337209200000},"2013":{"{x}":2,"{d}":16,"{th}":"th","{m}":"May","{y}":2013,"ts":1368658800000},"2014":{"{x}":3,"{d}":15,"{th}":"th","{m}":"May","{y}":2014,"ts":1400108400000},"2015":{"{x}":4,"{d}":21,"{th}":"st","{m}":"May","{y}":2015,"ts":1432162800000},"2016":{"{x}":5,"{d}":19,"{th}":"th","{m}":"May","{y}":2016,"ts":1463612400000},"2017":{"{x}":6,"{d}":18,"{th}":"th","{m}":"May","{y}":2017,"ts":1495062000000},"2018":{"{x}":7,"{d}":17,"{th}":"th","{m}":"May","{y}":2018,"ts":1526511600000},"2019":{"{x}":8,"{d}":16,"{th}":"th","{m}":"May","{y}":2019,"ts":1557961200000},"2020":{"{x}":9,"{d}":21,"{th}":"st","{m}":"May","{y}":2020,"ts":1590015600000},"2021":{"{x}":10,"{d}":20,"{th}":"th","{m}":"May","{y}":2021,"ts":1621465200000},"2022":{"{x}":11,"{d}":19,"{th}":"th","{m}":"May","{y}":2022,"ts":1652914800000},"2023":{"{x}":12,"{d}":18,"{th}":"th","{m}":"May","{y}":2023,"ts":1684364400000},"2024":{"{x}":13,"{d}":16,"{th}":"th","{m}":"May","{y}":2024,"ts":1715814000000},"2025":{"{x}":14,"{d}":15,"{th}":"th","{m}":"May","{y}":2025,"ts":1747263600000}}}
 },{}],2:[function(require,module,exports){
+module.exports={
+  "en": {
+    "name": "Global Accessibility Awareness Day (GAAD)",
+    "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>.",
+    "after": "Put next year's <a {at}>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
+    "put": "Put gaad-widget on your web site",
+    "url": "http://globalaccessibilityawarenessday.org"
+  },
+  "es": {
+    "name": "Día Mundial para Promover la Concienciación sobre la Accesibilidad Web (GAAD)",
+    "before": "El {d} de mayo de {y}, le invitamos a participar en el {x} ° <a {at}>{g}</a>.",
+    "after": "Coloque el <a {at}>{g}<a> del próximo año, el jueves {d} de mayo de {y}, en su diario. ¡Hasta entonces!",
+    "url": "/gaadsp.html"
+  },
+  "fr": {
+    "name": "Journée Mondiale de Sensibilisation à l'Accessibilité (GAAD)",
+    "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a {at}>{g}</a>.",
+    "after": "Mettez le <a {at}>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
+    "url": "/gaadfr.html"
+  },
+  "zh-cn": {
+    "name": "国际残疾人网上科技使用活动日 (GAAD)",
+    "before": "欢迎在每年5月份的第三个星期四加入我们，— <a {at}>{g}</a>。",
+    "after": "请在您的日历上标注5月  日举行的活动日 — <a {at}>{g}</a>。",
+    "calendar": "下载    日历文件",
+    "url": "/"
+  }
+}
+},{}],3:[function(require,module,exports){
 /*!
-  gaad-widget.js | © 2017 Nick Freear | License: MIT | NOT an official widget!
+  gaad-widget.js | © 2018 Nick Freear | License: MIT | NOT an official widget!
 
   https://github.com/nfreear/gaad-widget
   http://globalaccessibilityawarenessday.org
@@ -10,13 +39,10 @@ module.exports={"dates":{"2011":{"{x}":0,"{d}":"19","{th}":"th","{m}":"May","{y}
 
 'use strict';
 
-var VERSION = '3.1.0-beta'; // <Auto>
+var VERSION = '3.2.0'; // <Auto>
 
-var TRANSLATE_TEXTS = {
-  en: require('./locales/en'),
-  fr: require('./locales/fr')
-};
-var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min.json');
+var TRANSLATE_TEXTS = require('./data/locales'); // JSON.
+var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min'); // JSON.
 // console.log(GAAD_DATE_LOOKUP);
 var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION);
 var METHODS = require('./src/methods');
@@ -27,22 +53,7 @@ METHODS.analytics = require('node-analytics-ga');
 
 require('./src/widget-src').run(DEFAULTS, METHODS);
 
-},{"./data/gaad-dates.min.json":1,"./locales/en":3,"./locales/fr":4,"./src/configure":6,"./src/methods":7,"./src/widget-src":8,"node-analytics-ga":5}],3:[function(require,module,exports){
-module.exports={
-  "name": "Global Accessibility Awareness Day (GAAD)",
-  "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>.",
-  "after": "Put next year's <a {at}>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
-  "url": "http://globalaccessibilityawarenessday.org"
-}
-
-},{}],4:[function(require,module,exports){
-module.exports={
-  "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a {at}>{g}</a>.",
-  "after": "Mettez le <a {at}>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
-  "url": "/gaadfr.html"
-}
-
-},{}],5:[function(require,module,exports){
+},{"./data/gaad-dates.min":1,"./data/locales":2,"./src/configure":5,"./src/methods":6,"./src/widget-src":7,"node-analytics-ga":4}],4:[function(require,module,exports){
 /*!
   A basic Google Analytics wrapper | © Nick Freear, 06-July-2017.
 */
@@ -145,7 +156,7 @@ function includeJavascript (gaName) {
   }
 }
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 
 // Configure | ©Nick Freear.
 
@@ -186,6 +197,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
       name: 'gaadWidget',
       id: 'UA-102188521-1'
     },
+    put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget" aria-label="{p}" title="{p}" target=_top >{c}</a>',
+    put_char: '&#x2193;', // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html; http://amp-what.com/
     debug: /[?&]debug=1/.test(queryString),
     force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
   };
@@ -195,12 +208,13 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   return defaults;
 };
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 
 // Functions: extend, setHTML, addStylesheet.. | ©Nick Freear.
 
 var W = window;
 var D = W.document;
+var CFG;
 
 module.exports = {
 
@@ -215,6 +229,8 @@ module.exports = {
     gaad.log = gaad.debug && W.console ? console.warn : function () {};
 
     gaad.script_url = scriptEl.src;
+
+    CFG = gaad;
 
     return gaad;
   },
@@ -238,6 +254,12 @@ module.exports = {
       }
     }
     return extended;
+  },
+
+  trans: function (msgid, vars) {
+    var texts = CFG.texts;
+    var msgstr = texts[ CFG.lang ][ msgid ] || texts[ 'en' ][ msgid ];
+    return msgstr; // replaceObj( msgstr, vars );
   },
 
   // Ben McCormick (24 March 2013), SirDerpington:
@@ -282,7 +304,7 @@ function replaceObj (str, mapObj) {
   });
 }
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 
 // Main widget 'run' function | ©Nick Freear.
 
@@ -293,6 +315,7 @@ module.exports.run = function (defaults, methods) {
 
   var gaad = methods.getConfig(defaults, methods);
 
+  var texts = gaad.texts;
   var GAAD_DATE = gaad.date;
   var GAAD_NEXT = gaad.date_next;
 
@@ -305,20 +328,24 @@ module.exports.run = function (defaults, methods) {
 
   gaad.should_show = (gaad.diff_show >= 0 && gaad.diff_hide < 0);
 
-  gaad.is_before = (gaad.today - gaad.date) < 0;
+  gaad.is_before = (gaad.today - gaad.date.ts) < 0; // Use: 'JS Date - timestamp' (implicite cast), works!
 
   if (!gaad.is_before) {
     gaad.xreplace = GAAD_NEXT;
   }
 
-  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top"', { '{u}': gaad.url });
+  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': texts.en.name });
   gaad.xreplace[ '{x}' ] = gaad.xth;
-  gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
+  // Was: gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
 
-  var lang = gaad.texts[ gaad.lang ] ? gaad.lang : 'en';
-  var template = gaad.is_before ? gaad.texts[ lang ].before : gaad.texts[ lang ].after;
+  var lang = texts[ gaad.lang ] ? gaad.lang : 'en';
+  gaad.lang = lang;
 
-  gaad.message = methods.replaceObj(template, gaad.xreplace);
+  var template = gaad.is_before ? texts[ lang ].before : texts[ lang ].after;
+  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char });
+
+  gaad.xreplace[ '{g}' ] = texts[ lang ].name;
+  gaad.message = methods.replaceObj(template, gaad.xreplace) + putWidget;
 
   if (!gaad.should_show && !gaad.force) {
     return gaad.log('GAAD: no-show', gaad);
@@ -347,5 +374,5 @@ function runAnalytics (analyticsFn, config) {
   }
 }
 
-},{}]},{},[2])
+},{}]},{},[3])
 //# sourceMappingURL=gaad-widget.js.map
