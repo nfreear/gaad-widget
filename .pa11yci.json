@@ -1,8 +1,8 @@
 {
-  "//": "Automated accessibility testing ~ https://github.com/pa11y/pa11y-ci",
+  "#": "Automated accessibility testing ~ https://github.com/pa11y/pa11y-ci",
 
   "defaults": {
-    "screenCapture": "pa11y-screen-capture.png",
+    "screenCapture": "./_pa11y-screen-capture.png",
     "standard": "WCAG2AAA",
     "timeout": 5000,
     "wait": 2000,

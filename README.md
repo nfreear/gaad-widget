@@ -1,4 +1,5 @@
 [![Build status — Travis-CI][travis-icon]][travis]
+[![GitLab pipeline status][gitlab-icon]][gitlab]
 [![js-semistandard-style][semi-icon]][semi]
 [![GAAD-widget on Npmjs][npm-icon]][npm]
 [![License][license-icon]][mit]
@@ -47,7 +48,7 @@ Via [unpkg][] - [browse][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://unpkg.com/gaad-widget@3.2.0#._.js"></script>
+<script src="https://unpkg.com/gaad-widget@^3#"></script>
 ```
 
 Via [RawGit][] - production CDN:
@@ -170,6 +171,9 @@ _See the related [isad-widget][]._
     "Automated accessibility testing - via 'pa11y-ci'"
 [pa11y-icon]: https://img.shields.io/badge/accessibility-pa11y--ci-blue.svg
 [wcag-icon]: https://img.shields.io/badge/accessibility-WCAG_2.0_AAA-green.svg
+[gitlab-icon]: https://gitlab.com/nfreear/gaad-widget/badges/3.x/pipeline.svg
+[gitlab-co]: https://gitlab.com/nfreear/gaad-widget/commits/3.x
+[gitlab]: https://gitlab.com/nfreear/gaad-widget/pipelines "GitLab pipeline status"
 
 [isad-widget]: https://github.com/nfreear/isad-widget
     "banner-link for International Stuttering Awareness Day (ISAD)"

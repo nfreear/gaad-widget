@@ -20,6 +20,7 @@
  * Initial Spanish translation, #4;
  * Automated accessibility testing, via [pa11y-ci][] and `live-server`, #9;
  * Adopt `lessc` to build a LESS stylesheet;
+ * Added [GitLab CI][] integration;
  * Google Analytics via `node-analytics-ga`, can be disabled (see [README][]).
 
 ## Version 3.1.0 (Beta)
@@ -79,6 +80,7 @@
 [@srinivasu..]: http://srinivasu.org/
 [arrow]: http://xahlee.info/comp/unicode_arrows.html#!-U-2913
     "U+2913: DOWNWARDS ARROW TO BAR — &#x2913;"
+[gitlab ci]: https://gitlab.com/nfreear/gaad-widget/pipelines "GitLab CI"
 
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg

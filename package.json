@@ -9,6 +9,7 @@
   "main": "index.js",
   "author": "Nick Freear {@nfreear}",
   "repository": "https://github.com/nfreear/gaad-widget.git",
+  "x-repository-alt": "https://gitlab.com/nfreear/gaad-widget",
   "bugs": "https://github.com/nfreear/gaad-widget/issues",
   "homepage": "https://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=npm",
   "dependencies": {

@@ -1,28 +1,57 @@
 # .gitlab-ci.yml
-# SEE: https://gitlab.com/gitlab-examples/nodejs/blob/master/.gitlab-ci.yml
+# SEE: https://gitlab.com/nfreear/gaad-widget/-/ci/lint
+# https://gitlab.com/gitlab-examples/nodejs/blob/master/.gitlab-ci.yml
 # https://gist.github.com/thornbill/b4f44ac81106fd539d5f493a269bf25b
-# https://gitlab.com/nfreear/gaad-widget/settings/ci_cd
 
+# https://hub.docker.com/r/library/node/tags/
 image: node:6
+
+variables:
+  GIT_DEPTH: 8
 
 cache:
   paths:
   - node_modules/
 
 stages:
+  - install
+  - build
   - test
+  - pa11y-ci
+  - release
 
-job 1:
+install 1:
+  before_script:
+    - node -v
+    - npm -v
+  stage: install
+  script: npm install
+
+build 1:
+  stage: build
+  script: npm run build
+
+test 1:
   stage: test
-  script:
-   - node -v
-   - npm -v
-   - npm install
-   - npm run build
-   - npm test
+  script: npm test
+
+accessibility test 1:
+  stage: pa11y-ci
+  script: npm run serve-ci & sleep 5; npm run pa11y-ci
   after_script:
-   - nvm --version
-#  tags:
-#    - docker
+    - npm run ps
+    - npm run kill-server
+    - nvm --version
+
+release 1:
+  stage: release
+  script: echo Hello!
+  artifacts:
+    untracked: true
+    paths:
+      - dist/*
+      - data/*
+  # only:
+  #   - tags
 
 # End.
