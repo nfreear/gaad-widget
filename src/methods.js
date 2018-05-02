@@ -8,7 +8,7 @@ var CFG;
 module.exports = {
 
   getConfig: function (defaults, methods) {
-    var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
+    var scriptEl = D.querySelector('script[ data-gaad-widget ]'); // Was: ..('script[ src *= "' + defaults.script + '" ]');
 
     var data = scriptEl.getAttribute('data-gaad-widget');
     var options = data ? JSON.parse(data) : {};
