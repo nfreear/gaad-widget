@@ -7,9 +7,15 @@
 
  * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
+## Version 3.2.1
+
+ * _Date:  ~ May 2018_
+ * _Tag:   3.2.1_
+ * Fix Javascript selector for configuration -- `script[ data-gaad-widget ]`, #11;
+
 ## Version 3.2.0
 
- * _Date:  ~ April 2018_
+ * _Date:  30 April 2018_
  * _Tag:   3.2.0_
  * Incorrect message bug - logic bug (see screenshot) #10;
  * Add a "_Put gaad-widget on your site_" link ([arrow][]);

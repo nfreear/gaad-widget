@@ -31,9 +31,11 @@ job 1:
     # untracked: true
     paths:
       - dist/*
-      - data/*
-    # only:
-    #   - tags
+      # - data/*
+      - gaad-*.tgz
+      - _*.png
+    only:
+       - tags
 
 after_script:
   - npm run ps

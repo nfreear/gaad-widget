@@ -56,7 +56,7 @@ Via [RawGit][] - production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.2.0/dist/gaad-widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.2.1/dist/gaad-widget.js"></script>
 ```
 
 Local hosting:
