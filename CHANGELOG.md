@@ -12,6 +12,8 @@
  * _Date:  ~ May 2018_
  * _Tag:   3.2.1_
  * Fix Javascript selector for configuration -- `script[ data-gaad-widget ]`, #11;
+ * Fix - switch `font-size` in CSS stylesheet from `em` to `rem`;
+ * ...
 
 ## Version 3.2.0
 

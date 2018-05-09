@@ -43,7 +43,7 @@ npm test
 
 ## Usage
 
-Via [unpkg][] - [browse][] - production CDN:
+Via [unpkg][] — [browse][] — production CDN:
 
 ```html
 <div id="id-gaad-widget"></div>
@@ -51,7 +51,7 @@ Via [unpkg][] - [browse][] - production CDN:
 <script src="https://unpkg.com/gaad-widget@^3#"></script>
 ```
 
-Via [RawGit][] - production CDN:
+Via [RawGit][] — production CDN:
 
 ```html
 <div id="id-gaad-widget"></div>
@@ -145,7 +145,7 @@ _See the related [isad-widget][]._
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
-[browse]: https://unpkg.com/gaad-widget/ "Browse the most recent version on Unpkg.com"
+[browse]: https://unpkg.com/gaad-widget@^3/ "Browse the most recent version on Unpkg.com"
 [MIT]: https://nfreear.mit-license.org/2017-2018#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
 [mit-txt]: https://nfreear.mit-license.org/2017-2018/license.txt "MIT License | © Nick Freear"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
