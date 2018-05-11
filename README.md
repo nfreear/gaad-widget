@@ -101,7 +101,8 @@ Anonymous usage statistics via Google Analytics is being added for version `3.2+
 
 Please help with translating `gaad-widget` into your language!
 
-[Translations][i18n-code], [#4][i18n].
+ * [Translation information ~ #4][i18n]
+ * [Current translations][i18n-code].
 
 Français (French):
 
@@ -136,7 +137,7 @@ _See the related [isad-widget][]._
 [rel]: https://github.com/nfreear/gaad-widget/releases "Release notes / changelog"
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4#!-i18n "Bug #4, Translations (v 2.x)"
-[i18n-code]: https://github.com/nfreear/gaad-widget/tree/master/locales "Translations, JSON format"
+[i18n-code]: https://github.com/nfreear/gaad-widget/tree/3.x/locales "Translations, JSON format"
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
 [analytics]: https://github.com/nfreear/gaad-widget/blob/3.x/src/configure.js#L36-L40

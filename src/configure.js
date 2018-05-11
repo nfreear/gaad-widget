@@ -3,7 +3,7 @@
 
 var W = window;
 var Date = W.Date;
-var queryString = W.location.search;
+var queryString = W.location.href; // Was: W.location.search;
 
 module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   'use strict';
@@ -11,7 +11,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   var YEAR = new Date().getFullYear();
   var GAAD_DATE = DATES.dates[ YEAR ];
   var GAAD_NEXT = DATES.dates[ YEAR + 1 ];
-  var M_LANG = queryString.match(/[?&]lang=(\w{2}(-\w{2})?)/);
+  var M_LANG = queryString.match(/[&?#!]lang=(\w{2}(-\w{2})?)/);
 
   var defaults = {
     id: 'id-gaad-widget',
@@ -40,8 +40,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
     },
     put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget#usage" aria-label="{p}" title="{p}" target=_top >{c}</a>',
     put_char: '&#x2193;', // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html; http://amp-what.com/
-    debug: /[?&]debug=1/.test(queryString),
-    force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
+    debug: /[&?#!]debug=1/.test(queryString),
+    force: /[&?#!]gaad.?widget=f(orce)?/i.test(queryString)
   };
 
   defaults.version = VERSION;

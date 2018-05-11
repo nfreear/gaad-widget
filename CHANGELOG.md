@@ -15,6 +15,7 @@
  * Fix — switch `font-size` in the CSS stylesheet from `em` to `rem`;
  * Fix — switch `url` field in locale JSON from `.html` to `.php`;
  * Fix — adopt _proper_ release of `node-analytics-ga` package;
+ * Fix — make URL parameters like `?gaadwidget=force` more flexible (allow and `?..` and `#..`)
  * Add [Gitlab CI][] test;
  * Integration — [WordPress][wp] ([E-Access Bulletin][eab]);
  * Integration — [CloudEngine][ce] ([Cloudworks][cw]);
