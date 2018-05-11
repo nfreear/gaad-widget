@@ -13,13 +13,13 @@ module.exports={
     "name": "Día Mundial para Promover la Concienciación sobre la Accesibilidad Web (GAAD)",
     "before": "El {d} de mayo de {y}, le invitamos a participar en el {x} ° <a {at}>{g}</a>.",
     "after": "Coloque el <a {at}>{g}<a> del próximo año, el jueves {d} de mayo de {y}, en su diario. ¡Hasta entonces!",
-    "url": "/gaadsp.html"
+    "url": "/gaadsp.php"
   },
   "fr": {
     "name": "Journée Mondiale de Sensibilisation à l'Accessibilité (GAAD)",
     "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a {at}>{g}</a>.",
     "after": "Mettez le <a {at}>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
-    "url": "/gaadfr.html"
+    "url": "/gaadfr.php"
   },
   "zh-cn": {
     "name": "国际残疾人网上科技使用活动日 (GAAD)",
@@ -39,7 +39,7 @@ module.exports={
 
 'use strict';
 
-var VERSION = '3.2.0'; // <Auto>
+var VERSION = '3.2.1'; // <Auto>
 
 var TRANSLATE_TEXTS = require('./data/locales'); // JSON.
 var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min'); // JSON.
@@ -162,7 +162,7 @@ function includeJavascript (gaName) {
 
 var W = window;
 var Date = W.Date;
-var queryString = W.location.search;
+var queryString = W.location.href; // Was: W.location.search;
 
 module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   'use strict';
@@ -170,7 +170,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   var YEAR = new Date().getFullYear();
   var GAAD_DATE = DATES.dates[ YEAR ];
   var GAAD_NEXT = DATES.dates[ YEAR + 1 ];
-  var M_LANG = queryString.match(/[?&]lang=(\w{2}(-\w{2})?)/);
+  var M_LANG = queryString.match(/[&?#!]lang=(\w{2}(-\w{2})?)/);
 
   var defaults = {
     id: 'id-gaad-widget',
@@ -197,10 +197,10 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
       name: 'gaadWidget',
       id: 'UA-102188521-1'
     },
-    put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget" aria-label="{p}" title="{p}" target=_top >{c}</a>',
+    put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget#usage" aria-label="{p}" title="{p}" target=_top >{c}</a>',
     put_char: '&#x2193;', // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html; http://amp-what.com/
-    debug: /[?&]debug=1/.test(queryString),
-    force: /[?&]gaad.?widget=f(orce)?/i.test(queryString)
+    debug: /[&?#!]debug=1/.test(queryString),
+    force: /[&?#!]gaad.?widget=f(orce)?/i.test(queryString)
   };
 
   defaults.version = VERSION;
@@ -219,7 +219,7 @@ var CFG;
 module.exports = {
 
   getConfig: function (defaults, methods) {
-    var scriptEl = D.querySelector('script[ src *= "' + defaults.script + '" ]');
+    var scriptEl = D.querySelector('script[ data-gaad-widget ]'); // Was: ..('script[ src *= "' + defaults.script + '" ]');
 
     var data = scriptEl.getAttribute('data-gaad-widget');
     var options = data ? JSON.parse(data) : {};
