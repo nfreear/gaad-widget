@@ -2,7 +2,7 @@
   "name": "gaad-widget",
   "version": "3.2.1",
   "x-version-hat": "^3",
-  "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day.",
+  "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day. Via unpkg CDN.",
   "license": "MIT",
   "browser": "dist/gaad-widget.js",
   "unpkg": "dist/gaad-widget.js",
@@ -15,7 +15,7 @@
   "dependencies": {
     "datejs": "^1.0.0-rc3",
     "icalendar": "^0.7.1",
-    "node-analytics-ga": "git+https://github.com/nfreear/node-analytics-ga.git#918d458d8a"
+    "node-analytics-ga": "git+https://github.com/nfreear/node-analytics-ga.git#1.0.1"
   },
   "devDependencies": {
     "browserify": "^14.5.0",
@@ -76,9 +76,15 @@
     "src/",
     "style/*.css"
   ],
-  "x-locales": [ "en", "es", "fr", "zh-cn" ],
+  "x-locales": [
+    "en",
+    "es",
+    "fr",
+    "zh-cn"
+  ],
   "x-build-js-size": "12.9 kB",
-  "//": {
+  "x-cdn": "https://unpkg.com/gaad-widget@^3/dist/gaad-widget.min.js",
+  "#": {
     "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566",
     "universal-ga": "^1.1.0"
   }

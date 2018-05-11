@@ -13,7 +13,8 @@
 # nfreear/gaad-widget
 
 Display a banner-link to promote [Global Accessibility Awareness Day (GAAD)][gaad].
-The banner displays for a configurable period before and after the day.
+The banner displays for a configurable period before and after the day,
+and the emphasis is on easy site-integration, via a [CDN][unpkg].
 
 [![Global Accessibility Awareness Day][gaad-image]][gaad]
 
@@ -98,6 +99,8 @@ Anonymous usage statistics via Google Analytics is being added for version `3.2+
 
 ## Translation
 
+Please help with translating `gaad-widget` into your language!
+
 [Translations][i18n-code], [#4][i18n].
 
 Français (French):
@@ -144,7 +147,7 @@ _See the related [isad-widget][]._
 [Datejs-api]: https://github.com/datejs/Datejs#example-usage "API only (legacy code-base)"
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
-[unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network for everything on npm"
+[unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network (CDN) for everything on npm"
 [browse]: https://unpkg.com/gaad-widget@^3/ "Browse the most recent version on Unpkg.com"
 [MIT]: https://nfreear.mit-license.org/2017-2018#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
 [mit-txt]: https://nfreear.mit-license.org/2017-2018/license.txt "MIT License | © Nick Freear"
