@@ -35,7 +35,7 @@ module.exports.run = function (defaults, methods) {
   gaad.lang = lang;
 
   var template = gaad.is_before ? texts[ lang ].before : texts[ lang ].after;
-  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char });
+  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
 
   gaad.xreplace[ '{g}' ] = texts[ lang ].name;
   gaad.message = methods.replaceObj(template, gaad.xreplace) + putWidget;

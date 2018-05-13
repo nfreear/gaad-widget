@@ -7,6 +7,12 @@
 
  * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
+## Version 3.2.2
+
+  * _Date:  ~ May 2018_
+  * _Tag:   3.2.2_
+  * Fix `getConfig()` Javascript function, #11;
+
 ## Version 3.2.1
 
  * _Date:  ~ May 2018_

@@ -34,8 +34,7 @@ job 1:
       # - data/*
       - gaad-*.tgz
       - _*.png
-    only:
-       - tags
+    expire_in: 1 week
 
 after_script:
   - npm run ps

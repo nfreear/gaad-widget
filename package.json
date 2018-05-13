@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "x-version-hat": "^3",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day. Via unpkg CDN.",
   "license": "MIT",
@@ -82,7 +82,7 @@
     "fr",
     "zh-cn"
   ],
-  "x-build-js-size": "12.9 kB",
+  "x-build-js-size": "12.7 kB",
   "x-cdn": "https://unpkg.com/gaad-widget@^3/dist/gaad-widget.min.js",
   "#": {
     "Datejs-legacy": "https://github.com/datejs/Datejs#8164739566",
