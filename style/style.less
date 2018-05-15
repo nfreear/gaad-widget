@@ -48,49 +48,50 @@
     float: right;
     position: relative;
     right: -10px;
-  }
 
-  // "Put .. widget on your site"
-  .p { // a[ href *= '/gaad-widget' ]
-    border: 1px solid transparent;
-    border-bottom-color: #bbb;
-    border-radius: 4px;
-    color: #bbb;
-    display: inline-block;
-    font-size: 1.05em;
-    padding: 1px 9px 0;
-    text-decoration: none;
+    a {
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: #bbb;
+      display: inline-block;
+      font-size: 1.05em;
+      padding: 0 1px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background: #123;
+        border-color: #fff;
+        color: #fff;
+      }
+    }
+
+    // "Put .. widget on your site"
+    .p { // a[ href *= '/gaad-widget' ]
+      border-bottom-color: #bbb;
+      padding: 1px 9px 0;
     // background: #bbb;
     // height: .8em;
     // width: .8em;
 
-    &:hover,
-    &:focus {
-      background: #123;
-      color: #fff;
-    }
+      &:hover,
+      &:focus {
+      // background: #123;
+      // color: #fff;
+      }
 
-    &:before {
+      &:before {
       // 'South-east arrow to corner' - http://www.amp-what.com/
       // content: '\21f2';
       // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html
       // content: '\2913';
+      }
     }
-  }
 
-  // "Download iCal calendar"
-  .c {
-    border: 1px solid transparent;
-    border-radius: 4px;
-    display: inline-block;
-    padding: 0 1px;
+    // "Download iCal calendar"
+    .c {
     // height: 1.1em;
     // width: 1.1em;
-
-    &:hover,
-    &focus {
-      background: #123;
-      border-color: #fff;
     }
   }
 
