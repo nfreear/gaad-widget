@@ -5,7 +5,7 @@ var W = window;
 var Date = W.Date;
 var queryString = W.location.href; // Was: W.location.search;
 
-module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
+module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) {
   'use strict';
 
   var YEAR = new Date().getFullYear();
@@ -24,7 +24,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
     days_after: 10,
     embed: false,
     style_url: '/../../style/gaad-widget.css', // Was: '/../../style/GAAD.widget.css'
-    theme: 'blue', // OR: 'black'
+    theme: 'blue', // OR: 'black', or 'ical-hide'.
     should_show: null,
     is_before: null,
     xreplace: GAAD_DATE,
@@ -38,6 +38,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
       name: 'gaadWidget',
       id: 'UA-102188521-1'
     },
+    ical_widget: '<a class=c href="https://unpkg.com/gaad-widget@{v}/data/gaad.en.ics" aria-label="{p}" title="{p}">{c}</a>',
+    ical_char: '&#x1F4C6;', // 'Tear off calendar' emoji - https://emojipedia.org/tear-off-calendar/
     put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget#usage" aria-label="{p}" title="{p} (v{v})" target=_top >{c}</a>',
     put_char: '&#x2193;', // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html; http://amp-what.com/
     debug: /[&?#!]debug=1/.test(queryString),
@@ -45,6 +47,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
   };
 
   defaults.version = VERSION;
+  defaults.version_hat = VERSION_HAT;
 
   return defaults;
 };

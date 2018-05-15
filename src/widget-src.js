@@ -34,11 +34,14 @@ module.exports.run = function (defaults, methods) {
   var lang = texts[ gaad.lang ] ? gaad.lang : 'en';
   gaad.lang = lang;
 
+  var replaceObj = methods.replaceObj;
+
   var template = gaad.is_before ? texts[ lang ].before : texts[ lang ].after;
-  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
+  var putWidget = replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
+  var calWidget = replaceObj(gaad.ical_widget, { '{p}': methods.trans('ical'), '{c}': gaad.ical_char, '{v}': gaad.version_hat });
 
   gaad.xreplace[ '{g}' ] = texts[ lang ].name;
-  gaad.message = methods.replaceObj(template, gaad.xreplace) + putWidget;
+  gaad.message = replaceObj(template, gaad.xreplace) + replaceObj('<div class="w">{p}{c}</div>', { '{c}': calWidget, '{p}': putWidget });
 
   if (!gaad.should_show && !gaad.force) {
     return gaad.log('GAAD: no-show', gaad);
