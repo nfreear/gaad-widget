@@ -15,7 +15,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) 
 
   var defaults = {
     id: 'id-gaad-widget',
-    script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
+    script: '/gaad-widget', // .js OR .min.js;
     lang: M_LANG ? M_LANG[ 1 ] : 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
@@ -23,7 +23,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) 
     days_before: 10,
     days_after: 10,
     embed: false,
-    style_url: '/../../style/gaad-widget.css', // Was: '/../../style/GAAD.widget.css'
+    style_url: '/../../style/gaad-widget.css',
     theme: 'blue', // OR: 'black', or 'ical-hide'.
     should_show: null,
     is_before: null,

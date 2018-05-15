@@ -7,6 +7,7 @@ module.exports={
     "before": "Join us on Thursday May {d}{th}, {y} and mark the {x}th <a {at}>{g}</a>.",
     "after": "Put next year's <a {at}>{g}</a>, Thursday May {d}{th}, {y}, in your diary. See you then!",
     "put": "Put gaad-widget on your web site",
+    "ical": "Download an iCal calendar file",
     "url": "http://globalaccessibilityawarenessday.org"
   },
   "es": {
@@ -19,18 +20,21 @@ module.exports={
     "name": "Journée Mondiale de Sensibilisation à l'Accessibilité (GAAD)",
     "before": "Rejoignez-nous le jeudi {d} mai {y} et marquez le {x}ème <a {at}>{g}</a>.",
     "after": "Mettez le <a {at}>{g}</a> de l'année prochaine, le jeudi {d} mai {y} dans votre journal. À plus tard!",
+    "put": "Mettez 'gaad-widget' sur votre site web",
+    "ical": "Télécharger un fichier de calendrier (iCal)",
     "url": "/gaadfr.php"
   },
   "zh-cn": {
     "name": "国际残疾人网上科技使用活动日 (GAAD)",
     "before": "欢迎在每年5月份的第三个星期四加入我们，— <a {at}>{g}</a>。",
     "after": "请在您的日历上标注5月  日举行的活动日 — <a {at}>{g}</a>。",
-    "calendar": "下载    日历文件",
+    "ical": "下载 iCal 日历文件",
     "url": "/"
   }
 }
 },{}],3:[function(require,module,exports){
 /*!
+
   gaad-widget.js | © 2018 Nick Freear | License: MIT | NOT an official widget!
 
   https://github.com/nfreear/gaad-widget
@@ -39,12 +43,13 @@ module.exports={
 
 'use strict';
 
-var VERSION = '3.2.1'; // <Auto>
+var VERSION = '3.3.0'; // <Auto>
+var VERSION_HAT = '^3';
 
 var TRANSLATE_TEXTS = require('./data/locales'); // JSON.
 var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min'); // JSON.
 // console.log(GAAD_DATE_LOOKUP);
-var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION);
+var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION, VERSION_HAT);
 var METHODS = require('./src/methods');
 
 METHODS.analytics = require('node-analytics-ga');
@@ -164,7 +169,7 @@ var W = window;
 var Date = W.Date;
 var queryString = W.location.href; // Was: W.location.search;
 
-module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
+module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) {
   'use strict';
 
   var YEAR = new Date().getFullYear();
@@ -174,7 +179,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
 
   var defaults = {
     id: 'id-gaad-widget',
-    script: '/gaad-widget', // Was: 'GAAD.widget.', // .js OR .min.js;
+    script: '/gaad-widget', // .js OR .min.js;
     lang: M_LANG ? M_LANG[ 1 ] : 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
@@ -182,8 +187,8 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
     days_before: 10,
     days_after: 10,
     embed: false,
-    style_url: '/../../style/gaad-widget.css', // Was: '/../../style/GAAD.widget.css'
-    theme: 'blue', // OR: 'black'
+    style_url: '/../../style/gaad-widget.css',
+    theme: 'blue', // OR: 'black', or 'ical-hide'.
     should_show: null,
     is_before: null,
     xreplace: GAAD_DATE,
@@ -197,13 +202,16 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION) {
       name: 'gaadWidget',
       id: 'UA-102188521-1'
     },
-    put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget#usage" aria-label="{p}" title="{p}" target=_top >{c}</a>',
+    ical_widget: '<a class=c href="https://unpkg.com/gaad-widget@{v}/data/gaad.en.ics" aria-label="{p}" title="{p}">{c}</a>',
+    ical_char: '&#x1F4C6;', // 'Tear off calendar' emoji - https://emojipedia.org/tear-off-calendar/
+    put_widget: '<a class=p href="https://github.com/nfreear/gaad-widget#usage" aria-label="{p}" title="{p} (v{v})" target=_top >{c}</a>',
     put_char: '&#x2193;', // 'Downwards arrow to bar' - http://xahlee.info/comp/unicode_arrows.html; http://amp-what.com/
     debug: /[&?#!]debug=1/.test(queryString),
     force: /[&?#!]gaad.?widget=f(orce)?/i.test(queryString)
   };
 
   defaults.version = VERSION;
+  defaults.version_hat = VERSION_HAT;
 
   return defaults;
 };
@@ -219,12 +227,14 @@ var CFG;
 module.exports = {
 
   getConfig: function (defaults, methods) {
-    var scriptEl = D.querySelector('script[ data-gaad-widget ]'); // Was: ..('script[ src *= "' + defaults.script + '" ]');
+    var configEl = D.querySelector('script[ data-gaad-widget ]');
 
-    var data = scriptEl.getAttribute('data-gaad-widget');
+    var data = configEl ? configEl.getAttribute('data-gaad-widget') : null;
     var options = data ? JSON.parse(data) : {};
 
     var gaad = methods.extend(defaults, options);
+
+    var scriptEl = D.querySelector('script[ src *= "' + gaad.script + '" ]');
 
     gaad.log = gaad.debug && W.console ? console.warn : function () {};
 
@@ -341,11 +351,14 @@ module.exports.run = function (defaults, methods) {
   var lang = texts[ gaad.lang ] ? gaad.lang : 'en';
   gaad.lang = lang;
 
+  var replaceObj = methods.replaceObj;
+
   var template = gaad.is_before ? texts[ lang ].before : texts[ lang ].after;
-  var putWidget = methods.replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char });
+  var putWidget = replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
+  var calWidget = replaceObj(gaad.ical_widget, { '{p}': methods.trans('ical'), '{c}': gaad.ical_char, '{v}': gaad.version_hat });
 
   gaad.xreplace[ '{g}' ] = texts[ lang ].name;
-  gaad.message = methods.replaceObj(template, gaad.xreplace) + putWidget;
+  gaad.message = replaceObj(template, gaad.xreplace) + replaceObj('<div class="w">{p}{c}</div>', { '{c}': calWidget, '{p}': putWidget });
 
   if (!gaad.should_show && !gaad.force) {
     return gaad.log('GAAD: no-show', gaad);

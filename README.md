@@ -57,7 +57,7 @@ Via [RawGit][] — production CDN:
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.2.1/dist/gaad-widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.3.0/dist/gaad-widget.js"></script>
 ```
 
 Local hosting:
@@ -67,6 +67,8 @@ Local hosting:
 
 <script src="dist/gaad-widget.js" ></script>
 ```
+
+See the list of [default configuration options][cfg].
 
 Setting the `days_before` option:
 
@@ -140,6 +142,8 @@ _See the related [isad-widget][]._
 [i18n-code]: https://github.com/nfreear/gaad-widget/tree/3.x/locales "Translations, JSON format"
 [b/a]: https://github.com/nfreear/gaad-widget/issues/5 "Bug #5, Separate before and after messages (v 2.x)"
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11 "Bug #3, Browser compatibility"
+[cfg]: https://github.com/nfreear/gaad-widget/blob/3.x/src/configure.js#L16-L47
+    "Default configuration options"
 [analytics]: https://github.com/nfreear/gaad-widget/blob/3.x/src/configure.js#L36-L40
     "Analytics configuration, JS code"
 [gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
@@ -162,6 +166,7 @@ _See the related [isad-widget][]._
 [npm-icon]: https://img.shields.io/npm/v/gaad-widget.svg
 [license-icon]: https://img.shields.io/npm/l/gaad-widget.svg
 [downl-icon]: https://img.shields.io/npm/dt/gaad-widget.svg "Count of total downloads ~NPM"
+[size-i2]: http://img.badgesize.io/nfreear/gaad-widget/blob/3.x/dist/gaad-widget.js.svg?color=yellow
 [size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/dist/gaad-widget.js.svg
     "Size of built Javascript, kilo-bytes (kB) ~ on GitHub"
 [built-icon]: https://img.shields.io/badge/built_with-browserify-blue.svg

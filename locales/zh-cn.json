@@ -16,8 +16,8 @@
   "#__put_orig": "Put {z} on your web site",
   "#__put": "",
 
-  "#__calendar_orig": "Download an iCal calendar file",
-  "calendar": "下载    日历文件",
+  "#__ical_orig": "Download an iCal calendar file",
+  "ical": "下载 iCal 日历文件",
 
   "url": "/"
 }

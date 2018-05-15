@@ -7,17 +7,21 @@
 
  * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
-## Version 3.2.2
+## Version 3.3.0
 
-  * _Date:  ~ May 2018_
-  * _Tag:   3.2.2_
-  * Fix `getConfig()` Javascript function, #11;
+  * _Date:  ~15 May 2018_
+  * _Was:   3.2.2_
+  * Fix — error-handling in the `getConfig()` Javascript function, [#12][];
+  * Add — link to "_Download an iCal calendar file_", using an [emoji][ical-icon].
+    With an `ical-hide` switch for the `theme` configuration option;
+  * Fix / 'complete' the French and Chinese translations;
 
 ## Version 3.2.1
 
- * _Date:  ~ May 2018_
+ * _Date:  11 May 2018_
  * _Tag:   3.2.1_
- * Fix — Javascript selector for configuration — `script[ data-gaad-widget ]` (for WordPress etc.!), #11;
+ * Fix — Javascript selector for configuration — `script[ data-gaad-widget ]`
+   (for WordPress etc.!), [#11][];
  * Fix — switch `font-size` in the CSS stylesheet from `em` to `rem`;
  * Fix — switch `url` field in locale JSON from `.html` to `.php`;
  * Fix — adopt _proper_ release of `node-analytics-ga` package;
@@ -30,7 +34,7 @@
 
  * _Date:  30 April 2018_
  * _Tag:   3.2.0_
- * Incorrect message bug - logic bug (see screenshot) #10;
+ * Incorrect message bug - logic bug (see screenshot) [#10][];
  * Add a "_Put gaad-widget on your site_" link ([arrow][]);
  * Display language-specific GAAD string, not English — bug/enhancement;
  * Re-factor language/ locale/ translation/ i18n code, #4;
@@ -93,7 +97,11 @@
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist
 [i18n]: https://github.com/nfreear/gaad-widget/issues/4#!-i18n
 [ie]: https://github.com/nfreear/gaad-widget/issues/3#!-MSIE-9-11
+[#10]: https://github.com/nfreear/gaad-widget/issues/10
+[#11]: https://github.com/nfreear/gaad-widget/issues/11
+[#12]: https://github.com/nfreear/gaad-widget/issues/12 "Version 3.3.0"
 
+[cal-icon]: https://emojipedia.org/tear-off-calendar/ "Tear off calendar emoji"
 [pa11y-ci]: https://github.com/pa11y/pa11y-ci
 [browserify]: http://browserify.org/
 [@srinivasu..]: http://srinivasu.org/
