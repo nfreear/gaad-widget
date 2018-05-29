@@ -1,12 +1,13 @@
 [![Build status — Travis-CI][travis-icon]][travis]
 [![GitLab pipeline status][gitlab-icon]][gitlab]
 [![js-semistandard-style][semi-icon]][semi]
-[![GAAD-widget on Npmjs][npm-icon]][npm]
+[![GAAD-widget - on Npmjs][npm-icon]][npm]
 [![License][license-icon]][mit]
-[![Total downloads ~ NPMJS.com][downl-icon]][npm]
+[![Total downloads - on NPMJS][downl-icon]][npm]
 [![Size of Javascript][size-icon]][build]
-[![vulnerabilities][snyk-icon]][snyk]
-[![Accessibility testing - GAAD passes][pa11y-icon]][pa11y-ci]
+[![Vulnerability test][snyk-icon]][snyk]
+[![Accessibility test - GAAD passes][pa11y-icon]][pa11y-ci]
+[![gaad-widget - on UNPKG][unpkg-icon]][browse]
 <!--[![Browserify][built-icon]][gh]-->
 
 
@@ -153,6 +154,7 @@ _See the related [isad-widget][]._
 [RawGit]: https://rawgit.com/
     "RawGit serves Git files with the correct mime-type; a content delivery network (CDN)"
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network (CDN) for everything on npm"
+[unpkg-icon]: https://nick.freear.org.uk/badge/unpkg.svg
 [browse]: https://unpkg.com/gaad-widget@^3/ "Browse the most recent version on Unpkg.com"
 [MIT]: https://nfreear.mit-license.org/2017-2018#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
 [mit-txt]: https://nfreear.mit-license.org/2017-2018/license.txt "MIT License | © Nick Freear"
@@ -160,17 +162,19 @@ _See the related [isad-widget][]._
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"
 [semi]: https://github.com/Flet/semistandard
-[semi-icon]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square
-    "Javascript coding style — 'semistandard'"
+[semi-icon]: https://nick.freear.org.uk/badge/semi.svg "Javascript coding style — semistandard"
+[sem-i0]: https://img.shields.io/badge/code_style-semistandard-brightgreen.svg?_style=flat-square
 [npm]: https://npmjs.com/package/gaad-widget
-[npm-icon]: https://img.shields.io/npm/v/gaad-widget.svg
-[license-icon]: https://img.shields.io/npm/l/gaad-widget.svg
+[npm-icon]: https://badge.fury.io/js/gaad-widget.svg
+[npm-i0]: https://img.shields.io/npm/v/gaad-widget.svg
+[license-icon]: https://nick.freear.org.uk/badge/mit.svg
+[license-i0]: https://img.shields.io/npm/l/gaad-widget.svg
 [downl-icon]: https://img.shields.io/npm/dt/gaad-widget.svg "Count of total downloads ~NPM"
-[size-i2]: http://img.badgesize.io/nfreear/gaad-widget/blob/3.x/dist/gaad-widget.js.svg?color=yellow
+[size-i0]: http://img.badgesize.io/nfreear/gaad-widget/blob/3.x/dist/gaad-widget.js.svg?color=yellow
 [size-icon]: https://img.shields.io/github/size/nfreear/gaad-widget/dist/gaad-widget.js.svg
     "Size of built Javascript, kilo-bytes (kB) ~ on GitHub"
-[built-icon]: https://img.shields.io/badge/built_with-browserify-blue.svg
-    "Built with Browserify"
+[built-icon]: https://nick.freear.org.uk/badge/browserify.svg "Built with Browserify"
+[built-i0]: https://img.shields.io/badge/built_with-browserify-blue.svg
 [build]: https://github.com/nfreear/gaad-widget/tree/3.x/dist
 [Browserify]: http://browserify.org/
     "Browserify lets you require('modules') in the browser by bundling your dependencies."
@@ -178,7 +182,8 @@ _See the related [isad-widget][]._
 [snyk-icon]: https://snyk.io/test/npm/gaad-widget/badge.svg
 [pa11y-ci]: https://github.com/pa11y/pa11y-ci
     "Automated accessibility testing - via 'pa11y-ci'"
-[pa11y-icon]: https://img.shields.io/badge/accessibility-pa11y--ci-blue.svg
+[pa11y-icon]: https://nick.freear.org.uk/badge/pa11y-ci.svg
+[pa11y-i0]: https://img.shields.io/badge/accessibility-pa11y--ci-blue.svg
 [wcag-icon]: https://img.shields.io/badge/accessibility-WCAG_2.0_AAA-green.svg
 [gitlab-icon]: https://gitlab.com/nfreear/gaad-widget/badges/3.x/pipeline.svg
 [gitlab-co]: https://gitlab.com/nfreear/gaad-widget/commits/3.x
