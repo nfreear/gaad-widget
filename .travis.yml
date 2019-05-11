@@ -1,7 +1,9 @@
 
 language: node_js
 
-node_js: 6
+node_js: 11 # Was: 6
+
+cache: npm
 
 git:
   depth: 8

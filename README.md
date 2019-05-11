@@ -53,7 +53,7 @@ Via [unpkg][] — [browse][] — production CDN:
 <script src="https://unpkg.com/gaad-widget@^3#"></script>
 ```
 
-Via [RawGit][] — production CDN:
+Via [RawGit][] — production CDN (_deprecated_):
 
 ```html
 <div id="id-gaad-widget"></div>
@@ -134,8 +134,8 @@ _See the related [isad-widget][]._
 [@nfreear]: https://twitter.com/nfreear
 [@srinivasu..]: http://srinivasu.org "Suggested by @srinivasuchakravarthula"
 [gaad-widget]: https://github.com/nfreear/gaad-widget
-[gaad-image]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget-after.png
-[gaad-img-00]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
+[gaad-img-after]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget-after.png
+[gaad-img]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
 [changelog]: https://github.com/nfreear/gaad-widget/blob/3.x/CHANGELOG.md
 [rel]: https://github.com/nfreear/gaad-widget/releases "Release notes / changelog"
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
