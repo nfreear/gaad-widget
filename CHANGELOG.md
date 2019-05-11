@@ -7,6 +7,11 @@
 
  * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
+## Version 3.4.0
+
+  * _Date:  ~10 May 2019_
+  * Add — GAAD logo SVG image via LESS stylesheet;
+
 ## Version 3.3.0
 
   * _Date:  ~15 May 2018_

@@ -3,9 +3,8 @@
 LICENSE*
 
 *.css
-*.html
-!test/index.html
-!test/static.html
+## *.html
+test/cdn.html
 *.min.js*
 *.js.map
 *.*gz
@@ -13,25 +12,17 @@ LICENSE*
 *BAK*
 /*.png
 
-x_legacy/
 package*
 !package.json
 node_modules/
 *.log
-
 *.php
 composer.*
 vendor/
 
-*.js
-!dist/gaad-widget.js
-!bin/gaad.js
-!bin/_ver.js
-!src/*.js
+## *.js
 !index.js
 locales.json
 
-*analytics*
-
-ndf-*
 *.yaml
+.DS_Store
