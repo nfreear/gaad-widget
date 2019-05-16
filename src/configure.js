@@ -31,7 +31,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) 
     date: GAAD_DATE,
     date_next: GAAD_NEXT,
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
-    today: new Date(),
+    today: new Date((new Date()).toDateString()), // At midnight: 00:00:00!
     xth: YEAR - 2011,
     analytics: {
       isWidget: true,

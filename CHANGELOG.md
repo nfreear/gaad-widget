@@ -9,8 +9,10 @@
 
 ## Version 3.4.0
 
-  * _Date:  ~10 May 2019_
+  * _Date:  ~16 May 2019_
   * Add — GAAD logo SVG image via LESS stylesheet;
+  * Fix — the _on-the-day_ behaviour — show the `before` message, not the `after` one!
+  * Fix — add missing `package-lock.json`
 
 ## Version 3.3.0
 

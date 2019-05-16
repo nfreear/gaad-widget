@@ -23,6 +23,7 @@ after_script:
   - npm run kill-server
   - ls -alh dist
   - ls -alh data
+  - git status
   #- cat dist/gaad-widget.min.js
 
 # End.

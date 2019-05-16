@@ -1,4 +1,4 @@
-(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={"dates":{"2011":{"{x}":0,"{d}":19,"{th}":"th","{m}":"May","{y}":2011,"ts":1305759600000},"2012":{"{x}":1,"{d}":17,"{th}":"th","{m}":"May","{y}":2012,"ts":1337209200000},"2013":{"{x}":2,"{d}":16,"{th}":"th","{m}":"May","{y}":2013,"ts":1368658800000},"2014":{"{x}":3,"{d}":15,"{th}":"th","{m}":"May","{y}":2014,"ts":1400108400000},"2015":{"{x}":4,"{d}":21,"{th}":"st","{m}":"May","{y}":2015,"ts":1432162800000},"2016":{"{x}":5,"{d}":19,"{th}":"th","{m}":"May","{y}":2016,"ts":1463612400000},"2017":{"{x}":6,"{d}":18,"{th}":"th","{m}":"May","{y}":2017,"ts":1495062000000},"2018":{"{x}":7,"{d}":17,"{th}":"th","{m}":"May","{y}":2018,"ts":1526511600000},"2019":{"{x}":8,"{d}":16,"{th}":"th","{m}":"May","{y}":2019,"ts":1557961200000},"2020":{"{x}":9,"{d}":21,"{th}":"st","{m}":"May","{y}":2020,"ts":1590015600000},"2021":{"{x}":10,"{d}":20,"{th}":"th","{m}":"May","{y}":2021,"ts":1621465200000},"2022":{"{x}":11,"{d}":19,"{th}":"th","{m}":"May","{y}":2022,"ts":1652914800000},"2023":{"{x}":12,"{d}":18,"{th}":"th","{m}":"May","{y}":2023,"ts":1684364400000},"2024":{"{x}":13,"{d}":16,"{th}":"th","{m}":"May","{y}":2024,"ts":1715814000000},"2025":{"{x}":14,"{d}":15,"{th}":"th","{m}":"May","{y}":2025,"ts":1747263600000}}}
 },{}],2:[function(require,module,exports){
 module.exports={
@@ -43,7 +43,7 @@ module.exports={
 
 'use strict';
 
-var VERSION = '3.3.0'; // <Auto>
+var VERSION = '3.4.0'; // <Auto>
 var VERSION_HAT = '^3';
 
 var TRANSLATE_TEXTS = require('./data/locales'); // JSON.
@@ -195,7 +195,7 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) 
     date: GAAD_DATE,
     date_next: GAAD_NEXT,
     // Was: datefmt: GAAD_DATE.toString('MMMM dS, yyyy'),
-    today: new Date(),
+    today: new Date((new Date()).toDateString()),
     xth: YEAR - 2011,
     analytics: {
       isWidget: true,
@@ -282,7 +282,7 @@ module.exports = {
     elem.lang = gaad.lang;
     elem.dir = gaad.dir;
     elem.setAttribute('role', 'alert');
-    elem.className = replaceObj('gaad-widget-js {t} {e}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed' });
+    elem.className = replaceObj('gaad-widget-js {t} {e} {i}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed', '{i}': gaad.dayClass });
     elem.innerHTML = gaad.message;  // Was: 'gaad.join'
   },
 
@@ -338,11 +338,14 @@ module.exports.run = function (defaults, methods) {
 
   gaad.should_show = (gaad.diff_show >= 0 && gaad.diff_hide < 0);
 
-  gaad.is_before = (gaad.today - gaad.date.ts) < 0; // Use: 'JS Date - timestamp' (implicite cast), works!
+  gaad.is_today = (gaad.today - gaad.date.ts) === 0;
+  gaad.is_before = (gaad.today - gaad.date.ts) <= 0; // Use: 'JS Date - timestamp' (implicite cast), works!
 
   if (!gaad.is_before) {
     gaad.xreplace = GAAD_NEXT;
   }
+
+  gaad.dayClass = gaad.is_today ? 'is-today' : gaad.is_before ? 'is-before' : 'is-after';
 
   gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': texts.en.name });
   gaad.xreplace[ '{x}' ] = gaad.xth;

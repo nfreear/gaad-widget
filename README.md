@@ -11,7 +11,7 @@
 <!--[![Browserify][built-icon]][gh]-->
 
 
-# nfreear/gaad-widget
+# gaad-widget
 
 Display a banner-link to promote [Global Accessibility Awareness Day (GAAD)][gaad].
 The banner displays for a configurable period before and after the day,
@@ -19,7 +19,7 @@ and the emphasis is on easy site-integration, via a [CDN][unpkg].
 
 [![Global Accessibility Awareness Day][gaad-image]][gaad]
 
-> Join us on Thursday, May 18 2017 and mark the sixth Global Accessibility Awareness Day (GAAD).
+> Join us on Thursday, May 16 2019 and mark the eighth Global Accessibility Awareness Day (GAAD).
 > The purpose of GAAD is to get everyone talking, thinking and learning about digital
 > (web, software, mobile, etc.) access/inclusion and people with different disabilities.
 
@@ -58,7 +58,7 @@ Via [RawGit][] — production CDN (_deprecated_):
 ```html
 <div id="id-gaad-widget"></div>
 
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.3.0/dist/gaad-widget.js"></script>
+<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.4.0/dist/gaad-widget.js"></script>
 ```
 
 Local hosting:
@@ -128,14 +128,14 @@ Twitter: [@nfreear][], [@gbla11yday][].
 _See the related [isad-widget][]._
 
 
-[blog]: http://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=readme
-[GAAD]: http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
+[blog]: https://nick.freear.org.uk/2017/05/14/gaad-widget.html?utm_source=readme
+[GAAD]: https://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget
 [@gbla11yday]: https://twitter.com/gbla11yday
 [@nfreear]: https://twitter.com/nfreear
 [@srinivasu..]: http://srinivasu.org "Suggested by @srinivasuchakravarthula"
 [gaad-widget]: https://github.com/nfreear/gaad-widget
 [gaad-img-after]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget-after.png
-[gaad-img]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
+[gaad-image]: https://github.com/nfreear/gaad-widget/raw/3.x/style/gaad-widget.png
 [changelog]: https://github.com/nfreear/gaad-widget/blob/3.x/CHANGELOG.md
 [rel]: https://github.com/nfreear/gaad-widget/releases "Release notes / changelog"
 [wishlist]: https://github.com/nfreear/gaad-widget/issues/2#!-Wishlist "Bug #2, Wishlist"
@@ -147,7 +147,7 @@ _See the related [isad-widget][]._
     "Default configuration options"
 [analytics]: https://github.com/nfreear/gaad-widget/blob/3.x/src/configure.js#L36-L40
     "Analytics configuration, JS code"
-[gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833
+[gist]: https://gist.github.com/nfreear/eef4be96147cb5c1182cbc9e595f2833 "Original Gist, 27 April 2017"
 [wp]: https://gist.github.com/nfreear/e5520adbb930e537ef5fe2e0aab231d1 "WordPress plugin (PHP)"
 [Datejs]: https://npmjs.com/package/datejs "Thanks: @abritinthebay"
 [Datejs-api]: https://github.com/datejs/Datejs#example-usage "API only (legacy code-base)"
@@ -156,8 +156,8 @@ _See the related [isad-widget][]._
 [unpkg]: https://unpkg.com/ "unpkg is a fast content delivery network (CDN) for everything on npm"
 [unpkg-icon]: https://nick.freear.org.uk/badge/unpkg.svg
 [browse]: https://unpkg.com/gaad-widget@^3/ "Browse the most recent version on Unpkg.com"
-[MIT]: https://nfreear.mit-license.org/2017-2018#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
-[mit-txt]: https://nfreear.mit-license.org/2017-2018/license.txt "MIT License | © Nick Freear"
+[MIT]: https://nfreear.mit-license.org/2017-2019#!-gaad-widget "MIT License | © Nick Freear, 2017-04-27, 2018"
+[mit-txt]: https://nfreear.mit-license.org/2017-2019/license.txt "MIT License | © Nick Freear"
 [travis]: https://travis-ci.org/nfreear/gaad-widget
 [travis-icon]: https://api.travis-ci.org/nfreear/gaad-widget.svg
     "Build status – Travis-CI (NPM/eslint)"

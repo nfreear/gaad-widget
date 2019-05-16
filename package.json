@@ -1,6 +1,6 @@
 {
   "name": "gaad-widget",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "x-version-hat": "^3",
   "description": "Display a banner-link to promote Global Accessibility Awareness Day (GAAD). Display the banner for a period before and after the day. Via unpkg CDN.",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "uglify-js": "^2.8.29"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 11"
   },
   "bin": {
     "gaad": "bin/gaad.js"

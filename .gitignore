@@ -12,8 +12,6 @@ test/cdn.html
 *BAK*
 /*.png
 
-package*
-!package.json
 node_modules/
 *.log
 *.php
