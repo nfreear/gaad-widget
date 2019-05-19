@@ -17,7 +17,7 @@ Display a banner-link to promote [Global Accessibility Awareness Day (GAAD)][gaa
 The banner displays for a configurable period before and after the day,
 and the emphasis is on easy site-integration, via a [CDN][unpkg].
 
-[![Global Accessibility Awareness Day][gaad-image]][gaad]
+[![Global Accessibility Awareness Day][gaad-img-after]][gaad]
 
 > Join us on Thursday, May 16 2019 and mark the eighth Global Accessibility Awareness Day (GAAD).
 > The purpose of GAAD is to get everyone talking, thinking and learning about digital

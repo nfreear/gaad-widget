@@ -8,7 +8,7 @@ cache: npm
 git:
   depth: 8
 
-install: npm install
+# install: npm ci # Was: install
 
 before_script: npm run build
 
@@ -24,6 +24,7 @@ after_script:
   - ls -alh dist
   - ls -alh data
   - git status
+  - npm audit
   #- cat dist/gaad-widget.min.js
 
 # End.

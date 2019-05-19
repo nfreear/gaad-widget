@@ -64,7 +64,7 @@ module.exports = {
     elem.dir = gaad.dir;
     elem.setAttribute('role', 'alert');
     elem.className = replaceObj('gaad-widget-js {t} {e} {i}', { '{t}': gaad.theme, '{e}': gaad.embed ? 'embed' : 'no-embed', '{i}': gaad.dayClass });
-    elem.innerHTML = gaad.message;  // Was: 'gaad.join'
+    elem.innerHTML = gaad.message; // Was: 'gaad.join'
   },
 
   addStylesheet: function (gaad) {

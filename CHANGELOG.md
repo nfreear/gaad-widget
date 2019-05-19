@@ -7,12 +7,20 @@
 
  * Download on the [releases page][rel]. (Also, see the [wishlist][].)
 
+## Latest
+
+  * _Date:  ~19 May 2019_
+  * Update outdated dev-dependencies in `package.json` etc.;
+  * Fix — LESS styles, set `background-image: none` for smaller screens/ mobiles;
+  * Fix — make LESS styles closer to Bootstrap (e.g. `border-radius`)
+
 ## Version 3.4.0
 
   * _Date:  16 May 2019_
   * Add — GAAD logo SVG image via LESS stylesheet;
   * Fix — the _on-the-day_ behaviour — show the `before` message, not the `after` one!
   * Fix — add missing `package-lock.json`;
+  * Update — `gaad-widget.png`;
 
 ## Version 3.3.0
 

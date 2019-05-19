@@ -8,14 +8,14 @@
   background: url('./gaad-logo.svg') #00385e no-repeat .35rem center;
   background-size: 3.8rem; // Was: 60px;
   border: 3px solid #f8c958;
-  border-radius: 7px;
+  border-radius: .3rem; // Was: 7px;
   color: #fff;
   display: block;
   font: normal 1rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.6em;
+  line-height: 1.6;
   margin: 0 0 1.5em;
   padding: 0.8em;
-  padding-left: 67px;
+  padding-left: 4.1rem; // Was: 67px;
   text-align: center;
 
   // csslint adjoining-classes: false;
@@ -105,12 +105,17 @@
   }
 }
 
-@media (max-width: 767px) {
+// iPhone 6+, 7+ and 8+
+// See :~ https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+@media screen and (max-width: 736px) {
+// Was: @media (max-width: 767px) {
 
   .gaad-widget-js.no-embed {
+    background-image: none;
     border-width: 2px;
     font-size: 1.05em;
     padding: 0.5em;
+    // padding-left: 67px;
   }
 }
 
