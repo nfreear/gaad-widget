@@ -74,6 +74,7 @@
     "data/gaad.json",
     "data/locales.json",
     "src/",
+    "style/*logo*",
     "style/*.css"
   ],
   "x-locales": [
@@ -82,7 +83,7 @@
     "fr",
     "zh-cn"
   ],
-  "x-build-js-size": "13.3 kB",
+  "x-build-js-size": "13.8 kB",
   "x-cdn": "https://unpkg.com/gaad-widget@^3/dist/gaad-widget.min.js",
   "x-ticket": "[iet:8994834]",
   "#": {

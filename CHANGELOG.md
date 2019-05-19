@@ -9,14 +9,14 @@
 
 ## Version 3.4.0
 
-  * _Date:  ~16 May 2019_
+  * _Date:  16 May 2019_
   * Add — GAAD logo SVG image via LESS stylesheet;
   * Fix — the _on-the-day_ behaviour — show the `before` message, not the `after` one!
-  * Fix — add missing `package-lock.json`
+  * Fix — add missing `package-lock.json`;
 
 ## Version 3.3.0
 
-  * _Date:  ~15 May 2018_
+  * _Date:  15 May 2018_
   * _Was:   3.2.2_
   * Fix — error-handling in the `getConfig()` Javascript function, [#12][];
   * Add — link to "_Download an iCal calendar file_", using an [emoji][ical-icon].
