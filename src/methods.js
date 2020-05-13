@@ -37,10 +37,10 @@ module.exports = {
     var prop;
 
     for (key in arguments) {
-      var argument = arguments[ key ];
+      var argument = arguments[key];
       for (prop in argument) {
         if (Object.prototype.hasOwnProperty.call(argument, prop)) {
-          extended[ prop ] = argument[ prop ];
+          extended[prop] = argument[prop];
         }
       }
     }
@@ -49,7 +49,7 @@ module.exports = {
 
   trans: function (msgid, vars) {
     var texts = CFG.texts;
-    var msgstr = texts[ CFG.lang ][ msgid ] || texts[ 'en' ][ msgid ];
+    var msgstr = texts[CFG.lang][msgid] || texts.en[msgid];
     return msgstr; // replaceObj( msgstr, vars );
   },
 
@@ -91,6 +91,6 @@ function replaceObj (str, mapObj) {
   var re = new RegExp(Object.keys(mapObj).join('|'), 'g'); // Was: "gi".
 
   return str.replace(re, function (matched) {
-    return mapObj[ matched ]; // Was: matched.toLowerCase().
+    return mapObj[matched]; // Was: matched.toLowerCase().
   });
 }

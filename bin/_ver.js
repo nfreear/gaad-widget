@@ -14,12 +14,12 @@ const README = path('/../README.md');
 const TEST_HTML = path('/../test/index.html');
 const PKG = require('../package.json');
 const VERSION_TAG = PKG.version; // Was: .replace(/\.0(-.+)?/, '$1');
-const CARET_VERSION = PKG[ 'x-version-hat' ]; // Example, '^3'
+const CARET_VERSION = PKG['x-version-hat']; // Example, '^3'
 
 console.warn('VERSION_TAG :', VERSION_TAG, CARET_VERSION);
 
 replace({
-  paths: [ INDEX_JS ],
+  paths: [INDEX_JS],
   regex: /VERSION = '.+';(.+Auto.)?/,
   replacement: version('VERSION = \'%s\'; // <Auto>'),
   count: true,
@@ -27,7 +27,7 @@ replace({
 });
 
 replace({
-  paths: [ INDEX_JS ],
+  paths: [INDEX_JS],
   regex: /@version \d\.\d\.\d(-[.\w]+)?/,
   replacement: version('@version %s'),
   count: true,
@@ -35,7 +35,7 @@ replace({
 });
 
 replace({
-  paths: [ README, TEST_HTML ],
+  paths: [README, TEST_HTML],
   regex: /\/gaad-widget(\/|@)(\d\.\d\.\d(-[.\w]+)?)/g,
   replacement: version('/gaad-widget$1%s'),
   count: true,
@@ -43,7 +43,7 @@ replace({
 });
 
 replace({
-  paths: [ README ],
+  paths: [README],
   regex: /\/gaad-widget@[^\d]\d+(\.\d)?/g,
   replacement: '/gaad-widget@' + CARET_VERSION,
   count: true,

@@ -1,7 +1,7 @@
 
 language: node_js
 
-node_js: 11 # Was: 6
+node_js: 12 # Was: 6
 
 cache: npm
 

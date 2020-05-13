@@ -9,14 +9,14 @@ module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) 
   'use strict';
 
   var YEAR = new Date().getFullYear();
-  var GAAD_DATE = DATES.dates[ YEAR ];
-  var GAAD_NEXT = DATES.dates[ YEAR + 1 ];
+  var GAAD_DATE = DATES.dates[YEAR];
+  var GAAD_NEXT = DATES.dates[YEAR + 1];
   var M_LANG = queryString.match(/[&?#!]lang=(\w{2}(-\w{2})?)/);
 
   var defaults = {
     id: 'id-gaad-widget',
     script: '/gaad-widget', // .js OR .min.js;
-    lang: M_LANG ? M_LANG[ 1 ] : 'en',
+    lang: M_LANG ? M_LANG[1] : 'en',
     dir: 'ltr',
     texts: TRANSLATE_TEXTS,
     url: 'http://globalaccessibilityawarenessday.org/?utm_source=github&utm_campaign=gaad-widget',

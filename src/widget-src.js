@@ -30,20 +30,20 @@ module.exports.run = function (defaults, methods) {
 
   gaad.dayClass = gaad.is_today ? 'is-today' : gaad.is_before ? 'is-before' : 'is-after';
 
-  gaad.xreplace[ '{at}' ] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': texts.en.name });
-  gaad.xreplace[ '{x}' ] = gaad.xth;
+  gaad.xreplace['{at}'] = methods.replaceObj(' href="{u}" target="_top" title="{t}"', { '{u}': gaad.url, '{t}': texts.en.name });
+  gaad.xreplace['{x}'] = gaad.xth;
   // Was: gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
 
-  var lang = texts[ gaad.lang ] ? gaad.lang : 'en';
+  var lang = texts[gaad.lang] ? gaad.lang : 'en';
   gaad.lang = lang;
 
   var replaceObj = methods.replaceObj;
 
-  var template = gaad.is_before ? texts[ lang ].before : texts[ lang ].after;
+  var template = gaad.is_before ? texts[lang].before : texts[lang].after;
   var putWidget = replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
   var calWidget = replaceObj(gaad.ical_widget, { '{p}': methods.trans('ical'), '{c}': gaad.ical_char, '{v}': gaad.version_hat });
 
-  gaad.xreplace[ '{g}' ] = texts[ lang ].name;
+  gaad.xreplace['{g}'] = texts[lang].name;
   gaad.message = replaceObj(template, gaad.xreplace) + replaceObj('<div class="w">{p}{c}</div>', { '{c}': calWidget, '{p}': putWidget });
 
   if (!gaad.should_show && !gaad.force) {
