@@ -19,13 +19,13 @@ const LOCALE_FILE = abspath('../data/locales.json');
 // const JSON_TEXT = abspath('../src/gaad-texts.json');
 
 const GAAD_START_YEAR = 2011;
-const LIMIT_YEARS = 15;
+const LIMIT_YEARS = 18; // Was: 15.
 // const A_DAY = 24 * 60 * 60;
 
 const icalendar = require('icalendar');
 const datejs = require('datejs');
 
-const texts = readLocaleTexts(LOCALE_DIR, PKG[ 'x-locales' ]);
+const texts = readLocaleTexts(LOCALE_DIR, PKG['x-locales']);
 const GAAD_URL = texts.en.url;
 const today = new Date();
 
@@ -63,7 +63,7 @@ for (idx = 0; idx < LIMIT_YEARS; idx++) {
   event.setProperty('DTSTART;VALUE=DATE', GAAD_DATE.toString('yyyyMMdd'));
   event.setProperty('DTEND;VALUE=DATE', GAAD_DATE.toString('yyyyMMdd'));
 
-  gaadobj.dates[ year ] = {
+  gaadobj.dates[year] = {
     '{x}': parseInt(idx),
     '{d}': parseInt(GAAD_DATE.toString('dd')),
     '{th}': GAAD_DATE.toString('S'),
@@ -112,8 +112,8 @@ function readLocaleTexts (localedir, locales) {
   var locale;
 
   for (var idx = 0; idx < locales.length; idx++) {
-    locale = locales[ idx ];
-    texts[ locale ] = removeJsonComments(require(localedir + locale));
+    locale = locales[idx];
+    texts[locale] = removeJsonComments(require(localedir + locale));
   }
   return texts;
 }
@@ -126,7 +126,7 @@ function removeJsonComments (locale) {
 
   for (prop in locale) {
     if (!prop.match(/^#_+/)) {
-      texts[ prop ] = locale[ prop ];
+      texts[prop] = locale[prop];
     }
   }
   return texts;

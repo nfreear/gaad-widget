@@ -2,9 +2,9 @@
   "#": "License: MIT. The data is provided 'as is'. I accept no responsibility for the accuracy or otherwise of the data, or any losses arising.",
   "name": "gaad-widget",
   "version": "3.4.0",
-  "timestamp": "2019-05-16 10:29:23Z",
+  "timestamp": "2020-05-13 16:13:12Z",
   "url": "https://github.com/nfreear/gaad-widget.git",
-  "count_years": 15,
+  "count_years": 18,
   "dates": {
     "2011": {
       "{x}": 0,
@@ -125,6 +125,30 @@
       "{m}": "May",
       "{y}": 2025,
       "ts": 1747263600000
+    },
+    "2026": {
+      "{x}": 15,
+      "{d}": 21,
+      "{th}": "st",
+      "{m}": "May",
+      "{y}": 2026,
+      "ts": 1779318000000
+    },
+    "2027": {
+      "{x}": 16,
+      "{d}": 20,
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": 2027,
+      "ts": 1810767600000
+    },
+    "2028": {
+      "{x}": 17,
+      "{d}": 18,
+      "{th}": "th",
+      "{m}": "May",
+      "{y}": 2028,
+      "ts": 1842217200000
     }
   }
 }
