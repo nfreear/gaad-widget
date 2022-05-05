@@ -19,7 +19,7 @@ const LOCALE_FILE = abspath('../data/locales.json');
 // const JSON_TEXT = abspath('../src/gaad-texts.json');
 
 const GAAD_START_YEAR = 2011;
-const LIMIT_YEARS = 18; // Was: 15.
+const LIMIT_YEARS = 22; // Was: 18, 15.
 // const A_DAY = 24 * 60 * 60;
 
 const icalendar = require('icalendar');

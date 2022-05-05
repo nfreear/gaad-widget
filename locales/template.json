@@ -12,7 +12,8 @@
   "#__after_orig": "Put next year's <a {at}>{gaad}</a>, Thursday May {day}{th}, {year}, in your diary. See you then!",
   "after": "",
 
-  "#__url_orig": "http://globalaccessibilityawarenessday.org",
+  "#__url_orig": "https://accessibility.day",
+  "#__url_OLD": "http://globalaccessibilityawarenessday.org",
   "url": "",
 
   "#__put_orig": "Put {it} on your web site",
