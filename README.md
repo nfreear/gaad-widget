@@ -1,4 +1,5 @@
-[![Build status — Travis-CI][travis-icon]][travis]
+[![Node.js CI][ci-img]][ci]
+<!-- [![Build status — Travis-CI][travis-icon]][travis] -->
 [![GitLab pipeline status][gitlab-icon]][gitlab]
 [![js-semistandard-style][semi-icon]][semi]
 [![GAAD-widget - on Npmjs][npm-icon]][npm]
@@ -188,6 +189,8 @@ _See the related [isad-widget][]._
 [gitlab-icon]: https://gitlab.com/nfreear/gaad-widget/badges/3.x/pipeline.svg
 [gitlab-co]: https://gitlab.com/nfreear/gaad-widget/commits/3.x
 [gitlab]: https://gitlab.com/nfreear/gaad-widget/pipelines "GitLab pipeline status"
+[ci-img]: https://github.com/nfreear/gaad-widget/actions/workflows/node.js.yml/badge.svg
+[ci]: https://github.com/nfreear/gaad-widget/actions/workflows/node.js.yml
 
 [isad-widget]: https://github.com/nfreear/isad-widget
     "banner-link for International Stuttering Awareness Day (ISAD)"

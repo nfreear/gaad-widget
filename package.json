@@ -37,7 +37,8 @@
   "scripts": {
     "build": "rm -f dist/* && bin/gaad.js && bin/_ver.js && npm run browserify && npm run uglify && npm run less",
     "browserify": "browserify index.js --no-bf --debug | exorcist dist/gaad-widget.js.map > dist/gaad-widget.js",
-    "uglify": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
+    "uglify": "uglifyjs dist/*-widget.js -mco dist/gaad-widget.min.js",
+    "uglify:OLD": "uglifyjs dist/*-widget.js --comments=/^[!]/ -mco dist/gaad-widget.min.js",
     "less": "lessc style/style.less style/gaad-widget.css",
     "start": "npx servor . 9001 --reload",
     "start:OLD": "live-server --port=9001 -V",
