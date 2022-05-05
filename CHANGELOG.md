@@ -9,8 +9,16 @@
 
 ## Latest
 
+## Version 3.5.0
+
+  * _Date:  05 May 2022_
+  * Increase count of years covered in JSON, JS, iCal (#19)
+  * Add GitHub workflow (#33)
+
+---
+
   * _Date:  ~19 May 2019_
-  * Update outdated dev-dependencies in `package.json` etc.;
+  * Update outdated dev-dependencies in `package.json` etc. (#18);
   * Fix — LESS styles, set `background-image: none` for smaller screens/ mobiles;
   * Fix — make LESS styles closer to Bootstrap (e.g. `border-radius`)
 

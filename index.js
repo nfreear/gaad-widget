@@ -8,7 +8,7 @@
 
 'use strict';
 
-const VERSION = '3.4.0'; // <Auto>
+const VERSION = '3.5.0'; // <Auto>
 const VERSION_HAT = '^3';
 
 const TRANSLATE_TEXTS = require('./data/locales'); // JSON.

@@ -54,14 +54,6 @@ Via [unpkg][] — [browse][] — production CDN:
 <script src="https://unpkg.com/gaad-widget@^3#"></script>
 ```
 
-Via [RawGit][] — production CDN (_deprecated_):
-
-```html
-<div id="id-gaad-widget"></div>
-
-<script src="https://cdn.rawgit.com/nfreear/gaad-widget/3.4.0/dist/gaad-widget.js"></script>
-```
-
 Local hosting:
 
 ```html
