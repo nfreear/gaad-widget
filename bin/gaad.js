@@ -30,7 +30,7 @@ const GAAD_URL = texts.en.url;
 const today = new Date();
 
 var ical = new icalendar.iCalendar(); // eslint-disable-line
-var gaadobj = {
+const gaadobj = {
   '#': NO_LIABILITY,
   name: PKG.name,
   version: PKG.version,
@@ -41,18 +41,18 @@ var gaadobj = {
   count_years: LIMIT_YEARS,
   dates: {}
 };
-var idx;
+let idx;
 
 ical.setProperty('X-WR-CALNAME', 'GAAD: ' + GAAD_URL);
 ical.setProperty('X-WR-CALDESC', NO_LIABILITY);
 
 for (idx = 0; idx < LIMIT_YEARS; idx++) {
-  var event = ical.addComponent('VEVENT');
-  var year = (GAAD_START_YEAR + idx) + '';
+  const event = ical.addComponent('VEVENT');
+  const year = (GAAD_START_YEAR + idx) + '';
 
   // "...we invite you to help us mark GAAD on the third Thursday of May."
   // ~~  http://globalaccessibilityawarenessday.org/background.html  ~~
-  var GAAD_DATE = new Date(year).may().third().thursday();
+  const GAAD_DATE = new Date(year).may().third().thursday();
 
   console.log('> GAAD %d: %s', idx + 0, GAAD_DATE.toString());
 
@@ -74,7 +74,7 @@ for (idx = 0; idx < LIMIT_YEARS; idx++) {
   };
 }
 
-var gaaddates = {
+const gaaddates = {
   dates: gaadobj.dates
 };
 
@@ -108,10 +108,10 @@ function writeStatFile (file, data, label) {
 }
 
 function readLocaleTexts (localedir, locales) {
-  var texts = {};
-  var locale;
+  const texts = {};
+  let locale;
 
-  for (var idx = 0; idx < locales.length; idx++) {
+  for (let idx = 0; idx < locales.length; idx++) {
     locale = locales[idx];
     texts[locale] = removeJsonComments(require(localedir + locale));
   }
@@ -120,8 +120,8 @@ function readLocaleTexts (localedir, locales) {
 
 // https://github.com/i18next/i18next/issues/108#__A-comment
 function removeJsonComments (locale) {
-  var texts = {};
-  var prop;
+  const texts = {};
+  let prop;
   // console.log(locale);
 
   for (prop in locale) {

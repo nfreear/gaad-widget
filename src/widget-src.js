@@ -1,16 +1,14 @@
 
 // Main widget 'run' function | ©Nick Freear.
 
-var W = window;
-
 module.exports.run = function (defaults, methods) {
   'use strict';
 
-  var gaad = methods.getConfig(defaults, methods);
+  const gaad = methods.getConfig(defaults, methods);
 
-  var texts = gaad.texts;
-  var GAAD_DATE = gaad.date;
-  var GAAD_NEXT = gaad.date_next;
+  const texts = gaad.texts;
+  const GAAD_DATE = gaad.date;
+  const GAAD_NEXT = gaad.date_next;
 
   gaad.show_date = methods.addDays(GAAD_DATE, -gaad.days_before); // new Date(GAAD_DATE).addDays(-gaad.days_before); // Clone.
   gaad.hide_date = methods.addDays(GAAD_DATE, gaad.days_after); // new Date(GAAD_DATE).addDays(gaad.days_after);
@@ -34,14 +32,14 @@ module.exports.run = function (defaults, methods) {
   gaad.xreplace['{x}'] = gaad.xth;
   // Was: gaad.xreplace[ '{g}' ] = gaad.texts.en.name;
 
-  var lang = texts[gaad.lang] ? gaad.lang : 'en';
+  const lang = texts[gaad.lang] ? gaad.lang : 'en';
   gaad.lang = lang;
 
-  var replaceObj = methods.replaceObj;
+  const replaceObj = methods.replaceObj;
 
-  var template = gaad.is_before ? texts[lang].before : texts[lang].after;
-  var putWidget = replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
-  var calWidget = replaceObj(gaad.ical_widget, { '{p}': methods.trans('ical'), '{c}': gaad.ical_char, '{v}': gaad.version_hat });
+  const template = gaad.is_before ? texts[lang].before : texts[lang].after;
+  const putWidget = replaceObj(gaad.put_widget, { '{p}': methods.trans('put'), '{c}': gaad.put_char, '{v}': gaad.version });
+  const calWidget = replaceObj(gaad.ical_widget, { '{p}': methods.trans('ical'), '{c}': gaad.ical_char, '{v}': gaad.version_hat });
 
   gaad.xreplace['{g}'] = texts[lang].name;
   gaad.message = replaceObj(template, gaad.xreplace) + replaceObj('<div class="w">{p}{c}</div>', { '{c}': calWidget, '{p}': putWidget });
@@ -58,7 +56,7 @@ module.exports.run = function (defaults, methods) {
 
   methods.setHTML(gaad);
 
-  W.console && console.log('Happy GAAD! ~ http://globalaccessibilityawarenessday.org');
+  console.log('Happy GAAD! ~ http://globalaccessibilityawarenessday.org');
 
   return gaad;
 };

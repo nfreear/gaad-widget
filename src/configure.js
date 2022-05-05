@@ -1,19 +1,17 @@
 
 // Configure | ©Nick Freear.
 
-var W = window;
-var Date = W.Date;
-var queryString = W.location.href; // Was: W.location.search;
+const queryString = window.location.href; // Was: W.location.search;
 
 module.exports.config = function (TRANSLATE_TEXTS, DATES, VERSION, VERSION_HAT) {
   'use strict';
 
-  var YEAR = new Date().getFullYear();
-  var GAAD_DATE = DATES.dates[YEAR];
-  var GAAD_NEXT = DATES.dates[YEAR + 1];
-  var M_LANG = queryString.match(/[&?#!]lang=(\w{2}(-\w{2})?)/);
+  const YEAR = new Date().getFullYear();
+  const GAAD_DATE = DATES.dates[YEAR];
+  const GAAD_NEXT = DATES.dates[YEAR + 1];
+  const M_LANG = queryString.match(/[&?#!]lang=(\w{2}(-\w{2})?)/);
 
-  var defaults = {
+  const defaults = {
     id: 'id-gaad-widget',
     script: '/gaad-widget', // .js OR .min.js;
     lang: M_LANG ? M_LANG[1] : 'en',

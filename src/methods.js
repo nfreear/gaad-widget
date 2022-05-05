@@ -1,23 +1,23 @@
 
 // Functions: extend, setHTML, addStylesheet.. | ©Nick Freear.
 
-var W = window;
-var D = W.document;
-var CFG;
+// const W = window;
+const D = document;
+let CFG;
 
 module.exports = {
 
   getConfig: function (defaults, methods) {
-    var configEl = D.querySelector('script[ data-gaad-widget ]');
+    const configEl = D.querySelector('script[ data-gaad-widget ]');
 
-    var data = configEl ? configEl.getAttribute('data-gaad-widget') : null;
-    var options = data ? JSON.parse(data) : {};
+    const data = configEl ? configEl.getAttribute('data-gaad-widget') : null;
+    const options = data ? JSON.parse(data) : {};
 
-    var gaad = methods.extend(defaults, options);
+    const gaad = methods.extend(defaults, options);
 
-    var scriptEl = D.querySelector('script[ src *= "' + gaad.script + '" ]');
+    const scriptEl = D.querySelector('script[ src *= "' + gaad.script + '" ]');
 
-    gaad.log = gaad.debug && W.console ? console.warn : function () {};
+    gaad.log = gaad.debug && console ? console.warn : function () {};
 
     gaad.script_url = scriptEl.src;
 
@@ -32,12 +32,12 @@ module.exports = {
 
   // JuhQ (16 July 2015): https://gist.github.com/pbojinov/8f3765b672efec122f66#gistcomment-1493930
   extend: function () {
-    var extended = {};
-    var key;
-    var prop;
+    const extended = {};
+    let key;
+    let prop;
 
     for (key in arguments) {
-      var argument = arguments[key];
+      const argument = arguments[key];
       for (prop in argument) {
         if (Object.prototype.hasOwnProperty.call(argument, prop)) {
           extended[prop] = argument[prop];
@@ -48,8 +48,8 @@ module.exports = {
   },
 
   trans: function (msgid, vars) {
-    var texts = CFG.texts;
-    var msgstr = texts[CFG.lang][msgid] || texts.en[msgid];
+    const texts = CFG.texts;
+    const msgstr = texts[CFG.lang][msgid] || texts.en[msgid];
     return msgstr; // replaceObj( msgstr, vars );
   },
 
@@ -58,7 +58,7 @@ module.exports = {
   replaceObj: replaceObj,
 
   setHTML: function (gaad) {
-    var elem = D.getElementById(gaad.id);
+    const elem = D.getElementById(gaad.id);
 
     elem.lang = gaad.lang;
     elem.dir = gaad.dir;
@@ -68,7 +68,7 @@ module.exports = {
   },
 
   addStylesheet: function (gaad) {
-    var styleEl = D.createElement('link');
+    const styleEl = D.createElement('link');
     styleEl.rel = 'stylesheet';
     styleEl.type = 'text/css';
     styleEl.href = decideStyleUrl(gaad);
@@ -88,7 +88,7 @@ function decideStyleUrl (CFG) {
 }
 
 function replaceObj (str, mapObj) {
-  var re = new RegExp(Object.keys(mapObj).join('|'), 'g'); // Was: "gi".
+  const re = new RegExp(Object.keys(mapObj).join('|'), 'g'); // Was: "gi".
 
   return str.replace(re, function (matched) {
     return mapObj[matched]; // Was: matched.toLowerCase().

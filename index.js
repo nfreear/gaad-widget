@@ -8,14 +8,14 @@
 
 'use strict';
 
-var VERSION = '3.4.0'; // <Auto>
-var VERSION_HAT = '^3';
+const VERSION = '3.4.0'; // <Auto>
+const VERSION_HAT = '^3';
 
-var TRANSLATE_TEXTS = require('./data/locales'); // JSON.
-var GAAD_DATE_LOOKUP = require('./data/gaad-dates.min'); // JSON.
+const TRANSLATE_TEXTS = require('./data/locales'); // JSON.
+const GAAD_DATE_LOOKUP = require('./data/gaad-dates.min'); // JSON.
 // console.log(GAAD_DATE_LOOKUP);
-var DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION, VERSION_HAT);
-var METHODS = require('./src/methods');
+const DEFAULTS = require('./src/configure').config(TRANSLATE_TEXTS, GAAD_DATE_LOOKUP, VERSION, VERSION_HAT);
+const METHODS = require('./src/methods');
 
 METHODS.analytics = require('node-analytics-ga');
 // METHODS.analytics = require('universal-ga');
